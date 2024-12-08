@@ -1,6 +1,7 @@
 package page;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -15,7 +16,9 @@ public class Student_DashBoard_InnerChatBox extends BasePage{
 
     public void enter_Your_FullName(String fullName)
     {
-        driver.findElement(By.xpath("//input[@placeholder='Type your answer and press enter']")).sendKeys(fullName);
+        WebElement full=driver.findElement(By.xpath("//input[@placeholder='Type your answer and press enter']"));
+        full.sendKeys(fullName);
+        full.sendKeys(Keys.ENTER);
     }
 
     public void select_Your_DOB(String date)

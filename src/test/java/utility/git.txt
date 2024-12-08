@@ -36,7 +36,6 @@ git pull "GitHub repository URL" -->>pull the files from remote repository<<--
 
 
 clone new repository to local system
-
 git clone "GitHub repository URl"
 
 1. Create new folder in your local system.

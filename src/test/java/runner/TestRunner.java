@@ -11,10 +11,4 @@ import org.junit.runner.RunWith;
 )
 public class TestRunner {
     ///login_validation_001.feature
-
-
-
-
-
-
 }

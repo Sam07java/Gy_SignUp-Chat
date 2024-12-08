@@ -30,7 +30,7 @@ public class InnerBoxTextEntering {
 
     @When("Enter User detail on Dashboard Inner Box")
     public void enter_user_detail_on_dashboard_inner_box() {
-        sd=new Student_DashBoard_InnerChatBox(driver);
+        sd=new Student_DashBoard_InnerChatBox(Hook.driver);
         sd.enter_Your_FullName("Suraj Venjaramood");
     }
 
