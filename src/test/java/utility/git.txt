@@ -32,7 +32,17 @@ Round --2
 	git push origin master
 
 
-git pull "GitHub repository URL"
+git pull "GitHub repository URL" -->>pull the files from remote repository<<--
+
+
+clone new repository to local system
+
+git clone "GitHub repository URl"
+
+1. Create new folder in your local system.
+2. right click open GitHub Bash
+3. git clone "GitHub repository URL"
+
 
 	
 		
