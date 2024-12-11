@@ -37,7 +37,7 @@ public class RegistrationPage extends BasePage{
     }
 
     public void registration_Validation() throws InterruptedException {
-        //WebElement failedAlert=driver.findElement(By.xpath("//div[contains(text(),'Userid already exists')]"));
+       // WebElement failedAlert=driver.findElement(By.xpath("//div[contains(text(),'Userid already exists')]"));
         //WebElement successAlert=driver.findElement(By.xpath("//div[contains(text(),'User created successfully')]"));
         //h1[normalize-space()='Sign In']
         Thread.sleep(2000);

@@ -16,7 +16,7 @@ public class Hook {
     public void setup()
     {
         driver=new ChromeDriver();
-        driver.get("https://www.gyansetu.ai/");
+        driver.get("https://qaweb.gyansetu.ai//");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }

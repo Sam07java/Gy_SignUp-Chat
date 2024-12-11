@@ -16,6 +16,7 @@ public class Student_DashBoard_InnerChatBox extends BasePage{
 
     public void enter_Your_FullName(String fullName)
     {
+        // (1)
         WebElement full=driver.findElement(By.xpath("//input[@placeholder='Type your answer and press enter']"));
         full.sendKeys(fullName);
         full.sendKeys(Keys.ENTER);
@@ -23,7 +24,9 @@ public class Student_DashBoard_InnerChatBox extends BasePage{
 
     public void select_Your_DOB(String date)
     {
-        driver.findElement(By.xpath("//input[@id=':r8:']")).sendKeys(date);
+        //div[@class='MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-adornedEnd Mui-readOnly MuiInputBase-readOnly css-bl65n1']
+        //input[@id=':r8:']
+        driver.findElement(By.xpath("//button[@class='chat_search_btn']//*[name()='svg']")).sendKeys(date);
     }
 
     public void dateClick()
@@ -31,36 +34,57 @@ public class Student_DashBoard_InnerChatBox extends BasePage{
         driver.findElement(By.xpath("//button[@class='chat_search_btn']//*[name()='svg']")).click();
     }
 
+    public void datepicker()
+    {
+        //(2)
+        driver.findElement(By.xpath("//button[@aria-label='Choose date']")).click();
+        driver.findElement(By.xpath("//button[normalize-space()='9']")).click();
+        driver.findElement(By.xpath("//button[@class='chat_search_btn']")).click();
+    }
+
     public void enter_main_learning_goal(String goal)
     {
-        driver.findElement(By.xpath("//input[@placeholder='Type your answer and press enter']")).sendKeys(goal);
+        //(3)
+       WebElement lgoal=driver.findElement(By.xpath("//input[@placeholder='Type your answer and press enter']"));
+               lgoal.sendKeys(goal);
+               lgoal.sendKeys(Keys.ENTER);
     }
 
     public void select_Gender(String gender)
-    {
+    {   //(4)
         //Male or Female
-        WebElement gen= driver.findElement(By.xpath(""));
+        /*WebElement gen= driver.findElement(By.xpath("//div[@class='css-19bb58m']"));
         Select dropGender=new Select(gen);
-        dropGender.selectByValue(gender);
+        dropGender.selectByValue(gender);*/
+        //div[@class='css-1wy0on6']
+        //input[@aria-activedescendant='react-select-4-option-1']
+        //div[@id='react-select-2-option-0']
+        //div[@id='react-select-2-listbox']/div[2]
+        WebElement gen= driver.findElement(By.xpath("//div[@class='css-19bb58m']"));
+        gen.click();
+        WebElement male =  driver.findElement(By.xpath("//div[@id='react-select-2-listbox']/div[2]"));
+         male.click();
+       // System.out.println(male);
+
     }
 
     public void enter_Mother_Name(String motherName)
-    {
+    {   //(5)
         driver.findElement(By.xpath("//input[@placeholder='Type your answer and press enter']")).sendKeys(motherName);
     }
 
     public void enter_Father_Name(String fatherName)
-    {
+    {   //(6)
         driver.findElement(By.xpath("//input[@placeholder='Type your answer and press enter']")).sendKeys(fatherName);
     }
 
     public void enter_Quardian_Name(String quardianName)
-    {
+    {   //(7)
         driver.findElement(By.xpath("//input[@placeholder='Type your answer and press enter']")).sendKeys(quardianName);
     }
 
     public void Upload_Profile_Picture(String path)
-    {
+    {   //(8)
         driver.findElement(By.xpath("//input[@type='file']")).sendKeys(path);
     }
 

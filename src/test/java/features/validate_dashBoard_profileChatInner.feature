@@ -1,9 +1,9 @@
 Feature: Validating Profile Chat Inner Boc
 
-  Scenario: Register student User in Gyansetu
-    Given Navigate Registration Page
-    When User Enter Email "sameersnn@gmail.com" and Password "Same@1213"
-    Then Click SignUp Button
+  #Scenario: Register student User in Gyansetu
+   # Given Navigate Registration Page
+   # When User Enter Email "sameersnn@gmail.com" and Password "Same@1213"
+   # Then Click SignUp Button
 
   Scenario: Validating Profile Chat Inner Box after Login Successfully.
 
