@@ -71,12 +71,12 @@ public class DatePicker {
 
         List<WebElement> allDates =  driver.findElements(By.xpath("//table[@class='ui-datepicker-calendar']//td"));
 
-        for (WebElement eachDate : allDates) {
-            if (eachDate.getText().equals(date)) {
-
+        for (WebElement eachDate : allDates)
+        {
+            if (eachDate.getText().equals(date))
+            {
                 eachDate.click();
                 break;
-
             }
         }
     }
@@ -101,8 +101,9 @@ public class DatePicker {
         WebElement select_year=driver.findElement(By.xpath("//button[@aria-label='calendar view is open, switch to year view']"));
         select_year.click();
 
-        List<WebElement> years=driver.findElements(By.xpath("//button[@class='MuiPickersYear-yearButton css-osz2eb']"));
-        WebElement year2018=driver.findElement(By.xpath("//button[@class='MuiPickersYear-yearButton Mui-selected css-osz2eb']"));
+        List<WebElement> years=driver.findElements(By.xpath("//div[@class='MuiPickersYear-root css-j9zntq']//button"));
+        //div[@class='MuiPickersYear-root css-j9zntq']//button
+        //WebElement year2018=driver.findElement(By.xpath("//button[@class='MuiPickersYear-yearButton Mui-selected css-osz2eb']"));
 
         boolean yearFound=false;
         for(WebElement dateWebElement:years)
@@ -116,14 +117,12 @@ public class DatePicker {
                 yearFound=true;
                 break;
             }
-            else if (year2018.getText().equals("2018"))
+            /*else if (year2018.getText().equals("2018"))
             {
                 year2018.click();
                 yearFound=true;
                 break;
-            }
-
-
+            }*/
         }
         if(yearFound)
         {
@@ -133,14 +132,10 @@ public class DatePicker {
         {
             System.out.println("Year not found");
         }
-
-
           //left button--//*[name()='path' and contains(@d,'M15.41 16.')]
             //button[@title='Previous month']
 
             //right button--//button[@title='Next month']
-
-
 
         while(true)
         {
@@ -152,7 +147,6 @@ public class DatePicker {
             {
                 break;
             }
-
             driver.findElement(By.xpath(" //button[@title='Previous month']")).click();
         }
 
@@ -167,12 +161,9 @@ public class DatePicker {
       //             int columSize=colum.size();
       //  System.out.println("columSize= "+columSize);
 
-
-
         List<WebElement> dateF=driver.findElements(By.xpath("//button[@class='MuiButtonBase-root MuiPickersDay-root MuiPickersDay-dayWithMargin css-126v4m4']"));
         int dateSize=dateF.size();
         System.out.println("date="+dateSize);
-
 
         for(int i=0;i<=dateSize;i++)
         {
@@ -191,8 +182,6 @@ public class DatePicker {
                 System.out.println(dateD);
             }*/
         }
-
-
 
        /* while (true) {
 
@@ -218,10 +207,6 @@ public class DatePicker {
                 break;
             }
         }*/
-
-
-
-
     }
 
 }
