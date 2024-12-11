@@ -34,13 +34,12 @@ public class InnerBoxTextEntering {
     public void enter_user_detail_on_dashboard_inner_box() throws InterruptedException {
         sd=new Student_DashBoard_InnerChatBox(Hook.driver);
         sd.enter_Your_FullName("Suraj Venjaramood");
-      //  Thread.sleep(3000);
-       // sd.dateClick();
+
        // sd.select_Your_DOB("12/01/1998");
         dp=new DatePicker(Hook.driver);
-        dp.datepickerG("17","May","2017");
+        dp.datepickerG("17","May","2018");
 
-       // sd.datepicker();
+
         sd.enter_main_learning_goal("asasasasa");
         sd.select_Gender("ma");
         sd. enter_Mother_Name("Sarasu P");
@@ -51,6 +50,7 @@ public class InnerBoxTextEntering {
 
     @Then("Enter phone no.")
     public void enter_phone_no() {
+        sd.select_institute_type("collage");
 
     }
 

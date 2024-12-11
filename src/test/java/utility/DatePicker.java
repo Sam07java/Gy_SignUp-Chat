@@ -89,11 +89,11 @@ public class DatePicker {
         WebElement monthYear=driver.findElement(By.xpath("//div[@class='MuiPickersCalendarHeader-label css-1v994a0']"));
         //div[@id=':r2o:-grid-label']
         String my=monthYear.getText();
-        System.out.println(my);
+        System.out.println("First location"+my);
 
         String[] parts=my.split(" ");
-        System.out.println(parts[0]);
-        System.out.println(parts[1]);
+        System.out.println("1st Part="+parts[0]);
+        System.out.println("2nd Part="+parts[1]);
 
         String displayed_month=parts[0];
         String displayed_year=parts[1];
@@ -102,20 +102,29 @@ public class DatePicker {
         select_year.click();
 
         List<WebElement> years=driver.findElements(By.xpath("//button[@class='MuiPickersYear-yearButton css-osz2eb']"));
-
+        WebElement year2018=driver.findElement(By.xpath("//button[@class='MuiPickersYear-yearButton Mui-selected css-osz2eb']"));
 
         boolean yearFound=false;
         for(WebElement dateWebElement:years)
         {
           String yearText=dateWebElement.getText();
+
+            System.out.println("Loop"+yearText);
             if(yearText.equals(year))
             {
                 dateWebElement.click();
                 yearFound=true;
                 break;
             }
-        }
+            else if (year2018.getText().equals("2018"))
+            {
+                year2018.click();
+                yearFound=true;
+                break;
+            }
 
+
+        }
         if(yearFound)
         {
             System.out.println("clicked on year");
@@ -172,6 +181,7 @@ public class DatePicker {
            {
                cell.click();
                System.out.println("Cell clicked");
+               break;
            }
             /*rowDate.get(i);
             for(int j=0;j<=7;j++)

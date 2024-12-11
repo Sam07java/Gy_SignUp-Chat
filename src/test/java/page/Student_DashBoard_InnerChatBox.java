@@ -70,17 +70,24 @@ public class Student_DashBoard_InnerChatBox extends BasePage{
 
     public void enter_Mother_Name(String motherName)
     {   //(5)
-        driver.findElement(By.xpath("//input[@placeholder='Type your answer and press enter']")).sendKeys(motherName);
+    WebElement Mname=driver.findElement(By.xpath("//input[@placeholder='Type your answer and press enter']"));
+
+    Mname.sendKeys(motherName);
+    Mname.sendKeys(Keys.ENTER);
     }
 
     public void enter_Father_Name(String fatherName)
     {   //(6)
-        driver.findElement(By.xpath("//input[@placeholder='Type your answer and press enter']")).sendKeys(fatherName);
+        WebElement Fname=driver.findElement(By.xpath("//input[@placeholder='Type your answer and press enter']"));
+               Fname.sendKeys(fatherName);
+               Fname.sendKeys(Keys.ENTER);
     }
 
     public void enter_Quardian_Name(String quardianName)
     {   //(7)
-        driver.findElement(By.xpath("//input[@placeholder='Type your answer and press enter']")).sendKeys(quardianName);
+        WebElement Qname=driver.findElement(By.xpath("//input[@placeholder='Type your answer and press enter']"));
+                Qname.sendKeys(quardianName);
+                Qname.sendKeys(Keys.ENTER);
     }
 
     public void Upload_Profile_Picture(String path)
