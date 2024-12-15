@@ -4,6 +4,7 @@ import hooks.Hook;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import page.RegistrationPage;
 
@@ -25,9 +26,8 @@ public class Registration_Validation {
     }
     @Then("Click SignUp Button")
     public void click_sign_up_button() throws InterruptedException {
-
         rp.click_SignUp_Now();
-        //rp.registration_Validation();
+        rp.registration_Validation();
 
     }
 

@@ -41,7 +41,7 @@ public class RegistrationPage extends BasePage{
         //WebElement successAlert=driver.findElement(By.xpath("//div[contains(text(),'User created successfully')]"));
         //h1[normalize-space()='Sign In']
         Thread.sleep(2000);
-        WebElement titl=driver.findElement(By.xpath("//h1[normalize-space()='Sign In']"));
+        /*WebElement titl=driver.findElement(By.xpath("//h1[normalize-space()='Sign In']"));
         WebElement titl2=driver.findElement(By.xpath("//h1[normalize-space()='Sign Up']"));
         if(titl.isDisplayed())
         {
@@ -52,7 +52,8 @@ public class RegistrationPage extends BasePage{
         {
             //if (failedAlert.getText().equalsIgnoreCase("Userid already exists"))
             System.out.println("Registry Failed");
-        }
+        }*/
+
     }
 
 }

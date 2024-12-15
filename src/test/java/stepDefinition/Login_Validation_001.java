@@ -23,9 +23,14 @@ public class Login_Validation_001 {
     @When("Enter the valid Credential")
     public void enter_the_valid_credential() {
 
+        lop.EnterUserName("arunmba@gmail.com");
+        lop.EnterPassword("Arun@123");
+
     }
     @Then("Validate Dashboard Displayed or not")
     public void validate_dashboard_displayed_or_not() {
+        lop.ClickSign_Now();
+        lop.validatestudentpriflelogin();
 
     }
 
