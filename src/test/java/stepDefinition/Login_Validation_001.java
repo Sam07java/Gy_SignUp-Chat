@@ -23,7 +23,8 @@ public class Login_Validation_001 {
     @When("Enter the valid Credential")
     public void enter_the_valid_credential() {
 
-        lop.EnterUserName("arunmba@gmail.com");
+        lop.EnterUserName("arunm@gmail.com");
+        //runmba@gmail.com
         lop.EnterPassword("Arun@123");
 
     }

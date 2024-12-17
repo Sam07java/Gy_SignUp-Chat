@@ -37,15 +37,19 @@ public class LoginPage extends BasePage {
 
     public void validatestudentpriflelogin()
     {
-        WebElement titile=driver.findElement(By.xpath("//h3[text()='Hi, How can I help you today?']"));
-        if(titile.isDisplayed())
-        {
-            System.out.println("Login Successful");
-            Assert.assertTrue(true);
+        try {
+            WebElement titile = driver.findElement(By.xpath("//h3[text()='Hi, How can I help you today?']"));
+            if (titile.isDisplayed()) {
+                System.out.println("Login Successful");
+                Assert.assertTrue(true);
+            } else {
+                System.out.println("Login Failed");
+                Assert.fail("login Failed");
+            }
         }
-        else
-        {
-            System.out.println("Login Failed");
+        catch (Exception e) {
+            System.out.println("An error occurred during invalid signup Credential.");
+            e.printStackTrace();
             Assert.fail("login Failed");
         }
     }

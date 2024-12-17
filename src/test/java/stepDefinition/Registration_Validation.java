@@ -27,8 +27,8 @@ public class Registration_Validation {
     @Then("Click SignUp Button")
     public void click_sign_up_button() throws InterruptedException {
         rp.click_SignUp_Now();
+      //  Thread.sleep(2000);
         rp.registration_Validation();
-
     }
 
 

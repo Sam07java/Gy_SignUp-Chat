@@ -121,8 +121,8 @@ public class DatePicker {
             WebElement monthYear1=driver.findElement(By.xpath("//div[@class='MuiPickersCalendarHeader-label css-1v994a0']"));
             String afterMonthYear=monthYear1.getText();
             //System.out.println(afterMonthYear);
-            String actualdate=month+" "+year;
-            if(actualdate.equals(afterMonthYear))
+            String achualdate=month+" "+year;
+            if(achualdate.equals(afterMonthYear))
             {
                 break;
             }
