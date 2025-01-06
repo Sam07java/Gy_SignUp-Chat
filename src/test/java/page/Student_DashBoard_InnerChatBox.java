@@ -2,10 +2,7 @@ package page;
 
 import io.cucumber.java.ja.且つ;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Select;
 
 import java.security.PublicKey;
@@ -17,6 +14,7 @@ public class Student_DashBoard_InnerChatBox extends BasePage{
         super(driver);
     }
 
+
     public void enter_Your_FullName(String fullName)
     {// (1)
         WebElement full=driver.findElement(By.xpath("//input[@placeholder='Type your answer and press enter']"));
@@ -24,7 +22,7 @@ public class Student_DashBoard_InnerChatBox extends BasePage{
         full.sendKeys(Keys.ENTER);
     }
 
-    public void select_Your_DOB(String date)
+  /*  public void select_Your_DOB(String date)
     {
         driver.findElement(By.xpath("//button[@class='chat_search_btn']//*[name()='svg']")).sendKeys(date);
     }
@@ -39,7 +37,7 @@ public class Student_DashBoard_InnerChatBox extends BasePage{
         driver.findElement(By.xpath("//button[@aria-label='Choose date']")).click();
         driver.findElement(By.xpath("//button[normalize-space()='9']")).click();
         driver.findElement(By.xpath("//button[@class='chat_search_btn']")).click();
-    }
+    }*/
 
     public void enter_main_learning_goal(String goal)
     {//(3)
@@ -48,7 +46,7 @@ public class Student_DashBoard_InnerChatBox extends BasePage{
                lgoal.sendKeys(Keys.ENTER);
     }
 
-    public void select_Gender(String gender)
+    public void select_Gender()
     {   //(4)
         //Male or Female
         WebElement gen= driver.findElement(By.xpath("//div[@class='css-19bb58m']"));
@@ -113,24 +111,60 @@ public class Student_DashBoard_InnerChatBox extends BasePage{
         driver.findElement(By.id("react-select-3-option-10")).click();
     }
 
-    public void choose_your_hobbies()
+    public void choose_your_hobbies(String hobbie)
     {
         WebElement choosinessHobbies=driver.findElement(By.className("css-19bb58m"));
         choosinessHobbies.click();
-        driver.findElement(By.id("react-select-3-option-5")).click();
+        //driver.findElement(By.id("react-select-3-option-5")).click();
+         try {
+          List<WebElement> hobbies = driver.findElements(By.className("css-10wo9uf-option"));
+             //div[@class='css-10wo9uf-option']
+            for (WebElement hb : hobbies) {
+                String hob = hb.getText();
+                if (hob.equalsIgnoreCase(hobbie)) {
+                  hb.click();
+                 // return;
+                    break;
+                }
+            }
+         }
+        catch(StaleElementReferenceException a)
+        {
+        System.out.println("Exception Handled");
+        }
+        System.out.println("Hobbie clicked");
     }
 
-    public void select_known_language()
+    public void select_known_language(String language)
     {
-        WebElement chooseLang=driver.findElement(By.className("css-19bb58m"));
+        WebElement chooseLang=driver.findElement(By.className("css-1wy0on6"));//css-19bb58m
         chooseLang.click();
-        driver.findElement(By.id("react-select-3-option-2")).click();
+       // driver.findElement(By.id("react-select-3-option-0")).click();
+       // try {
+            List<WebElement> lang = driver.findElements(By.className("css-10wo9uf-option"));
+            //div[@class='css-10wo9uf-option']
+            for (WebElement hb : lang) {
+                String hob = hb.getText();
+                if (hob.equalsIgnoreCase(language)) {
+                    hb.click();
+                    //return;
+                    break;
+
+                }
+            }
+        System.out.println("language clicked");
+       // }
+      //  catch(StaleElementReferenceException a)
+      //  {
+       //     System.out.println("Exception Handled");
+      //  }
     }
 
     public void select_proficiency() {
         WebElement chooseProficiency=driver.findElement(By.className("css-19bb58m"));
         chooseProficiency.click();
-        driver.findElement(By.id("react-select-3-option-2")).click();
+        driver.findElement(By.xpath("//div[@class='css-d7l1ni-option']")).click();
+        //driver.findElement(By.id("react-select-3-option-2")).click();
     }
 
     public void select_your_mobile_number_country_code()
@@ -154,10 +188,22 @@ public class Student_DashBoard_InnerChatBox extends BasePage{
        watzup.sendKeys(Keys.ENTER);
     }
 
-    public void Select_your_subject_name()
+    public void Select_your_subject_name(String subjectPreference)
     {
-        driver.findElement(By.className("css-1xc3v61-indicatorContainer")).click();
-        driver.findElement(By.xpath("//div[text()='Science']")).click();
+        driver.findElement(By.className("css-19bb58m")).click();
+      List <WebElement> subPreference= driver.findElements(By.className("css-10wo9uf-option"));
+      for(WebElement subPreElement : subPreference)
+        {
+           String sub= subPreElement.getText();
+           if(sub.equalsIgnoreCase(subjectPreference))
+           {
+               subPreElement.click();
+               break;
+           }
+        }
+
+        //driver.findElement(By.className("css-1xc3v61-indicatorContainer")).click();
+        //driver.findElement(By.xpath("//div[text()='Science']")).click();
 
     }
 
@@ -241,16 +287,19 @@ public class Student_DashBoard_InnerChatBox extends BasePage{
 
    public void validateInnerChatBox()
    {
-       WebElement text=driver.findElement(By.xpath("//div[@class='chatinput-body']"));
-       if (text.isDisplayed())
-       {
-           Assert.assertTrue(true);
-           text.click();
-       }
-       else
-       {
+       try {
+           WebElement text = driver.findElement(By.xpath("//div[@class='chatinput-body']"));
+           if (text.isDisplayed()) {
+               Assert.assertTrue(true);
+               text.click();
+           } else {
+               System.out.println("Inner chatBox isn't completed ");
+               Assert.fail();
+           }
+       } catch (Exception e) {
            System.out.println("Inner chatBox isn't completed ");
            Assert.fail();
+           throw new RuntimeException(e);
        }
    }
 

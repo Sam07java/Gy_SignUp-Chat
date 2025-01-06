@@ -86,10 +86,10 @@ public class DatePicker {
         datepick.click();
         WebElement monthYear=driver.findElement(By.xpath("//div[@class='MuiPickersCalendarHeader-label css-1v994a0']"));
         String my=monthYear.getText();
-        System.out.println("First location"+my);
+       // System.out.println("First location"+my);
         String[] parts=my.split(" ");
-        System.out.println("1st Part="+parts[0]);
-        System.out.println("2nd Part="+parts[1]);
+        //System.out.println("1st Part="+parts[0]);
+      //  System.out.println("2nd Part="+parts[1]);
         String displayed_month=parts[0];
         String displayed_year=parts[1];
         WebElement select_year=driver.findElement(By.xpath("//button[@aria-label='calendar view is open, switch to year view']"));
@@ -126,23 +126,24 @@ public class DatePicker {
             {
                 break;
             }
-            driver.findElement(By.xpath(" //button[@title='Previous month']")).click();
+           // driver.findElement(By.xpath(" //button[@title='Previous month']")).click();
+            driver.findElement(By.xpath("//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeStart MuiIconButton-sizeMedium MuiPickersArrowSwitcher-button css-1fklenr']")).click();
         }
         //For Date Selection
         List<WebElement> dateF=driver.findElements(By.xpath("//button[@class='MuiButtonBase-root MuiPickersDay-root MuiPickersDay-dayWithMargin css-126v4m4']"));
         int dateSize=dateF.size();
-        System.out.println("date="+dateSize);
+       // System.out.println("date="+dateSize);
         for(int i=0;i<=dateSize;i++)
         {
            WebElement cell=dateF.get(i);
            if (cell.getText().equals(date))
            {
                cell.click();
-               System.out.println("Cell clicked");
+               System.out.println("date clicked");
                break;
            }
         }
-
+driver.findElement(By.xpath("//button[@class='chat_search_btn']")).click();
        /* while (true) {
 
             Month displayMonth = convertMonth(displayed_month);

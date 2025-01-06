@@ -2,6 +2,7 @@ package page;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -62,9 +63,10 @@ public class RegistrationPage extends BasePage {
                 System.out.println("Registration Failed");
             }
         }
-        catch (Exception e)
+        catch (NoSuchElementException e)
         {
             System.out.println("An error occurred during invalid signup validation.");
+            Assert.fail("Registration Failed");
             e.printStackTrace();
            // Thread.sleep(2000);
          //   WebElement failedAlert = driver.findElement(By.xpath("//div[@class='Toastify__toast-container Toastify__toast-container--top-right']"));

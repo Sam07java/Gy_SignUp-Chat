@@ -13,10 +13,6 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-    public void SignIn_with_Email()
-    {
-        driver.findElement(By.xpath("//div[text()='Sign in with Email / Phone']")).click();
-    }
 
     public void EnterUserName(String username)
     {
