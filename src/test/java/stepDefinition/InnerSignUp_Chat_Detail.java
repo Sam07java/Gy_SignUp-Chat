@@ -55,9 +55,9 @@ public class InnerSignUp_Chat_Detail {
         sd.Upload_Profile_Picture(string);
     }
 
-    @When("User Select Institute Type")
-    public void user_select_institute_type() {
-        sd.select_institute_type();
+    @When("User Select Institute Type {string}")
+    public void user_select_institute_type(String string) {
+        sd.select_institute_type(string);
     }
 
     @When("User Select Board")
@@ -68,6 +68,12 @@ public class InnerSignUp_Chat_Detail {
     @When("User Select Class")
     public void user_select_class() {
         sd.select_your_class();
+    }
+
+    @When("User Select Class {string}")
+    public void user_select_class(String string)
+    {
+        sd.select_your_classes(string);
     }
 
     @When("User Choose Hobbies {string}")

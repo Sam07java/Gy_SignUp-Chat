@@ -2,11 +2,11 @@ Feature: Automate Sign Up chat Functionality on Student Profile
 
   Scenario: Register student User in Gyansetu
     Given Navigate Registration Page
-      When User Enter Email "sameer25@gmail.com" and Password "Same@2323"
+      When User Enter Email "sameer27@gmail.com" and Password "Same@2323"
     Then Click SignUp Button
 
   Scenario: Enter Details Sign Up Chat.
-    Given Enter Student Valid Credential on SigIn Page Email "sameer25@gmail.com" and Password "Same@2323"
+    Given Enter Student Valid Credential on SigIn Page Email "sameer27@gmail.com" and Password "Same@2323"
     When Click SignIn Button
     And User enter the Full Name "Sharmila Ayoob"
     And User Select the Date of Birth Date= "17" Month= "July" Year= "2015"
@@ -16,7 +16,7 @@ Feature: Automate Sign Up chat Functionality on Student Profile
     And User Enter Your Father Name "Joseph"
     And User Enter Your Quardian Name "Sharafudeen SP"
     And User upload profile picture "C:\\Users\\WIIS\\Pictures\\one piece\\1471770.jpg"
-    And User Select Institute Type
+    And User Select Institute Type "School"
     And User Select Board
     And User Select Class
     And User Choose Hobbies "Swimming"
@@ -37,8 +37,9 @@ Feature: Automate Sign Up chat Functionality on Student Profile
     And User Enter Second Address "Valanjavazhi"
     Then Validate whether SignUp chat is Completed
 
+
 Scenario: Validate profile details with given input of Sign Up Chat
-  Given Enter Student Valid Credential on SigIn Page Email "sameer25@gmail.com" and Password "Same@2323"
+  Given Enter Student Valid Credential on SigIn Page Email "sameer27@gmail.com" and Password "Same@2323"
   When Click SignIn Button
   And Check the Student Profile detail is displayed
   And Validate whether First Name "Sharmila" with given input of SignUp Chat

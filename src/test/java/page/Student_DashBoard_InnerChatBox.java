@@ -81,12 +81,18 @@ public class Student_DashBoard_InnerChatBox extends BasePage{
         driver.findElement(By.xpath("//input[@type='file']")).sendKeys(path);
     }
 
-    public void select_institute_type()
+    public void select_institute_type(String institutionType)
     {
         //school or collage
         driver.findElement(By.className("css-hlgwow")).click();
-        WebElement schoolElement=driver.findElement(By.id("react-select-3-option-0"));
-        schoolElement.click();
+        if(institutionType.equals("School")) {
+            WebElement schoolElement = driver.findElement(By.id("react-select-3-option-0"));
+            schoolElement.click();
+        }
+        else if (institutionType.equals("College"))
+        {
+            driver.findElement(By.id("react-select-3-option-1")).click();
+        }
       /* if (schoolElement.getText().equalsIgnoreCase(institute))
        {
            WebElement collageElement=driver.findElement(By.id("react-select-3-option-1"));
@@ -109,6 +115,19 @@ public class Student_DashBoard_InnerChatBox extends BasePage{
         WebElement clickDropDown=driver.findElement(By.className("css-19bb58m"));
         clickDropDown.click();
         driver.findElement(By.id("react-select-3-option-10")).click();
+    }
+
+    public void select_your_classes(String clas)
+    {
+        driver.findElement(By.className("css-19bb58m")).click();
+        List <WebElement> cbseClass =driver.findElements(By.className("css-10wo9uf-option"));
+            for(WebElement cb:cbseClass)
+            {
+                if(cb.getText().equalsIgnoreCase(clas)) {
+                    cb.click();
+                    break;
+                }
+            }
     }
 
     public void choose_your_hobbies(String hobbie)
