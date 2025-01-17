@@ -80,6 +80,36 @@ public class DatePicker {
         }
     }
 
+    public void selectYear(String Year)
+    {
+        WebElement datepick=driver.findElement(By.xpath("//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-slyssw']"));
+        datepick.click();
+       // WebElement select_year=driver.findElement(By.xpath("//button[@aria-label='calendar view is open, switch to year view']"));
+        //select_year.click();
+        List<WebElement> years=driver.findElements(By.xpath("//div[@class='MuiPickersYear-root css-j9zntq']//button"));
+        //For Year selection
+        boolean yearFound=false;
+        for(WebElement dateWebElement:years)
+        {
+            String yearText=dateWebElement.getText();
+            if(yearText.equals(Year))
+            {
+                dateWebElement.click();
+                yearFound=true;
+                break;
+            }
+        }
+        if(yearFound)
+        {
+            System.out.println("clicked on year");
+        }
+        else
+        {
+            System.out.println("Year not found");
+        }
+        driver.findElement(By.xpath("//button[@class='chat_search_btn']")).click();
+    }
+
     public void datepickerG(String date,String month,String year)
     {
         WebElement datepick=driver.findElement(By.xpath("//button[@aria-label='Choose date']"));

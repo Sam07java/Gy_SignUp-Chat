@@ -1,12 +1,10 @@
 package stepDefinition;
 
-import io.cucumber.java.bs.A;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import page.Student_DashBoard;
 import page.studentprofile_edit.*;
 

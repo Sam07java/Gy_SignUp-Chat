@@ -49,7 +49,7 @@ public class InnerBoxTextEntering {
         sd.enter_Father_Name("Nasar S");
         sd.enter_Quardian_Name("Sharafudheen S");
         sd.Upload_Profile_Picture("C:\\Users\\WIIS\\Pictures\\one piece\\1471770.jpg");
-        sd.select_institute_type("School");
+        sd.select_School_type();
         sd.select_your_board();
         sd.select_your_class();
         sd.choose_your_hobbies("running");

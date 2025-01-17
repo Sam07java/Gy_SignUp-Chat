@@ -26,4 +26,10 @@ public class Subject_Preference extends BasePage {
     {
        return driver.findElement(By.xpath("//input[@name='score_in_percentage']")).getDomAttribute("value");
     }
+
+    public String semester_verification()
+    {
+      return   driver.findElement(By.id("mui-component-select-sem_id")).getText();
+    }
+
 }

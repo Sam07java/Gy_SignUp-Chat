@@ -23,11 +23,13 @@ public class Hook {
         //  https://uatweb.gyansetu.ai/
         //  https://www.gyansetu.ai/
         //  https://qaweb.gyansetu.ai/
+
+       // Properties p=new Properties();
     }
 
     @After
     public void tearDown()
     {
-       // driver.close();
+      // driver.close();
     }
 }

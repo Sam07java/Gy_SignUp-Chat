@@ -2,11 +2,11 @@ Feature: Automate Sign Up chat Functionality on Student Profile
 
   Scenario: Register student User in Gyansetu
     Given Navigate Registration Page
-      When User Enter Email "sameer27@gmail.com" and Password "Same@2323"
+      When User Enter Email "sameer33@gmail.com" and Password "Same@2323"
     Then Click SignUp Button
 
   Scenario: Enter Details Sign Up Chat.
-    Given Enter Student Valid Credential on SigIn Page Email "sameer27@gmail.com" and Password "Same@2323"
+    Given Enter Student Valid Credential on SigIn Page Email "sameer33@gmail.com" and Password "Same@2323"
     When Click SignIn Button
     And User enter the Full Name "Sharmila Ayoob"
     And User Select the Date of Birth Date= "17" Month= "July" Year= "2015"
@@ -39,7 +39,7 @@ Feature: Automate Sign Up chat Functionality on Student Profile
 
 
 Scenario: Validate profile details with given input of Sign Up Chat
-  Given Enter Student Valid Credential on SigIn Page Email "sameer27@gmail.com" and Password "Same@2323"
+  Given Enter Student Valid Credential on SigIn Page Email "sameer33@gmail.com" and Password "Same@2323"
   When Click SignIn Button
   And Check the Student Profile detail is displayed
   And Validate whether First Name "Sharmila" with given input of SignUp Chat
@@ -72,7 +72,7 @@ Scenario: Validate profile details with given input of Sign Up Chat
   And Check if Contact Details Page is Displayed or not
   And Verify the mobile Number "9897454566" with Input of SighUp Chat.
   And Verify the whatzapp Number "9867676777" with Input of SignUp Chat.
-  And Check the Email dispayed Correct with sign in data "sameer25@gmail.com".
+  And Check the Email dispayed Correct with sign in data "sameer33@gmail.com".
   And Click the Next Button of Contact Deatil Page.
   And Check if Subject Preference Page is displayed or not.
   And Verify the Subject is selected "English" correct with signUp Chat.

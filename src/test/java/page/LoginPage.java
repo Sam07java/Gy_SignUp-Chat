@@ -13,7 +13,6 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-
     public void EnterUserName(String username)
     {
         driver.findElement(By.xpath("//input[@id='email/phone']")).sendKeys(username);

@@ -81,27 +81,98 @@ public class Student_DashBoard_InnerChatBox extends BasePage{
         driver.findElement(By.xpath("//input[@type='file']")).sendKeys(path);
     }
 
-    public void select_institute_type(String institutionType)
-    {
-        //school or collage
+    public void select_School_type()
+    {//school or collage
         driver.findElement(By.className("css-hlgwow")).click();
-        if(institutionType.equals("School")) {
             WebElement schoolElement = driver.findElement(By.id("react-select-3-option-0"));
             schoolElement.click();
-        }
-        else if (institutionType.equals("College"))
-        {
-            driver.findElement(By.id("react-select-3-option-1")).click();
-        }
-      /* if (schoolElement.getText().equalsIgnoreCase(institute))
-       {
-           WebElement collageElement=driver.findElement(By.id("react-select-3-option-1"));
-       }
-       else
-       {
-        collageElement.click();
-       }*/
     }
+
+    public void select_Collage_type()
+    {
+        driver.findElement(By.className("css-hlgwow")).click();
+        driver.findElement(By.xpath("//div[text()='College']")).click();
+    }
+
+    public void please_Select_your_University(String University)
+    {
+        System.out.println("University Methode execution started");
+        driver.findElement(By.className("css-19bb58m")).click();
+
+       List <WebElement> uni = driver.findElements(By.xpath("//div[@class='css-qr46ko']//div"));
+       for(WebElement univer_sity:uni)
+       {
+          String u=univer_sity.getText();
+           if(u.equalsIgnoreCase(University))
+           {
+               univer_sity.click();
+               break;
+           }
+       }
+    }
+
+    public void please_Select_your_Institution(String institution)
+    {
+        System.out.println("Institution Methode is execution started. ");
+        driver.findElement(By.className("css-19bb58m")).click();
+        List <WebElement> ins = driver.findElements(By.xpath("//div[@class='css-qr46ko']//div"));
+        for(WebElement instit_ution:ins)
+        {
+            String u=instit_ution.getText();
+            if(u.equalsIgnoreCase(institution))
+            {
+                instit_ution.click();
+                break;
+            }
+        }
+    }
+
+    public void please_select_your_Course(String course)
+    {
+        System.out.println("Course Methode is started");
+        driver.findElement(By.className("css-19bb58m")).click();
+
+        List <WebElement> cou = driver.findElements(By.xpath("//div[@class='css-qr46ko']//div"));
+        for(WebElement cou_ution:cou)
+        {
+            String u=cou_ution.getText();
+            if(u.equalsIgnoreCase(course))
+            {
+                cou_ution.click();
+                break;
+            }
+        }
+    }
+
+    public void please_select_your_Semester()
+    {
+        driver.findElement(By.className("css-19bb58m")).click();  //css-19bb58m
+        WebElement cbseElement=driver.findElement(By.id("react-select-3-option-0"));
+        cbseElement.click();
+    }
+
+    public void please_select_your_learningStyle()
+    {
+        driver.findElement(By.className("css-19bb58m")).click();  //css-19bb58m
+        WebElement cbseElement=driver.findElement(By.id("react-select-3-option-0"));
+        cbseElement.click();
+    }
+
+    public void user_select_which_your_subject_belongs()
+    {
+        driver.findElement(By.className("css-19bb58m")).click();
+        driver.findElement(By.xpath("//div[@class='css-qr46ko']//div")).click();
+        //div[@class='css-qr46ko']//div
+        //div[@class='css-10wo9uf-option']
+    }
+
+    public void user_select_semester()
+    {
+        driver.findElement(By.className("css-19bb58m")).click();
+        driver.findElement(By.className("css-d7l1ni-option")).click();
+    }
+
+
 
     public void select_your_board()
     {// CBSE or ICSE or State Board
@@ -153,13 +224,12 @@ public class Student_DashBoard_InnerChatBox extends BasePage{
         }
         System.out.println("Hobbie clicked");
     }
-
+    //div[@class='css-d7l1ni-option']
     public void select_known_language(String language)
     {
-        WebElement chooseLang=driver.findElement(By.className("css-1wy0on6"));//css-19bb58m
+        WebElement chooseLang=driver.findElement(By.className("css-19bb58m"));//css-19bb58m
         chooseLang.click();
        // driver.findElement(By.id("react-select-3-option-0")).click();
-       // try {
             List<WebElement> lang = driver.findElements(By.className("css-10wo9uf-option"));
             //div[@class='css-10wo9uf-option']
             for (WebElement hb : lang) {
@@ -168,15 +238,9 @@ public class Student_DashBoard_InnerChatBox extends BasePage{
                     hb.click();
                     //return;
                     break;
-
                 }
             }
         System.out.println("language clicked");
-       // }
-      //  catch(StaleElementReferenceException a)
-      //  {
-       //     System.out.println("Exception Handled");
-      //  }
     }
 
     public void select_proficiency() {

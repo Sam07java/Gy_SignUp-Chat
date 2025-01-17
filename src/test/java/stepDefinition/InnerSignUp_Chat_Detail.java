@@ -3,6 +3,7 @@ package stepDefinition;
 import hooks.Hook;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.By;
 import page.Student_DashBoard;
 import page.Student_DashBoard_InnerChatBox;
 import utility.DatePicker;
@@ -57,7 +58,69 @@ public class InnerSignUp_Chat_Detail {
 
     @When("User Select Institute Type {string}")
     public void user_select_institute_type(String string) {
-        sd.select_institute_type(string);
+
+       if(string.equalsIgnoreCase("School")) {
+           sd.select_School_type();
+           System.out.println("School Selected");
+       } else{
+           sd.select_Collage_type();
+           System.out.println("collage Selected");
+//           sd.please_Select_your_University("KTU(Kerala Technical University)");
+//           sd.please_Select_your_Institution("MESITAM Chathnoor");
+//           sd.please_select_your_Course("Electronics and Communication");
+//           sd.please_select_your_Semester();
+//           sd.please_select_your_learningStyle();
+//           dp.selectYear("2022");
+
+       }
+    }
+
+    @When("User Select University {string}")
+    public void User_Select_University(String university)
+    {
+        sd.please_Select_your_University(university);
+    }
+
+    @When("User Select Institution {string}")
+    public void user_Select_Institution(String institution)
+    {
+        sd.please_Select_your_Institution(institution);
+    }
+
+    @When("User Select Course {string}")
+    public void user_Select_Course(String course)
+    {
+        sd.please_select_your_Course(course);
+    }
+
+    @When("User Select Semester {string}")
+    public void  user_Select_Semester(String semester)
+    {
+        sd.please_select_your_Semester();
+    }
+
+    @When("User Select Learning Style {string}")
+    public void user_select_learning_style(String string)
+    {
+        sd.please_select_your_learningStyle();
+    }
+
+    @When("User Select Year {string}")
+    public void user_select_year(String string)
+    {
+        dp.selectYear(string);
+    }
+
+    @When("User select which your subject belongs {string}")
+    public void user_select_which_your_subject_belongs(String string)
+    {
+        sd.user_select_which_your_subject_belongs();
+    }
+
+    @When("User select semester")
+    public void user_select_semester()
+    {
+        sd.user_select_semester();
     }
 
     @When("User Select Board")
@@ -71,8 +134,7 @@ public class InnerSignUp_Chat_Detail {
     }
 
     @When("User Select Class {string}")
-    public void user_select_class(String string)
-    {
+    public void user_select_class(String string) {
         sd.select_your_classes(string);
     }
 
@@ -80,9 +142,9 @@ public class InnerSignUp_Chat_Detail {
     public void user_choose_hobbies(String string) {
         sd.choose_your_hobbies(string);
     }
-
     @When("User Select Known Language {string}")
-    public void user_select_known_language(String string) {
+    public void user_select_known_language(String string) throws InterruptedException {
+        //Thread.sleep(500);
         sd.select_known_language(string);
     }
 
@@ -164,5 +226,4 @@ public class InnerSignUp_Chat_Detail {
         sdi=new Student_DashBoard(Hook.driver);
         sdi.logOut();
     }
-
 }
