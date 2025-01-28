@@ -15,9 +15,9 @@ public class InnerSignUp_Chat_Detail {
     Student_DashBoard sdi;
 
     @When("User enter the Full Name {string}")
-    public void user_enter_the_full_name(String a) {
+    public void user_enter_the_full_name(String fullName) {
         sd=new Student_DashBoard_InnerChatBox(Hook.driver);
-        sd.enter_Your_FullName(a);
+        sd.enter_Your_FullName(fullName);
     }
 
     @When("User Select the Date of Birth Date= {string} Month= {string} Year= {string}")
@@ -96,7 +96,7 @@ public class InnerSignUp_Chat_Detail {
     @When("User Select Semester {string}")
     public void  user_Select_Semester(String semester)
     {
-        sd.please_select_your_Semester();
+        sd.please_select_your_Semester(semester);
     }
 
     @When("User Select Learning Style {string}")
@@ -144,7 +144,7 @@ public class InnerSignUp_Chat_Detail {
     }
     @When("User Select Known Language {string}")
     public void user_select_known_language(String string) throws InterruptedException {
-        //Thread.sleep(500);
+        Thread.sleep(500);
         sd.select_known_language(string);
     }
 

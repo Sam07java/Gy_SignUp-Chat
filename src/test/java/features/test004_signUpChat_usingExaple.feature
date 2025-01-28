@@ -37,7 +37,7 @@ Feature:Automate signUp chat using Example keyWord-->User Student
     Examples:
       | username         | password  | FullName | MotherName | FatherName | MobileNo   | InstituteType | Clas     |
       | same06@gmail.com | Same@2323 | Arushi A | Mariyam    | Kebeer     | 9897454566 | School        | class_07 |
-  #    | same04@gmail.com | Same@2323 | Aravind Kirthan | Kirthi     | Thambi     | 9898988888 | School        | class_06 |
+      | same04@gmail.com | Same@2323 | Aravind Kirthan | Kirthi     | Thambi     | 9898988888 | School        | class_06 |
 
 
   Scenario Outline: Validate profile details with given input of Sign Up Chat

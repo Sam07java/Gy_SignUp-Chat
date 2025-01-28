@@ -61,7 +61,9 @@ public class AddressPage extends BasePage {
 
     public void Click_SameAs_Current_Address()
     {
-        driver.findElement(By.xpath("//input[@name='sameAsCurrent']")).click();
+       WebElement el_button= driver.findElement(By.xpath("//input[@name='sameAsCurrent']"));
+        JavascriptExecutor js=(JavascriptExecutor)driver;
+        js.executeScript("arguments[0].click()",el_button);
     }
 
     public void Click_Next_Button()

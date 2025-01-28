@@ -456,7 +456,7 @@ public class profileEditPage_Validation_With_SignUpChat {
         sp=new Subject_Preference(driver);
     }
 
-    @Then("Verify the Subject is selected {string} correct with signUp Chat.")
+    @Then("Verify the Subject Preference is selected {string} correct with signUp Chat.")
     public void verify_the_subject_is_selected_correct_with_sign_up_chat(String string) throws InterruptedException {
         Thread.sleep(1000);
         try {
@@ -509,8 +509,8 @@ public class profileEditPage_Validation_With_SignUpChat {
     @Then("Validate Profile Edit page is entered Completed or not.")
     public void validate_profile_edit_page_is_entered_completed_or_not() throws InterruptedException {
         System.out.println("Validation with SignUp chat with Profile edit details is successfull");
-        sa.assertAll();
         sd.logOut();
+        sa.assertAll();
     }
 
 

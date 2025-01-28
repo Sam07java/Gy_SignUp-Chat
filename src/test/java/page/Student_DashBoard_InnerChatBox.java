@@ -116,11 +116,9 @@ public class Student_DashBoard_InnerChatBox extends BasePage{
         System.out.println("Institution Methode is execution started. ");
         driver.findElement(By.className("css-19bb58m")).click();
         List <WebElement> ins = driver.findElements(By.xpath("//div[@class='css-qr46ko']//div"));
-        for(WebElement instit_ution:ins)
-        {
+        for(WebElement instit_ution:ins){
             String u=instit_ution.getText();
-            if(u.equalsIgnoreCase(institution))
-            {
+            if(u.equalsIgnoreCase(institution)){
                 instit_ution.click();
                 break;
             }
@@ -144,11 +142,22 @@ public class Student_DashBoard_InnerChatBox extends BasePage{
         }
     }
 
-    public void please_select_your_Semester()
+    public void please_select_your_Semester(String semester)
     {
         driver.findElement(By.className("css-19bb58m")).click();  //css-19bb58m
-        WebElement cbseElement=driver.findElement(By.id("react-select-3-option-0"));
-        cbseElement.click();
+       // WebElement cbseElement=driver.findElement(By.id("react-select-3-option-0"));
+       // cbseElement.click();
+       List<WebElement> sem= driver.findElements(By.xpath("//div[@role='option']"));
+        //div[@class='css-10wo9uf-option']
+
+       for(WebElement semElement : sem) {
+          String semText= semElement.getText();
+          if(semText.equalsIgnoreCase(semester)) {
+              semElement.click();
+              break;
+          }
+       }
+        System.out.println("Semester Clicked");
     }
 
     public void please_select_your_learningStyle()

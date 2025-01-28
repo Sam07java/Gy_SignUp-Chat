@@ -6,8 +6,8 @@ Feature:Automate signUp chat using Example keyWord-->User Student
 
     Examples:
       | username         | password  |
-      | same20@gmail.com | Same@2323 |
-      | same21@gmail.com  | Same@2323 |
+      | 9895443325       | Same@2323 |
+      | same54@gmail.com | Same@2323 |
 
   Scenario Outline: Enter Details Sign Up Chat.
     Given Enter Student Valid Credential on SigIn Page Email "<username>" and Password "<password>"
@@ -30,7 +30,7 @@ Feature:Automate signUp chat using Example keyWord-->User Student
     And User Select Learning Style "Offline"
     And User Select Year "<Year>"
     And User Choose Hobbies "Swimming"
-    And User Select Known Language "English"
+    And User Select Known Language "Hindi"
     And User Select Language Proficiency
     And User Select mobile number Country code
     And User Enter Mobile Number "<MobileNo>"
@@ -51,9 +51,9 @@ Feature:Automate signUp chat using Example keyWord-->User Student
     Then Validate whether SignUp chat is Completed
 
     Examples:
-      | username         | password  | FullName        | MotherName | FatherName | MobileNo   | InstituteType | Year | University                       | Institution                | Course                        | Semester   | Subject preference                       |
-      | same20@gmail.com | Same@2323 | Sushama C       | Anjali M   | Abhijith S | 9897454566 | College       | 2022 | GJU(Guru Jambheshwar University) | GJU Science and Technology | BSc Geography                 | Semester 2 | Cartographic Techniques in Geography (T) |
-      | same21@gmail.com | Same@2323 | Aravind Kirthan | Kirthi     | Thambi     | 9898988888 | College       | 2000 | KTU(Kerala Technical University) | MESITAM Chathnoor          | Electronics and Communication | Semester 3 | Basic Electronics                        |
+      | username         | password  | FullName        | MotherName | FatherName | MobileNo   | InstituteType | Year | University                       | Institution   | Course        | Semester   | Subject preference                       |
+      | 9895443325       | Same@2323 | Sushama C       | Anjali M   | Abhijith S | 9897454566 | College       | 2022 | GJU(Guru Jambheshwar University) | GJU Institute | MSc Geography | Semester 1 | Cartographic Techniques in Geography (T) |
+      | same54@gmail.com | Same@2323 | Aravind Kirthan | Kirthi     | Thambi     | 9898988888 | College       | 2000 | KTU(Kerala Technical University) | MESITAM       | ECE           | Semester 1 | Basic Electronics                        |
 
   Scenario Outline: Validate profile details with given input of Sign Up Chat
     Given Enter Student Valid Credential on SigIn Page Email "<username>" and Password "<password>"
@@ -79,7 +79,7 @@ Feature:Automate signUp chat using Example keyWord-->User Student
     Then Click The Next Button.
     And Naviagte to Hobbies and Language Page.
     And Verify that the hobbies are selected correctly with "Swimming".
-    And Verify that the language are selected corectly with "English".
+    And Verify that the language are selected corectly with "Hindi".
     Then Click Next Button
     And Verify whether Academic History Page is displayed or not
     And Verify the Institute type is selected "<InstituteType>" by Input of SignUp chat.
@@ -94,7 +94,7 @@ Feature:Automate signUp chat using Example keyWord-->User Student
     And Check the Email dispayed Correct with sign in data "<username>".
     And Click the Next Button of Contact Deatil Page.
     And Check if Subject Preference Page is displayed or not.
-    And Verify the Subject is selected "<Subject preference>" correct with signUp Chat.
+    And Verify the Subject Preference is selected "<Subject preference>" correct with signUp Chat.
     And Check the subject preference is entered "Mathematics" is correct with SignUp chat Input.
     And Validate the Score Percentage "76" with SignUp Chat Input
     And Check the semester is selected by input of signup chat"<Semester>"
@@ -102,6 +102,6 @@ Feature:Automate signUp chat using Example keyWord-->User Student
     Then Validate Profile Edit page is entered Completed or not.
 
     Examples:
-      | username         | password  | FirstName | SecondName | MotherName | FatherName | MobileNo   | InstituteType | Year | University                       | Institution Name           | Course                        | Semester   | Subject preference                       |  |
-      | same20@gmail.com | Same@2323 | Sushama   | C          | Anjali M   | Abhijith S | 9897454566 | College       | 2022 | GJU(Guru Jambheshwar University) | GJU Science and Technology | BSc Geography                 | Semester 2 | Cartographic Techniques in Geography (T) |  |
-      | same21@gmail.com | Same@2323 | Aravind   | Kirthan    | Kirthi     | Thambi     | 9898988888 | College       | 2000 | KTU(Kerala Technical University) | MESITAM Chathnoor          | Electronics and Communication | Semester 3 | Basic Electronics                        |  |
+      | username         | password  | FirstName | SecondName | MotherName | FatherName | MobileNo   | InstituteType | Year | University                       | Institution Name | Course                        | Semester   | Subject preference                       |  |
+      | 9895443325       | Same@2323 | Sushama   | C          | Anjali M   | Abhijith S | 9897454566 | College       | 2022 | GJU(Guru Jambheshwar University) | GJU Institute    | BSc Geography                 | Semester 1 | Cartographic Techniques in Geography (T) |  |
+      | same54@gmail.com | Same@2323 | Aravind   | Kirthan    | Kirthi     | Thambi     | 9898988888 | College       | 2000 | KTU(Kerala Technical University) | MESITAM          | Electronics and Communication | Semester 1 | DSP                                      |  |
