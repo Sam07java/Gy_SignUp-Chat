@@ -117,6 +117,7 @@ public class profileEditPage_Validation_With_SignUpChat {
     @Then("Click Submit Button")
     public void click_submit_button() {
         bi.Submit_Butten();
+      // sa.assertAll();
     }
 
     @Then("Validate whether the Address Page is Displayed")
@@ -223,6 +224,7 @@ public class profileEditPage_Validation_With_SignUpChat {
     @Then("Click The Next Button.")
     public void click_the_next_button() {
         ap.Click_Next_Button();
+       // sa.assertAll();
     }
 
     @Then("Naviagte to Hobbies and Language Page.")
@@ -260,6 +262,7 @@ public class profileEditPage_Validation_With_SignUpChat {
     @Then("Click Next Button")
     public void click_next_button() {
         hpp.Click_Button();
+      //  sa.assertAll();
     }
 
     @Then("Verify whether Academic History Page is displayed or not")
@@ -314,7 +317,6 @@ public class profileEditPage_Validation_With_SignUpChat {
             System.out.println("Assertion failed: Expected [" + university + "], but found [" + isFound + "]");
             sa.fail("Institute selected Validation Failed");
         }
-
     }
 
     @Then("Check the Institute Name is corrent by Input of SignUp Chat {string}.")
@@ -406,6 +408,7 @@ public class profileEditPage_Validation_With_SignUpChat {
     @Then("Click the Next Button of Academic History")
     public void click_the_next_button_of_academic_history() {
         ahh.Click_Next_Button();
+       // sa.assertAll();
     }
 
     @Then("Check if Contact Details Page is Displayed or not")
@@ -459,6 +462,20 @@ public class profileEditPage_Validation_With_SignUpChat {
     @Then("Verify the Subject Preference is selected {string} correct with signUp Chat.")
     public void verify_the_subject_is_selected_correct_with_sign_up_chat(String string) throws InterruptedException {
         Thread.sleep(1000);
+        //collage
+        try {
+            sa.assertEquals(string, sp.Subject());
+            System.out.println(sp.Subject());
+        } catch (AssertionError e) {
+            System.out.println("Assertion failed: Expected [" + string + "], but found [" + sp.Subject() + "]");
+            sa.fail("User Email Validation Failed");
+        }
+    }
+
+    @Then("Verify the Subject is selected {string} correct with signUp Chat.")
+    public void verify_the_subjrct(String string) throws InterruptedException {
+        Thread.sleep(1000);
+        //School
         try {
             sa.assertEquals(string, sp.Subject());
             System.out.println(sp.Subject());
@@ -474,7 +491,7 @@ public class profileEditPage_Validation_With_SignUpChat {
             sa.assertEquals(string, sp.Preferene());
             System.out.println(sp.Preferene());
         } catch (AssertionError e) {
-            System.out.println("Assertion failed: Expected [" + string + "], but found [" + sp.Subject() + "]");
+            System.out.println("Assertion failed: Expected [" + string + "], but found [" + sp.Preferene() + "]");
             sa.fail("User Email Validation Failed");
         }
     }

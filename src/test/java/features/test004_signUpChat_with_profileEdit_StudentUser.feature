@@ -1,6 +1,17 @@
 Feature:Automate signUp chat using Example keyWord-->User Student
 
- Scenario Outline: Enter Details Sign Up Chat.
+  Scenario Outline: Register student User in Gyansetu
+    Given Navigate Registration Page
+    When User Enter Email "<username>" and Password "<password>"
+    Then Click SignUp Button
+
+    Examples:
+      | username           | password  |
+      | sameer08@gmail.com | Same@2323 |
+      | sameer09@gmail.com | Same@2323 |
+      | sameer10@gmail.com | Same@2323 |
+
+  Scenario Outline: Enter Details Sign Up Chat.
     Given Enter Student Valid Credential on SigIn Page Email "<username>" and Password "<password>"
     When Click SignIn Button
     And User enter the Full Name "<FullName>"
@@ -35,10 +46,10 @@ Feature:Automate signUp chat using Example keyWord-->User Student
     Then Validate whether SignUp chat is Completed
 
     Examples:
-      | username         | password  | FullName | MotherName | FatherName | MobileNo   | InstituteType | Clas     |
-      | same06@gmail.com | Same@2323 | Arushi A | Mariyam    | Kebeer     | 9897454566 | School        | class_07 |
-      | same04@gmail.com | Same@2323 | Aravind Kirthan | Kirthi     | Thambi     | 9898988888 | School        | class_06 |
-
+      | username           | password  | FullName        | MotherName | FatherName | MobileNo   | InstituteType | Clas     |  |
+      | sameer08@gmail.com | Same@2323 | Arushi A        | Mariyam    | Kebeer     | 9897454566 | School        | class_07 |  |
+      | sameer09@gmail.com | Same@2323 | Aravind Kirthan | Kirthi     | Thambi     | 9898988888 | School        | class_06 |  |
+      | sameer10@gmail.com  | Same@2323 | Deepu Kumar     | Sunitha    | Viliams    | 7847386667 | School        | class_09 |  |
 
   Scenario Outline: Validate profile details with given input of Sign Up Chat
     Given Enter Student Valid Credential on SigIn Page Email "<username>" and Password "<password>"
@@ -84,6 +95,7 @@ Feature:Automate signUp chat using Example keyWord-->User Student
     Then Validate Profile Edit page is entered Completed or not.
 
     Examples:
-      | username         | password  | FirstName | SecondName | MotherName | FatherName | MobileNo   | InstituteType | Clas     |
-      | same06@gmail.com | Same@2323 | Arushi    | A          | Mariyam    | Kebeer     | 9897454566 | School        | class 07 |
-   #   | same04@gmail.com | Same@2323 | Aravind   | Kirthan    | Kirthi     | Thambi     | 9898988888 | School        | class 06 |
+      | username           | password  | FirstName |  | SecondName | MotherName | FatherName | MobileNo   | InstituteType | Clas     |
+      | sameer08@gmail.com | Same@2323 | Arushi    |  | A          | Mariyam    | Kebeer     | 9897454566 | School        | class 07 |
+      | sameer09@gmail.com | Same@2323 | Aravind   |  | Kirthan    | Kirthi     | Thambi     | 9898988888 | School        | class 06 |
+      | sameer10@gmail.com | Same@2323 | Deepu     |  | Kumar      | Sunitha    | Viliams    | 7847386667 | School        | class 09 |

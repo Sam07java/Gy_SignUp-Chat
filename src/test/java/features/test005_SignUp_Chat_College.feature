@@ -1,19 +1,20 @@
-Feature:Automate signUp chat using Example keyWord-->User Student
+Feature:Automate signUp chat using Example keyWord-->User Collage Student
   Scenario Outline: Register student User in Gyansetu
     Given Navigate Registration Page
     When User Enter Email "<username>" and Password "<password>"
     Then Click SignUp Button
 
     Examples:
-      | username         | password  |
-      | 9895443325       | Same@2323 |
-      | same54@gmail.com | Same@2323 |
+      | username          | password  |
+      | 9895443341        | Same@2323 |
+      | same73@gmail.com  | Same@2323 |
+      | sabin09@gmail.com | Same@2323 |
 
   Scenario Outline: Enter Details Sign Up Chat.
     Given Enter Student Valid Credential on SigIn Page Email "<username>" and Password "<password>"
     When Click SignIn Button
     And User enter the Full Name "<FullName>"
-    And User Select the Date of Birth Date= "17" Month= "July" Year= "2015"
+    And User Select the Date of Birth Date= "<Day>" Month= "<Month>" Year= "<DOBYear>"
     And User Enter Main learning Goal "To get Higher Mark"
     And User Select Gender
     And User Enter Your Mother Name "<MotherName>"
@@ -51,9 +52,10 @@ Feature:Automate signUp chat using Example keyWord-->User Student
     Then Validate whether SignUp chat is Completed
 
     Examples:
-      | username         | password  | FullName        | MotherName | FatherName | MobileNo   | InstituteType | Year | University                       | Institution   | Course        | Semester   | Subject preference                       |
-      | 9895443325       | Same@2323 | Sushama C       | Anjali M   | Abhijith S | 9897454566 | College       | 2022 | GJU(Guru Jambheshwar University) | GJU Institute | MSc Geography | Semester 1 | Cartographic Techniques in Geography (T) |
-      | same54@gmail.com | Same@2323 | Aravind Kirthan | Kirthi     | Thambi     | 9898988888 | College       | 2000 | KTU(Kerala Technical University) | MESITAM       | ECE           | Semester 1 | Basic Electronics                        |
+      | username          | password  | FullName        | MotherName | FatherName | MobileNo   | InstituteType | Year | University                       | Institution         | Course        | Semester   | Subject preference                   | Day | Month    | DOBYear |
+      | 9895443341        | Same@2323 | Sushama C       | Anjali M   | Abhijith S | 9897454566 | College       | 2022 | GJU(Guru Jambheshwar University) | GJU Institute       | MSc Geography | Semester 1 | Itegrated water resources management | 7   | July     | 1995    |
+      | same73@gmail.com  | Same@2323 | Aravind Kirthan | Kirthi     | Thambi     | 9898988888 | College       | 2000 | KTU(Kerala Technical University) | MESITAM             | ECE           | Semester 1 | Basic Electronics                    | 23  | August   | 2011    |
+      | sabin09@gmail.com | Same@2323 | Sabin NN        | Sabu S     | Radha V    | 8964363772 | College       | 1993 | KTU(Kerala Technical University) | Sreechithra college | B.Tech ECE    | Semester 3 | DSP                                  | 14  | November | 2008    |
 
   Scenario Outline: Validate profile details with given input of Sign Up Chat
     Given Enter Student Valid Credential on SigIn Page Email "<username>" and Password "<password>"
@@ -61,7 +63,7 @@ Feature:Automate signUp chat using Example keyWord-->User Student
     And Check the Student Profile detail is displayed
     And Validate whether First Name "<FirstName>" with given input of SignUp Chat
     And Validate Last Name "<SecondName>" with SignUp Chat Input.
-    And Validate Date of Birth "17/07/2015" with SignUp Chat Input.
+    And Validate Date of Birth "<DOB>" with SignUp Chat Input.
     And Validate Father Name "<FatherName>" with SignUp Chat Input.
     And Validate Mother Name "<MotherName>" with SignUp Chat Input.
     And Validate Quardian Name "Sharafudeen SP" with SignUp Chat Input.
@@ -102,6 +104,7 @@ Feature:Automate signUp chat using Example keyWord-->User Student
     Then Validate Profile Edit page is entered Completed or not.
 
     Examples:
-      | username         | password  | FirstName | SecondName | MotherName | FatherName | MobileNo   | InstituteType | Year | University                       | Institution Name | Course                        | Semester   | Subject preference                       |  |
-      | 9895443325       | Same@2323 | Sushama   | C          | Anjali M   | Abhijith S | 9897454566 | College       | 2022 | GJU(Guru Jambheshwar University) | GJU Institute    | BSc Geography                 | Semester 1 | Cartographic Techniques in Geography (T) |  |
-      | same54@gmail.com | Same@2323 | Aravind   | Kirthan    | Kirthi     | Thambi     | 9898988888 | College       | 2000 | KTU(Kerala Technical University) | MESITAM          | Electronics and Communication | Semester 1 | DSP                                      |  |
+      | username          | password  | FirstName | SecondName | MotherName | FatherName | MobileNo   | InstituteType | Year | University                       | Institution Name    | Course        | Semester   | Subject preference                   | DOB        |
+      | 9895443341        | Same@2323 | Sushama   | C          | Anjali M   | Abhijith S | 9897454566 | College       | 2022 | GJU(Guru Jambheshwar University) | GJU Institute       | BSc Geography | Semester 1 | Itegrated water resources management | 07/07/1995 |
+      | same73@gmail.com  | Same@2323 | Aravind   | Kirthan    | Kirthi     | Thambi     | 9898988888 | College       | 2000 | KTU(Kerala Technical University) | MESITAm             | ECE           | Semester 1 | Basic Electronics                    | 23/08/2011 |
+      | sabin09@gmail.com | Same@2323 | Sabin     | NN         | Sabu S     | Radha V    | 8964363772 | College       | 1993 | KTU(Kerala Technical University) | Sreechithra college | B.Tech ECE    | Semester 3 | DSP                                  | 14/11/2008 |

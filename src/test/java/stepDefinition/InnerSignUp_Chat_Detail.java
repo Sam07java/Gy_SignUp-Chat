@@ -114,7 +114,7 @@ public class InnerSignUp_Chat_Detail {
     @When("User select which your subject belongs {string}")
     public void user_select_which_your_subject_belongs(String string)
     {
-        sd.user_select_which_your_subject_belongs();
+        sd.user_select_which_your_subject_belongs(string);
     }
 
     @When("User select semester")

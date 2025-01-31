@@ -167,10 +167,19 @@ public class Student_DashBoard_InnerChatBox extends BasePage{
         cbseElement.click();
     }
 
-    public void user_select_which_your_subject_belongs()
+    public void user_select_which_your_subject_belongs(String subjectPreference)
     {
         driver.findElement(By.className("css-19bb58m")).click();
-        driver.findElement(By.xpath("//div[@class='css-qr46ko']//div")).click();
+       List<WebElement> subElemets= driver.findElements(By.xpath("//div[@class='css-qr46ko']//div"));
+       for(WebElement subjectElemet:subElemets)
+       {
+           String subText=subjectElemet.getText();
+           if(subText.equalsIgnoreCase(subjectPreference))
+           {
+               subjectElemet.click();
+               break;
+           }
+       }
         //div[@class='css-qr46ko']//div
         //div[@class='css-10wo9uf-option']
     }
@@ -283,12 +292,10 @@ public class Student_DashBoard_InnerChatBox extends BasePage{
     public void Select_your_subject_name(String subjectPreference)
     {
         driver.findElement(By.className("css-19bb58m")).click();
-      List <WebElement> subPreference= driver.findElements(By.className("css-10wo9uf-option"));
-      for(WebElement subPreElement : subPreference)
-        {
+      List <WebElement> subPreference= driver.findElements(By.xpath("//div[@role='option']"));
+      for(WebElement subPreElement : subPreference) {
            String sub= subPreElement.getText();
-           if(sub.equalsIgnoreCase(subjectPreference))
-           {
+           if(sub.equalsIgnoreCase(subjectPreference)){
                subPreElement.click();
                break;
            }

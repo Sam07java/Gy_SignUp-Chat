@@ -32,8 +32,9 @@ public class Basic_informationPage extends BasePage {
 
     public boolean Gender()
     {
-            WebElement gender=driver.findElement(By.xpath("//input[@value='male']"));
+            WebElement gender=driver.findElement(By.xpath("//input[@value='male' or @value='female']"));
            return gender.isEnabled();
+        //input[@value='male' or @value='female']
     }
 
     public String Date_of_Birth()
