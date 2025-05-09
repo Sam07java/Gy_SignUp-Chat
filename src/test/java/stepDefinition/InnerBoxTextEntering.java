@@ -33,7 +33,7 @@ public class InnerBoxTextEntering {
     @When("Click SignIn Button")
     public void click_sign_in_button() throws InterruptedException {
         lop.ClickSign_Now();
-        Thread.sleep(4000);
+      //  Thread.sleep(4000);
     }
 
     @When("Enter User detail on Dashboard Inner ChatBox")

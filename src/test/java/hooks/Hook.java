@@ -17,13 +17,14 @@ public class Hook {
     {
         driver=new ChromeDriver();
         driver.get("https://qaweb.gyansetu.ai/");
+      //  driver.get("http://13.233.97.160:3000/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         //  https://uatweb.gyansetu.ai/
         //  https://www.gyansetu.ai/
         //  https://qaweb.gyansetu.ai/
-
+        // http://13.233.97.160:3000/
        // Properties p=new Properties();
     }
 

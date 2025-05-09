@@ -25,8 +25,8 @@ public class profileEditPage_Validation_With_SignUpChat {
     @When("Validate whether First Name {string} with given input of SignUp Chat")
     public void validate_whether_first_name_with_given_input_of_sign_up_chat(String firstName) throws InterruptedException {
         sd=new Student_DashBoard(driver);
-        sd.profile_edit_page();
-        Thread.sleep(2000);
+       // sd.profile_edit_page();
+       // Thread.sleep(2000);
         bi=new Basic_informationPage(driver);
         sa=new SoftAssert();
 
@@ -247,8 +247,9 @@ public class profileEditPage_Validation_With_SignUpChat {
     }
 
     @Then("Verify that the language are selected corectly with {string}.")
-    public void verify_that_the_language_are_selected_corectly_with(String string) {
+    public void verify_that_the_language_are_selected_corectly_with(String string) throws InterruptedException {
       //  SoftAssert sa04=new SoftAssert();
+        Thread.sleep(1000);
         try {
             sa.assertEquals(string, hpp.Language());
             System.out.println(hpp.Language());
@@ -301,7 +302,7 @@ public class profileEditPage_Validation_With_SignUpChat {
         boolean isFound = false;
         for (String unive_rsity : elemt) {
             System.out.println(unive_rsity);
-            if (unive_rsity.equals(university)) {// Case-insensitive comparison
+            if (unive_rsity.equalsIgnoreCase(university)) {// Case-insensitive comparison
                 isFound = true;
                 break;
             }
@@ -326,7 +327,7 @@ public class profileEditPage_Validation_With_SignUpChat {
         List<String> elemt= ahh.universityName();
         boolean isFound = false;
         for (String unive_rsity : elemt) {
-            if (unive_rsity.equals(string)) {// Case-insensitive comparison
+            if (unive_rsity.equalsIgnoreCase(string)) {// Case-insensitive comparison
                 isFound = true;
                 break;
             }
@@ -350,7 +351,7 @@ public class profileEditPage_Validation_With_SignUpChat {
         List<String> elemt= ahh.universityName();
         boolean isFound = false;
         for (String unive_rsity : elemt) {
-            if (unive_rsity.equals(string)) {// Case-insensitive comparison
+            if (unive_rsity.equalsIgnoreCase(string)) {// Case-insensitive comparison
                 isFound = true;
                 break;
             }
@@ -529,7 +530,4 @@ public class profileEditPage_Validation_With_SignUpChat {
         sd.logOut();
         sa.assertAll();
     }
-
-
-
 }

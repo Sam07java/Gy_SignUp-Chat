@@ -207,9 +207,8 @@ public class Student_DashBoard_InnerChatBox extends BasePage{
     }
 
     public void select_your_classes(String clas)
-    {
-        driver.findElement(By.className("css-19bb58m")).click();
-        List <WebElement> cbseClass =driver.findElements(By.className("css-10wo9uf-option"));
+    {driver.findElement(By.className("css-19bb58m")).click();
+        List <WebElement> cbseClass =driver.findElements(By.xpath("//div[@role='option']"));
             for(WebElement cb:cbseClass)
             {
                 if(cb.getText().equalsIgnoreCase(clas)) {
@@ -225,7 +224,7 @@ public class Student_DashBoard_InnerChatBox extends BasePage{
         choosinessHobbies.click();
         //driver.findElement(By.id("react-select-3-option-5")).click();
          try {
-          List<WebElement> hobbies = driver.findElements(By.className("css-10wo9uf-option"));
+          List<WebElement> hobbies = driver.findElements(By.xpath("//div[@role='option']"));
              //div[@class='css-10wo9uf-option']
             for (WebElement hb : hobbies) {
                 String hob = hb.getText();
@@ -248,7 +247,7 @@ public class Student_DashBoard_InnerChatBox extends BasePage{
         WebElement chooseLang=driver.findElement(By.className("css-19bb58m"));//css-19bb58m
         chooseLang.click();
        // driver.findElement(By.id("react-select-3-option-0")).click();
-            List<WebElement> lang = driver.findElements(By.className("css-10wo9uf-option"));
+            List<WebElement> lang = driver.findElements(By.xpath("//div[@role='option']"));
             //div[@class='css-10wo9uf-option']
             for (WebElement hb : lang) {
                 String hob = hb.getText();

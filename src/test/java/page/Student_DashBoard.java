@@ -19,19 +19,27 @@ public class Student_DashBoard extends BasePage {
     }
 
     public void logOut() throws InterruptedException {
-        Thread.sleep(2000);
-       //WebElement dropdownToggle= driver.findElement(By.xpath("//a[@class='dropdown-toggle dropdown-toggle-nocaret']"));
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-       WebElement dropdownToggle= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@class='dropdown-toggle dropdown-toggle-nocaret']")));
-       // WebElement dropdownToggle= driver.findElement(By.xpath("//a[@class='dropdown-toggle dropdown-toggle-nocaret']"));
-       // dropdownToggle.click();
+        Thread.sleep(500);
+        driver.navigate().refresh();
+      WebElement dropdownToggle=  driver.findElement(By.xpath("//a[@class='dropdown-toggle dropdown-toggle-nocaret']"));
         JavascriptExecutor js=(JavascriptExecutor)driver;
         js.executeScript("arguments[0].click()",dropdownToggle);
-        driver.findElement(By.xpath("//button[@class='dropdown-item d-flex align-items-center gap-2 py-2']")).click();
+
+       WebElement logoutButton= driver.findElement(By.xpath("//button[text()='Logout']"));
+        //driver.findElement(By.xpath("//button[@class='dropdown-item d-flex align-items-center gap-2 py-2']")).click();
+        //button[text()='Logout']
+
+         JavascriptExecutor jss=(JavascriptExecutor)driver;
+        jss.executeScript("arguments[0].click()",logoutButton);
     }
 
     public void profile_edit_page() {
-        driver.findElement(By.xpath("//a[@class='dropdown-toggle dropdown-toggle-nocaret']")).click();
-        driver.findElement(By.xpath("//a[text()='Profile']")).click();
+        WebElement dropdownToggle=  driver.findElement(By.xpath("//a[@class='dropdown-toggle dropdown-toggle-nocaret']"));
+        JavascriptExecutor js=(JavascriptExecutor)driver;
+        js.executeScript("arguments[0].click()",dropdownToggle);
+
+        WebElement profileElement=  driver.findElement(By.xpath("//button[text()='Profile']"));
+        JavascriptExecutor jss=(JavascriptExecutor)driver;
+        jss.executeScript("arguments[0].click()",profileElement);
     }
 }

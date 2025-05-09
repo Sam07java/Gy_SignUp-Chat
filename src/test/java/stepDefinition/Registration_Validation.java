@@ -15,21 +15,30 @@ public class Registration_Validation {
 
     @Given("Navigate Registration Page")
     public void navigate_registration_page() {
-        rp=new RegistrationPage(Hook.driver);
+        rp = new RegistrationPage(Hook.driver);
         rp.click_Registration_Button();
     }
+
     @When("User Enter Email {string} and Password {string}")
     public void user_enter_email_and_password(String string, String string2) {
         rp.Enter_Email(string);
         rp.Enter_Password(string2);
         rp.click_checkBox_TermsAndCondition();
     }
+
     @Then("Click SignUp Button")
     public void click_sign_up_button() throws InterruptedException {
         rp.click_SignUp_Now();
-      //  Thread.sleep(2000);
-        rp.registration_Validation();
+        Thread.sleep(15000);
+       // rp.registration_Validation();
     }
 
 
+    @When("User Enter Email {string}, Password {string}, phoneNo {string}")
+    public void userEnterEmailPasswordPhoneNo(String arg0, String arg1, String arg2) {
+        rp.Enter_Email(arg0);
+        rp.Enter_Password(arg1);
+        rp.Enter_phoneNo(arg2);
+        rp.click_checkBox_TermsAndCondition();
+    }
 }

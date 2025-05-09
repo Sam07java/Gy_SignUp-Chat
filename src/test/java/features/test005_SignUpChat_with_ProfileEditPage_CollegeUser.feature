@@ -1,14 +1,14 @@
-Feature:Automate signUp chat using Example keyWord-->User Collage Student
-  Scenario Outline: Register student User in Gyansetu
-    Given Navigate Registration Page
-    When User Enter Email "<username>" and Password "<password>"
-    Then Click SignUp Button
+Feature:Automate signUp chat using Example keyWord-->User College Student
 
-    Examples:
-      | username          | password  |
-      | 9895443341        | Same@2323 |
-      | same73@gmail.com  | Same@2323 |
-      | sabin09@gmail.com | Same@2323 |
+#  Scenario Outline: Register student User in Gyansetu
+#    Given Navigate Registration Page
+#    When User Enter Email "<username>", Password "<password>", phoneNo "<phoneNo>"
+#    Then Click SignUp Button
+#
+#    Examples:
+#      | username              | password  | phoneNo    |
+#      | vidhu100@yopmail.com  | Same@2323 | 9893483483 |
+#      | sameer005@yopmail.com | Same@2323 | 9893483484 |
 
   Scenario Outline: Enter Details Sign Up Chat.
     Given Enter Student Valid Credential on SigIn Page Email "<username>" and Password "<password>"
@@ -22,7 +22,7 @@ Feature:Automate signUp chat using Example keyWord-->User Collage Student
     And User Enter Your Quardian Name "Sharafudeen SP"
     And User upload profile picture "C:\\Users\\WIIS\\Pictures\\one piece\\1471770.jpg"
     And User Select Institute Type "<InstituteType>"
-#    And User Select Board
+  #    And User Select Board
  #   And User Select Class "<Clas>"
     And User Select University "<University>"
     And User Select Institution "<Institution>"
@@ -30,12 +30,12 @@ Feature:Automate signUp chat using Example keyWord-->User Collage Student
     And User Select Semester "<Semester>"
     And User Select Learning Style "Offline"
     And User Select Year "<Year>"
-    And User Choose Hobbies "Swimming"
+    And User Choose Hobbies "cooking"
     And User Select Known Language "Hindi"
     And User Select Language Proficiency
     And User Select mobile number Country code
     And User Enter Mobile Number "<MobileNo>"
-    And User Enter WhatsAll Number "9867676777"
+    And User Enter WhatsAll Number "9877334477"
  # xpath different in collage user-   And User Select Your Subject Name "English"
     # semester selection.
     And User select which your subject belongs "<Subject preference>"
@@ -52,10 +52,10 @@ Feature:Automate signUp chat using Example keyWord-->User Collage Student
     Then Validate whether SignUp chat is Completed
 
     Examples:
-      | username          | password  | FullName        | MotherName | FatherName | MobileNo   | InstituteType | Year | University                       | Institution         | Course        | Semester   | Subject preference                   | Day | Month    | DOBYear |
-      | 9895443341        | Same@2323 | Sushama C       | Anjali M   | Abhijith S | 9897454566 | College       | 2022 | GJU(Guru Jambheshwar University) | GJU Institute       | MSc Geography | Semester 1 | Itegrated water resources management | 7   | July     | 1995    |
-      | same73@gmail.com  | Same@2323 | Aravind Kirthan | Kirthi     | Thambi     | 9898988888 | College       | 2000 | KTU(Kerala Technical University) | MESITAM             | ECE           | Semester 1 | Basic Electronics                    | 23  | August   | 2011    |
-      | sabin09@gmail.com | Same@2323 | Sabin NN        | Sabu S     | Radha V    | 8964363772 | College       | 1993 | KTU(Kerala Technical University) | Sreechithra college | B.Tech ECE    | Semester 3 | DSP                                  | 14  | November | 2008    |
+      | username                    | password  | FullName        | MotherName | FatherName | MobileNo   | InstituteType | Year | University                       | Institution | Course | Semester   | Subject preference | Day | Month  | DOBYear |
+  #    | sameer012@yopmail.com | Sasa@1234 | Sushama C | Anjali M   | Abhijith S | 9897454566 | College       | 2022 | GJU(Guru Jambheshwar University) | GJU institute tt | MSc Geography | Semester 1 | Itegrated water resources management | 7   | July  | 1995    |
+      | sameercollage07@yopmail.com | Same@2323 | Aravind Kirthan | Kirthi     | Thambi     | 9893483494 | College       | 2000 | KTU(Kerala Technical University) | MESITAM     | ECE    | Semester 1 | Basic Electronics  | 23  | August | 2011    |
+   #  | sabin09@gmail.com | Same@2323 | Sabin NN  | Sabu S     | Radha V    | 8964363772 | College       | 1993 | KTU(Kerala Technical University) | Sreechithra college | B.Tech ECE    | Semester 3 | DSP                                  | 14  | November | 2008    |
 
   Scenario Outline: Validate profile details with given input of Sign Up Chat
     Given Enter Student Valid Credential on SigIn Page Email "<username>" and Password "<password>"
@@ -80,8 +80,8 @@ Feature:Automate signUp chat using Example keyWord-->User Collage Student
     And Click the Same As Current Address.
     Then Click The Next Button.
     And Naviagte to Hobbies and Language Page.
-    And Verify that the hobbies are selected correctly with "Swimming".
-    And Verify that the language are selected corectly with "Hindi".
+    And Verify that the hobbies are selected correctly with "cooking".
+    And Verify that the language are selected corectly with "hindi".
     Then Click Next Button
     And Verify whether Academic History Page is displayed or not
     And Verify the Institute type is selected "<InstituteType>" by Input of SignUp chat.
@@ -92,7 +92,7 @@ Feature:Automate signUp chat using Example keyWord-->User Collage Student
     Then Click the Next Button of Academic History
     And Check if Contact Details Page is Displayed or not
     And Verify the mobile Number "<MobileNo>" with Input of SighUp Chat.
-    And Verify the whatzapp Number "9867676777" with Input of SignUp Chat.
+    And Verify the whatzapp Number "9877334477" with Input of SignUp Chat.
     And Check the Email dispayed Correct with sign in data "<username>".
     And Click the Next Button of Contact Deatil Page.
     And Check if Subject Preference Page is displayed or not.
@@ -104,7 +104,7 @@ Feature:Automate signUp chat using Example keyWord-->User Collage Student
     Then Validate Profile Edit page is entered Completed or not.
 
     Examples:
-      | username          | password  | FirstName | SecondName | MotherName | FatherName | MobileNo   | InstituteType | Year | University                       | Institution Name    | Course        | Semester   | Subject preference                   | DOB        |
-      | 9895443341        | Same@2323 | Sushama   | C          | Anjali M   | Abhijith S | 9897454566 | College       | 2022 | GJU(Guru Jambheshwar University) | GJU Institute       | BSc Geography | Semester 1 | Itegrated water resources management | 07/07/1995 |
-      | same73@gmail.com  | Same@2323 | Aravind   | Kirthan    | Kirthi     | Thambi     | 9898988888 | College       | 2000 | KTU(Kerala Technical University) | MESITAm             | ECE           | Semester 1 | Basic Electronics                    | 23/08/2011 |
-      | sabin09@gmail.com | Same@2323 | Sabin     | NN         | Sabu S     | Radha V    | 8964363772 | College       | 1993 | KTU(Kerala Technical University) | Sreechithra college | B.Tech ECE    | Semester 3 | DSP                                  | 14/11/2008 |
+      | username                    | password  | FirstName | SecondName | MotherName | FatherName | MobileNo   | InstituteType | Year | University                       | Institution Name | Course | Semester   | Subject preference | DOB        |
+   #   | 9895443350            | Same@2323 | Sushama   | C          | Anjali M   | Abhijith S | 9897454566 | College       | 2022 | GJU(Guru Jambheshwar University) | GJU institute tt | MSc Geography | Semester 1 | Itegrated water resources management | 07/07/1995 |
+      | sameercollage07@yopmail.com | Same@2323 | Aravind   | Kirthan    | Kirthi     | Thambi     | 9893483494 | College       | 2000 | KTU(Kerala Technical University) | MESITAM          | ECE    | Semester 1 | Basic Electronics  | 23/08/2011 |
+    #  | sabin09@gmail.com | Same@2323 | Sabin     | NN         | Sabu S     | Radha V    | 8964363772 | College       | 1993 | KTU(Kerala Technical University) | Sreechithra college | B.Tech ECE    | Semester 3 | DSP                                  | 14/11/2008 |

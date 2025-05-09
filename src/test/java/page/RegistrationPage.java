@@ -1,10 +1,7 @@
 package page;
 
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 
 public class RegistrationPage extends BasePage {
 
@@ -17,11 +14,11 @@ public class RegistrationPage extends BasePage {
     }
 
     public void Enter_Email(String email) {
-        driver.findElement(By.xpath("//input[@id='emailphone']")).sendKeys(email);
+        driver.findElement(By.xpath("//input[@id='email']")).sendKeys(email);
     }
 
     public void Enter_Password(String password) {
-        driver.findElement(By.xpath("//input[@id=':r1:']")).sendKeys(password);
+        driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys(password);
     }
 
     public void click_checkBox_TermsAndCondition() {
@@ -29,12 +26,18 @@ public class RegistrationPage extends BasePage {
     }
 
     public void click_SignUp_Now() {
-        driver.findElement(By.xpath("//button[normalize-space()='Sign Up Now']")).click();
+        WebElement we=driver.findElement(By.xpath("//button[text()='Sign Up Now']"));
+        JavascriptExecutor js=(JavascriptExecutor)driver;
+        js.executeScript("arguments[0].click()",we);
+    }
+
+    public void Enter_phoneNo(String phnNo){
+        driver.findElement(By.id("phone")).sendKeys(phnNo);
     }
 
 
     public void registration_Validation() throws InterruptedException {
-
+            Thread.sleep(6000);
         //h1[normalize-space()='Sign In']
         //div[text()='Userid already exists']
         //Thread.sleep(2000);

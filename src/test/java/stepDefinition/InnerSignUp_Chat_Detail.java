@@ -142,6 +142,7 @@ public class InnerSignUp_Chat_Detail {
     public void user_choose_hobbies(String string) {
         sd.choose_your_hobbies(string);
     }
+
     @When("User Select Known Language {string}")
     public void user_select_known_language(String string) throws InterruptedException {
         Thread.sleep(500);
@@ -222,7 +223,7 @@ public class InnerSignUp_Chat_Detail {
     public void validate_whether_sign_up_chat_is_completed() throws InterruptedException {
         sd.validateInnerChatBox();
         System.out.println("Profile Inner Chat Automated Successfully");
-        Thread.sleep(4000);
+        Thread.sleep(1000);
         sdi=new Student_DashBoard(Hook.driver);
         sdi.logOut();
     }

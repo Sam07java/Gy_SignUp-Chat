@@ -39,7 +39,7 @@ public class Basic_informationPage extends BasePage {
 
     public String Date_of_Birth()
     {
-        WebElement dob=driver.findElement(By.xpath("//input[@id=':r6:']"));
+        WebElement dob=driver.findElement(By.xpath("//input[@class='MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-1uvydh2']"));
         return dob.getDomAttribute("value");
     }
 
