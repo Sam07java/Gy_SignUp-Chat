@@ -33,7 +33,8 @@ public class Student_DashBoard extends BasePage {
         jss.executeScript("arguments[0].click()",logoutButton);
     }
 
-    public void profile_edit_page() {
+    public void profile_edit_page() throws InterruptedException {
+        Thread.sleep(1000);
         WebElement dropdownToggle=  driver.findElement(By.xpath("//a[@class='dropdown-toggle dropdown-toggle-nocaret']"));
         JavascriptExecutor js=(JavascriptExecutor)driver;
         js.executeScript("arguments[0].click()",dropdownToggle);

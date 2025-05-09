@@ -18,7 +18,7 @@ public class RegistrationPage extends BasePage {
     }
 
     public void Enter_Password(String password) {
-        driver.findElement(By.xpath("//input[@placeholder='Password']")).sendKeys(password);
+        driver.findElement(By.xpath("//input[@placeholder='Enter your password']")).sendKeys(password);
     }
 
     public void click_checkBox_TermsAndCondition() {
@@ -34,7 +34,6 @@ public class RegistrationPage extends BasePage {
     public void Enter_phoneNo(String phnNo){
         driver.findElement(By.id("phone")).sendKeys(phnNo);
     }
-
 
     public void registration_Validation() throws InterruptedException {
             Thread.sleep(6000);

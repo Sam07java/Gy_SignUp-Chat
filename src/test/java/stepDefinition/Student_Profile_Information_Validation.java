@@ -15,7 +15,7 @@ public class Student_Profile_Information_Validation {
     Student_DashBoard sd;
     Basic_informationPage bi;
     @Given("Check the Student Profile detail is displayed")
-    public void check_the_student_profile_detail_is_displayed() {
+    public void check_the_student_profile_detail_is_displayed() throws InterruptedException {
        // driver.findElement(By.xpath("//a[@class='dropdown-toggle dropdown-toggle-nocaret']")).click();
         sd=new Student_DashBoard(driver);
         sd.profile_edit_page();

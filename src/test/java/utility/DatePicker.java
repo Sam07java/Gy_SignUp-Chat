@@ -152,28 +152,26 @@ public class DatePicker {
             String afterMonthYear=monthYear1.getText();
             //System.out.println(afterMonthYear);
             String achualdate=month+" "+year;
-            if(achualdate.equals(afterMonthYear))
-            {
+            if(achualdate.equals(afterMonthYear)) {
                 break;
             }
            // driver.findElement(By.xpath(" //button[@title='Previous month']")).click();
             driver.findElement(By.xpath("//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeStart MuiIconButton-sizeMedium MuiPickersArrowSwitcher-button css-1fklenr']")).click();
         }
         //For Date Selection
-        List<WebElement> dateF=driver.findElements(By.xpath("//button[@class='MuiButtonBase-root MuiPickersDay-root MuiPickersDay-dayWithMargin css-126v4m4']"));
+        List<WebElement> dateF=driver.findElements(By.xpath("//button[@class='MuiButtonBase-root MuiPickersDay-root MuiPickersDay-dayWithMargin css-zo8nzd']"));
+        //button[@class='MuiButtonBase-root MuiPickersDay-root MuiPickersDay-dayWithMargin css-126v4m4']
         int dateSize=dateF.size();
-       // System.out.println("date="+dateSize);
-        for(int i=0;i<=dateSize;i++)
-        {
+       System.out.println("date Size:="+dateSize);
+        for(int i=0;i<=dateSize;i++) {
            WebElement cell=dateF.get(i);
-           if (cell.getText().equals(date))
-           {
+           if (cell.getText().equals(date)) {
                cell.click();
                System.out.println("date clicked");
                break;
            }
         }
-driver.findElement(By.xpath("//button[@class='chat_search_btn']")).click();
+            driver.findElement(By.xpath("//button[@class='chat_search_btn']")).click();
        /* while (true) {
 
             Month displayMonth = convertMonth(displayed_month);

@@ -10,9 +10,10 @@ import java.util.Properties;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = {
-                "src/test/java/features/test002_student_signup_validationfor_Revamp.feature",
-                "src/test/java/features/test004_signUpChat_with_profileEdit_StudentUser.feature",
-                "src/test/java/features/test005_SignUpChat_with_ProfileEditPage_CollegeUser.feature"
+              //  "src/test/java/features/test002_student_signup_validationfor_Revamp.feature",
+               // "src/test/java/features/test004_signUpChat_with_profileEdit_StudentUser.feature",
+                // "src/test/java/features/test005_SignUpChat_with_ProfileEditPage_CollegeUser.feature"
+                 "src/test/java/features/test006_student_signup_ExcelSheet.feature"
         },
       //  extraGlue = {"src/test/java/features/test005_SignUpChat_with_ProfileEditPage_CollegeUser.feature"},
       // features= {"src/test/java/features/test004_signUpChat_with_profileEdit_StudentUser.feature"},

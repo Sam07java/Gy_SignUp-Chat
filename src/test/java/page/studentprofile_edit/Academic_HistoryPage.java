@@ -27,7 +27,7 @@ public class Academic_HistoryPage extends BasePage {
     }
 
     public List<String> universityName() {
-        List<WebElement> listElement = driver.findElements(By.xpath("//div[@class='col form_field_wrapper']//div[@class='MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input css-qiwgdb']"));
+        List<WebElement> listElement = driver.findElements(By.xpath("//div[@class='MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-1haoj0b']"));
         List<String> lil = new ArrayList<>();
         for (WebElement element:listElement) {
             lil.add(element.getText());
@@ -42,16 +42,18 @@ public class Academic_HistoryPage extends BasePage {
 
     public String Class()
     {
-       return driver.findElement(By.xpath("//div[@class='MuiFormControl-root css-mla5jh']//div//div")).getText();
+       return driver.findElement(By.xpath("//div[@class='row align-items-center g-4']/div[4]/div/div/div")).getText();
+        //div[@class='MuiFormControl-root css-mla5jh']//div//div
     }
 
     public String year()
     {
-       List<WebElement> val= driver.findElements(By.xpath("//input[@class='MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd css-1uvydh2']"));
+      // List<WebElement> val= driver.findElements(By.xpath("//input[@placeholder='YYYY']"));
         //button[@class='MuiPickersYear-yearButton Mui-selected css-osz2eb']
         //driver.findElement(By.xpath(""))
-        WebElement y =val.get(1);
-        return y.getDomAttribute("value");
+       // WebElement y =val.get(1);
+       WebElement year= driver.findElement(By.xpath("//input[@placeholder='YYYY']"));
+        return year.getDomAttribute("value");
     }
 
     public void Click_Next_Button()

@@ -1,13 +1,13 @@
 Feature:Automate signUp chat using Example keyWord-->User College Student
 
-#  Scenario Outline: Register student User in Gyansetu
-#    Given Navigate Registration Page
-#    When User Enter Email "<username>", Password "<password>", phoneNo "<phoneNo>"
-#    Then Click SignUp Button
-#
-#    Examples:
-#      | username              | password  | phoneNo    |
-#      | vidhu100@yopmail.com  | Same@2323 | 9893483483 |
+  Scenario Outline: Register student User in Gyansetu
+    Given Navigate Registration Page
+    When User Enter Email "<username>", Password "<password>", phoneNo "<phoneNo>"
+    Then Click SignUp Button
+
+    Examples:
+      | username              | password  | phoneNo    |
+      | malhar009@yopmail.com | Same@2323 | 9893483688 |
 #      | sameer005@yopmail.com | Same@2323 | 9893483484 |
 
   Scenario Outline: Enter Details Sign Up Chat.
@@ -22,8 +22,6 @@ Feature:Automate signUp chat using Example keyWord-->User College Student
     And User Enter Your Quardian Name "Sharafudeen SP"
     And User upload profile picture "C:\\Users\\WIIS\\Pictures\\one piece\\1471770.jpg"
     And User Select Institute Type "<InstituteType>"
-  #    And User Select Board
- #   And User Select Class "<Clas>"
     And User Select University "<University>"
     And User Select Institution "<Institution>"
     And User Select Course "<Course>"
@@ -35,13 +33,14 @@ Feature:Automate signUp chat using Example keyWord-->User College Student
     And User Select Language Proficiency
     And User Select mobile number Country code
     And User Enter Mobile Number "<MobileNo>"
-    And User Enter WhatsAll Number "9877334477"
+#    And User Enter WhatsAll Number "9877334477"
  # xpath different in collage user-   And User Select Your Subject Name "English"
     # semester selection.
     And User select which your subject belongs "<Subject preference>"
     And User select semester
     And User Enter subject preference "Mathematics"
     And User add Score Percentage "76"
+    And User select teacher "<Teacher>"
     And User Select Current Country of Residence "India"
     And User Select Current residence State "Kerala"
     And User Enter Current residence District Name "Alappuzha"
@@ -52,10 +51,9 @@ Feature:Automate signUp chat using Example keyWord-->User College Student
     Then Validate whether SignUp chat is Completed
 
     Examples:
-      | username                    | password  | FullName        | MotherName | FatherName | MobileNo   | InstituteType | Year | University                       | Institution | Course | Semester   | Subject preference | Day | Month  | DOBYear |
-  #    | sameer012@yopmail.com | Sasa@1234 | Sushama C | Anjali M   | Abhijith S | 9897454566 | College       | 2022 | GJU(Guru Jambheshwar University) | GJU institute tt | MSc Geography | Semester 1 | Itegrated water resources management | 7   | July  | 1995    |
-      | sameercollage07@yopmail.com | Same@2323 | Aravind Kirthan | Kirthi     | Thambi     | 9893483494 | College       | 2000 | KTU(Kerala Technical University) | MESITAM     | ECE    | Semester 1 | Basic Electronics  | 23  | August | 2011    |
-   #  | sabin09@gmail.com | Same@2323 | Sabin NN  | Sabu S     | Radha V    | 8964363772 | College       | 1993 | KTU(Kerala Technical University) | Sreechithra college | B.Tech ECE    | Semester 3 | DSP                                  | 14  | November | 2008    |
+      | username                   | password  | FullName        | MotherName | FatherName | MobileNo   | InstituteType | Year | University                       | Institution         | Course     | Semester   | Subject preference | Teacher | Day | Month    | DOBYear |
+      | malhar009@yopmail.com | Same@2323 | Aravind Kirthan | Kirthi     | Thambi     | 9877334477 | College       | 2000 | KTU(Kerala Technical University) | MESITAM             | ECE        | Semester 1 | Basic Electronics  | Akhil P | 23  | August   | 2011    |
+#      | sabin09@gmail.com          | Same@2323 | Sabin NN        | Sabu S     | Radha V    | 8964363772 | College       | 1993 | KTU(Kerala Technical University) | Sreechithra college | B.Tech ECE | Semester 3 | DSP                | Sruthy  | 14  | November | 2008    |
 
   Scenario Outline: Validate profile details with given input of Sign Up Chat
     Given Enter Student Valid Credential on SigIn Page Email "<username>" and Password "<password>"
@@ -104,7 +102,7 @@ Feature:Automate signUp chat using Example keyWord-->User College Student
     Then Validate Profile Edit page is entered Completed or not.
 
     Examples:
-      | username                    | password  | FirstName | SecondName | MotherName | FatherName | MobileNo   | InstituteType | Year | University                       | Institution Name | Course | Semester   | Subject preference | DOB        |
+      | username              | password  | FirstName | SecondName | MotherName | FatherName | MobileNo   | InstituteType | Year | University                       | Institution Name | Course | Semester   | Subject preference | DOB        |
    #   | 9895443350            | Same@2323 | Sushama   | C          | Anjali M   | Abhijith S | 9897454566 | College       | 2022 | GJU(Guru Jambheshwar University) | GJU institute tt | MSc Geography | Semester 1 | Itegrated water resources management | 07/07/1995 |
-      | sameercollage07@yopmail.com | Same@2323 | Aravind   | Kirthan    | Kirthi     | Thambi     | 9893483494 | College       | 2000 | KTU(Kerala Technical University) | MESITAM          | ECE    | Semester 1 | Basic Electronics  | 23/08/2011 |
+      | malhar009@yopmail.com | Same@2323 | Aravind   | Kirthan    | Kirthi     | Thambi     | 9893483688 | College       | 2000 | KTU(Kerala Technical University) | MESITAM          | ECE    | Semester 1 | Basic Electronics  | 23/08/2011 |
     #  | sabin09@gmail.com | Same@2323 | Sabin     | NN         | Sabu S     | Radha V    | 8964363772 | College       | 1993 | KTU(Kerala Technical University) | Sreechithra college | B.Tech ECE    | Semester 3 | DSP                                  | 14/11/2008 |

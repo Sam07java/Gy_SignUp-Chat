@@ -190,7 +190,29 @@ public class Student_DashBoard_InnerChatBox extends BasePage{
         driver.findElement(By.className("css-d7l1ni-option")).click();
     }
 
+    public void user_select_schoolName(String schoolNAme){
+        driver.findElement(By.className("css-19bb58m")).click();
+         List<WebElement> school=driver.findElements(By.xpath("//div[@role='option']"));
+         for(WebElement schoolElement:school){
+             if(schoolElement.getText().equalsIgnoreCase(schoolNAme)){
+                 schoolElement.click();
+                 break;
+             }
+         }
 
+
+    }
+
+    public void user_select_teacherName(String teacherName){
+        driver.findElement(By.className("css-19bb58m")).click();
+        List<WebElement> teacher=driver.findElements(By.xpath("//div[@role='option']"));
+        for(WebElement teacherElement: teacher){
+            if(teacherElement.getText().equalsIgnoreCase(teacherName)){
+                teacherElement.click();
+                break;
+            }
+        }
+    }
 
     public void select_your_board()
     {// CBSE or ICSE or State Board
@@ -294,6 +316,7 @@ public class Student_DashBoard_InnerChatBox extends BasePage{
       List <WebElement> subPreference= driver.findElements(By.xpath("//div[@role='option']"));
       for(WebElement subPreElement : subPreference) {
            String sub= subPreElement.getText();
+          System.out.println(sub);
            if(sub.equalsIgnoreCase(subjectPreference)){
                subPreElement.click();
                break;

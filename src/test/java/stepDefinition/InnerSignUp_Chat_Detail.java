@@ -1,6 +1,8 @@
 package stepDefinition;
 
 import hooks.Hook;
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
@@ -227,4 +229,16 @@ public class InnerSignUp_Chat_Detail {
         sdi=new Student_DashBoard(Hook.driver);
         sdi.logOut();
     }
+
+
+    @And("User select School Name {string}")
+    public void userSelectSchoolName(String arg0) {
+        sd.user_select_schoolName(arg0);
+    }
+
+    @And("User select teacher {string}")
+    public void userSelectTeacher(String arg0) {
+            sd.user_select_teacherName(arg0);
+    }
+
 }

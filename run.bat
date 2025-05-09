@@ -1,2 +1,4 @@
-cd C:\Users\WIIS\IdeaProjects\Gyansetu_TestCase001
-mvn test
+@echo off
+cd /d F:\Gyansetu\G_TestCase001
+mvn clean test
+pause
