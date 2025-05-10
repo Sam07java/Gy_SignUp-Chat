@@ -7,16 +7,25 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
+
 public class Hook {
 
     public static WebDriver driver;
     //WebDriver driver;
+    private Logger logger;
 
     @Before
     public void setup()
     {
+        logger=LogManager.getLogger("hooks.Hook");
         driver=new ChromeDriver();
-        driver.get("https://qaweb.gyansetu.ai/");
+        logger.info("Starting WebDriver initialization");
+        logger.info("Chrome browser launched");
+        driver.get("https://uatweb.gyansetu.ai/");
+        logger.info("Navigated to qaweb-gyansetu");
       //  driver.get("http://13.233.97.160:3000/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));

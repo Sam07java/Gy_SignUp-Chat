@@ -2,6 +2,7 @@ package runner;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
+//import io.cucumber.testngxmlformatter.MessagesToTestngXmlWriter;
 import org.junit.runner.RunWith;
 
 import java.util.Map;
@@ -18,7 +19,10 @@ import java.util.Properties;
       //  extraGlue = {"src/test/java/features/test005_SignUpChat_with_ProfileEditPage_CollegeUser.feature"},
       // features= {"src/test/java/features/test004_signUpChat_with_profileEdit_StudentUser.feature"},
         glue = {"stepDefinition","hooks","utility"},
-        plugin = {"pretty","html:target/cucmber.html"},
+        plugin = {"pretty","html:target/cucumber_report.html",
+                        "json:target/test_report.json",
+                        "junit:target/test_report.xml"},
+
         publish = true,
         monochrome = false,
         dryRun = false
