@@ -5,7 +5,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import org.apache.xmlbeans.soap.SOAPArrayType;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import page.HomePage;
 import page.LoginPage;
@@ -13,6 +17,7 @@ import page.Student_DashBoard;
 import page.Student_DashBoard_InnerChatBox;
 import utility.DatePicker;
 import utility.ExelUtility;
+import utility.Screenshot;
 
 import java.io.IOException;
 import java.util.List;
@@ -27,29 +32,41 @@ public class InnerBoxTextEntering {
     DatePicker dp;
     Student_DashBoard sdi;
     ExelUtility exelUtility;
+    Screenshot screenshot;
     String path="F:\\Gyansetu\\G_TestCase001\\src\\test-data\\data for sign-up chat.xlsx";
+    private final Logger logger= LogManager.getLogger(this.getClass().getName());
+
 
     @Given("Navigate to SignIn Page.")
     public void Navigate_to_SignIn_Page(){
-        lop= new LoginPage(Hook.driver);
-        hp=new HomePage(Hook.driver);
+        logger.info("Initializing LoginPage and HomePage");
+        lop = new LoginPage(Hook.driver);
+        hp = new HomePage(Hook.driver);
+
+        logger.info("Navigating to SignIn via HomePage");
         hp.SignIn_with_Email();
+        logger.info("SignIn page loaded");
     }
-    @When("Fetch data from Excel sheet for Sign In {string}, {} and Enter credentials in SignIn.")
+
+    @When("Fetch data from Excel sheet for Sign In {string}, {int} and Enter credentials in SignIn.")
     public void fetchDataFromExcelSheetForSignInAndEnterCredentialsInSignIn(String sheet, Integer row) throws IOException {
-        exelUtility=new ExelUtility(path);
-        List<Map<String,String>> signupdata =exelUtility.storeData(path, sheet);
-        //  exelUtility.storeData(path, sheetName);
-        String userid= signupdata.get(row).get("Email ID");
-        System.out.println(userid);
+        logger.info("Fetching SignIn credentials from Excel: Sheet = {}, Row = {}", sheet, row);
+        exelUtility = new ExelUtility(path);
+        List<Map<String, String>> signupdata = exelUtility.storeData(path, sheet);
 
-        lop=new LoginPage(Hook.driver);
+        String userid = signupdata.get(row).get("Email ID");
+        logger.info("Fetched Email ID: {}", userid);
+
+        lop = new LoginPage(Hook.driver);
         lop.EnterUserName(userid);
+        logger.info("Entered Email ID in SignIn field");
 
-        String password= signupdata.get(row).get("Password");
-        System.out.println(password);
+        String password = signupdata.get(row).get("Password");
+        logger.info("Fetched Password: ********");
         lop.EnterPassword(password);
+        logger.info("Entered Password in SignIn field");
     }
+
     @Given("Enter Student Valid Credential on SigIn Page Email {string} and Password {string}")
     public void enter_student_valid_credential_on_sig_in_page_email_and_password(String string, String string2) {
         lop= new LoginPage(Hook.driver);
@@ -61,9 +78,13 @@ public class InnerBoxTextEntering {
 
     @When("Click SignIn Button")
     public void click_sign_in_button() throws InterruptedException {
+        logger.info("Clicking the Sign In button");
         lop.ClickSign_Now();
-      //  Thread.sleep(4000);
+        logger.info("Sign In button clicked successfully");
+        // Optional wait (uncomment if needed for sync)
+        // Thread.sleep(4000);
     }
+
 
     @When("Enter User detail on Dashboard Inner ChatBox")
     public void enter_user_detail_on_dashboard_inner_box() throws InterruptedException {
@@ -101,144 +122,197 @@ public class InnerBoxTextEntering {
 
     @Then("Validate whether Inner ChatBox is Completed")
     public void enter_phone_no() throws InterruptedException {
+        logger.info("Starting Inner ChatBox validation");
 
-        sd.validateInnerChatBox();
-        System.out.println("Profile Inner Chat Automated Successfully");
+        boolean result = sd.validateInnerChatBox();
+        if (result) {
+            logger.info("Profile Inner Chat Automated Successfully");
+        } else {
+            logger.warn("Profile Inner Chat automation failed or element not visible");
+        }
+
         Thread.sleep(4000);
-        sdi=new Student_DashBoard(Hook.driver);
-        sdi.logOut();
 
+        sdi = new Student_DashBoard(Hook.driver);
+        logger.info("Logging out from student dashboard");
+        sdi.logOut();
     }
 
 
     @And("Fetch data from Excel sheet for SignUp-Chat {string}, {} and enter details on signup-chat.")
     public void fetchDataFromExcelSheetForSignUpChatAndEnterDetailsOnSignupChat(String sheetSignupchat, Integer roww) throws IOException, InterruptedException {
-        exelUtility=new ExelUtility(path);
-        List<Map<String,String>> signupdata =exelUtility.storeData(path, sheetSignupchat);
+        logger.info("Fetching data from Excel sheet: {}", sheetSignupchat);
 
-//Enter First Name
-       String name= signupdata.get(roww).get("Full Name");
-        System.out.println(name);
-        sd=new Student_DashBoard_InnerChatBox(Hook.driver);
-        sd.enter_Your_FullName(name);
+        exelUtility = new ExelUtility(path);
+        List<Map<String, String>> signupdata = exelUtility.storeData(path, sheetSignupchat);
 
-//DOB Select
-        dp=new DatePicker(Hook.driver);
-       String dobdate= signupdata.get(roww).get("DOBdate");
-      String dobMonth= signupdata.get(roww).get("DOBmonth");
-     String dobyear= signupdata.get(roww).get("DOByear");
-        System.out.println(dobdate+" "+dobMonth+" "+dobyear);
-        dp.datepickerG(dobdate,dobMonth,dobyear);
+        try {
+            // Enter First Name
+            String name = signupdata.get(roww).get("Full Name");
+            logger.info("Entering Full Name: {}", name);
+            sd = new Student_DashBoard_InnerChatBox(Hook.driver);
+            sd.enter_Your_FullName(name);
 
-//Main learing Goal
-        String learningGoal= signupdata.get(roww).get("Main learning goal");
-        sd.enter_main_learning_goal(learningGoal);
+            // DOB Select
+            String dobdate = signupdata.get(roww).get("DOBdate");
+            String dobMonth = signupdata.get(roww).get("DOBmonth");
+            String dobyear = signupdata.get(roww).get("DOByear");
+            logger.info("Entering Date of Birth: {}-{}-{}", dobdate, dobMonth, dobyear);
+            dp = new DatePicker(Hook.driver);
+            dp.datepickerG(dobdate, dobMonth, dobyear);
 
-//Select Gender (Gender)
-        String gender= signupdata.get(roww).get("Gender");
-        sd.select_Gender();
+            // Main learning Goal
+            String learningGoal = signupdata.get(roww).get("Main learning goal");
+            logger.info("Entering Main Learning Goal: {}", learningGoal);
+            sd.enter_main_learning_goal(learningGoal);
 
-//Enter Mother Name(Mother Name)
-        String mothername= signupdata.get(roww).get("Mother Name");
-        sd.enter_Mother_Name(mothername);
+            // Gender
+            String gender = signupdata.get(roww).get("Gender");
+            logger.info("Selecting Gender: {}", gender);
+            sd.select_Gender();
 
-//ENter Father Name
-        String fathername= signupdata.get(roww).get("Father Name");
-        sd.enter_Father_Name(fathername);
+            // Mother Name
+            String mothername = signupdata.get(roww).get("Mother Name");
+            logger.info("Entering Mother's Name: {}", mothername);
+            sd.enter_Mother_Name(mothername);
 
-//Enter Guardian Name
-        String guardianName= signupdata.get(roww).get("Guardian Name");
-        sd.enter_Quardian_Name(guardianName);
+            // Father Name
+            String fathername = signupdata.get(roww).get("Father Name");
+            logger.info("Entering Father's Name: {}", fathername);
+            sd.enter_Father_Name(fathername);
 
-//Upload PP
-        String uploadPp= signupdata.get(roww).get("Upload PP");
-        sd.Upload_Profile_Picture(uploadPp);
+            // Guardian Name
+            String guardianName = signupdata.get(roww).get("Guardian Name");
+            logger.info("Entering Guardian Name: {}", guardianName);
+            sd.enter_Quardian_Name(guardianName);
 
-//Institute type
-        sd.select_School_type();
+            // Upload PP
+            String uploadPp = signupdata.get(roww).get("Upload PP");
+            logger.info("Uploading Profile Picture");
+            sd.Upload_Profile_Picture(uploadPp);
 
-//School Name
-        String schoolName= signupdata.get(roww).get("School Name");
-        sd.user_select_schoolName(schoolName);
+            // Institute type
+            logger.info("Selecting Institute type");
+            sd.select_School_type();
 
-//Board
-        sd.select_your_board();
+            // School Name
+            String schoolName = signupdata.get(roww).get("School Name");
+            logger.info("Selecting School Name: {}", schoolName);
+            sd.user_select_schoolName(schoolName);
 
-//Class
-        String classes= signupdata.get(roww).get("Classes");
-        sd.select_your_classes(classes);
+            // Board
+            logger.info("Selecting Board");
+            sd.select_your_board();
 
-//Hobbies
-        String hobbies= signupdata.get(roww).get("Hobbies");
-        sd.choose_your_hobbies(hobbies);
+            // Class
+            String classes = signupdata.get(roww).get("Classes");
+            logger.info("Selecting Class: {}", classes);
+            sd.select_your_classes(classes);
 
-//Language
-        String language= signupdata.get(roww).get("Language");
-        Thread.sleep(500);
-        sd.select_known_language(language);
+            // Hobbies
+            String hobbies = signupdata.get(roww).get("Hobbies");
+            logger.info("Selecting Hobbies: {}", hobbies);
+            sd.choose_your_hobbies(hobbies);
 
-//Language proficiency
-        sd.select_proficiency();
+            // Language
+            String language = signupdata.get(roww).get("Language");
+            logger.info("Selecting Known Language: {}", language);
+            Thread.sleep(500);
+            sd.select_known_language(language);
 
-//Country Code
-        sd.select_your_mobile_number_country_code();
+            // Language proficiency
+            logger.info("Selecting Language Proficiency");
+            sd.select_proficiency();
 
-//WhatsApp No.
-        String whatsappno= signupdata.get(roww).get("WhatsApp No.");
-        sd.What_is_your_mobile_number(whatsappno);
+            // Country Code
+            logger.info("Selecting Country Code");
+            sd.select_your_mobile_number_country_code();
 
-//Subject Name
-        String sujectname= signupdata.get(roww).get("Subject Name");
-        sd.Select_your_subject_name(sujectname);
+            // WhatsApp No.
+            String whatsappno = signupdata.get(roww).get("WhatsApp No.");
+            logger.info("Entering WhatsApp Number: {}", whatsappno);
+            sd.What_is_your_mobile_number(whatsappno);
 
-//Preference
-        String preference= signupdata.get(roww).get("Preference");
-        sd.What_is_your_preference(preference);
+            // Subject Name
+            String sujectname = signupdata.get(roww).get("Subject Name");
+            logger.info("Selecting Subject Name: {}", sujectname);
+            sd.Select_your_subject_name(sujectname);
 
-//Score Percentage
-        String scorePercentage= signupdata.get(roww).get("Score Percentage");
-        sd.Add_your_score_in_percentage(scorePercentage);
+            // Preference
+            String preference = signupdata.get(roww).get("Preference");
+            logger.info("Selecting Preference: {}", preference);
+            sd.What_is_your_preference(preference);
 
-//Select Teacher
-        String teacher= signupdata.get(roww).get("Select Teacher");
-        sd.user_select_teacherName(teacher);
+            // Score Percentage
+            String scorePercentage = signupdata.get(roww).get("Score Percentage");
+            logger.info("Entering Score Percentage: {}", scorePercentage);
+            sd.Add_your_score_in_percentage(scorePercentage);
 
-//Country
-        String country= signupdata.get(roww).get("Country");
-        sd.select_your_current_country_of_residence(country);
+            // Select Teacher
+            String teacher = signupdata.get(roww).get("Select Teacher");
+            logger.info("Selecting Teacher: {}", teacher);
+            sd.user_select_teacherName(teacher);
 
-//State
-        String state= signupdata.get(roww).get("State");
-        sd.select_your_current_country_of_residence(state);
+            // Country
+            String country = signupdata.get(roww).get("Country");
+            logger.info("Selecting Country: {}", country);
+            sd.select_your_current_country_of_residence(country);
 
-//District
-        String district= signupdata.get(roww).get("District");
-        sd.which_district(district);
-//City
-        String city= signupdata.get(roww).get("City");
-        sd.which_city(city);
+            // State
+            String state = signupdata.get(roww).get("State");
+            logger.info("Selecting State: {}", state);
+            sd.select_your_current_country_of_residence(state);
 
-//Pin code
-        String pincode= signupdata.get(roww).get("Pin code");
-        sd.enter_pin_Code(pincode);
+            // District
+            String district = signupdata.get(roww).get("District");
+            logger.info("Selecting District: {}", district);
+            sd.which_district(district);
 
+            // City
+            String city = signupdata.get(roww).get("City");
+            logger.info("Selecting City: {}", city);
+            sd.which_city(city);
 
-//First Address
-        String firstAddress= signupdata.get(roww).get("First Address");
-        sd.enter_first_address(firstAddress);
+            // Pin code
+            String pincode = signupdata.get(roww).get("Pin code");
+            logger.info("Entering Pin code: {}", pincode);
+            sd.enter_pin_Code(pincode);
 
-//Second Addresss
-        String secondAddresss= signupdata.get(roww).get("Second Addresss");
-        sd.what_is_your_second_address(secondAddresss);
+            // First Address
+            String firstAddress = signupdata.get(roww).get("First Address");
+            logger.info("Entering First Address: {}", firstAddress);
+            sd.enter_first_address(firstAddress);
 
+            // Second Address
+            String secondAddresss = signupdata.get(roww).get("Second Addresss");
+            logger.info("Entering Second Address: {}", secondAddresss);
+            sd.what_is_your_second_address(secondAddresss);
+
+        } catch (Exception e) {
+            logger.error("Error occurred while filling signup chat details: {}", e.getMessage());
+            Screenshot.captureScreenshot(Hook.driver, "SignUpChat_Failure_" + roww);
+            throw e;  // Re-throw the exception after logging
+        }
     }
 
-    @Then("Verified sign-up chat is complited.")
+    @Then("Verified sign-up chat is completed.")
     public void verifiedSignUpChatIsComplited() throws InterruptedException {
-        sd.validateInnerChatBox();
-        System.out.println("Profile Inner Chat Automated Successfully");
-        Thread.sleep(1000);
-        sdi=new Student_DashBoard(Hook.driver);
+        logger.info("Starting sign-up chat verification");
+
+        boolean result = sd.validateInnerChatBox();
+        if (result) {
+            logger.info("Profile Inner Chat automated successfully.");
+        } else {
+            logger.error("Profile Inner Chat automation failed. Capturing screenshot...");
+            Screenshot.captureScreenshot(Hook.driver, "SignUpChat_Failure");
+            Assert.fail("Profile Inner Chat was not completed successfully.");
+        }
+
+        Thread.sleep(1000); // Optional wait for synchronization
+
+        sdi = new Student_DashBoard(Hook.driver);
+        logger.info("Logging out from student dashboard.");
         sdi.logOut();
     }
+
 }

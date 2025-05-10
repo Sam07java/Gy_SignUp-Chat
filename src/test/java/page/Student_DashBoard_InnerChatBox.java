@@ -7,14 +7,15 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.security.PublicKey;
 import java.util.List;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 public class Student_DashBoard_InnerChatBox extends BasePage{
 
     public Student_DashBoard_InnerChatBox(WebDriver driver) {
         super(driver);
     }
 
-
+Logger logger=LogManager.getLogger(this.getClass().getName());
     public void enter_Your_FullName(String fullName)
     {// (1)
         WebElement full=driver.findElement(By.xpath("//input[@placeholder='Type your answer and press enter']"));
@@ -406,23 +407,28 @@ public class Student_DashBoard_InnerChatBox extends BasePage{
        sAdd.sendKeys(Keys.ENTER);
    }
 
-   public void validateInnerChatBox()
-   {
-       try {
-           WebElement text = driver.findElement(By.xpath("//div[@class='chatinput-body']"));
-           if (text.isDisplayed()) {
-               Assert.assertTrue(true);
-               text.click();
-           } else {
-               System.out.println("Inner chatBox isn't completed ");
-               Assert.fail();
-           }
-       } catch (Exception e) {
-           System.out.println("Inner chatBox isn't completed ");
-           Assert.fail();
-           throw new RuntimeException(e);
-       }
-   }
+    public boolean validateInnerChatBox() {
+        try {
+            WebElement text = driver.findElement(By.xpath("//div[@class='chatinput-body']"));
+
+            if (text.isDisplayed()) {
+                logger.info("Inner ChatBox is visible on the screen.");
+                text.click();
+                return true;
+            } else {
+                logger.warn("Inner ChatBox is not visible.");
+                return false;
+            }
+
+        } catch (NoSuchElementException e) {
+            logger.error("Inner ChatBox element not found: {}", e.getMessage());
+            return false;
+        } catch (Exception e) {
+            logger.error("Unexpected error while validating Inner ChatBox: {}", e.getMessage());
+            return false;
+        }
+    }
+
 
 
 

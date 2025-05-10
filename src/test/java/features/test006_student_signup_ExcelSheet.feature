@@ -23,7 +23,7 @@ Scenario Outline: Enter the data on SignUp-Chat
   When Fetch data from Excel sheet for Sign In "<SheetNAme>", <RowNumber> and Enter credentials in SignIn.
   And Click SignIn Button
   And Fetch data from Excel sheet for SignUp-Chat "<SignUp-Chat>", <Number> and enter details on signup-chat.
-  Then Verified sign-up chat is complited.
+  Then Verified sign-up chat is completed.
   Examples:
     | SheetNAme    | RowNumber | SignUp-Chat  | Number |
     | Registration | 1         | Sign-Up chat | 1      |
