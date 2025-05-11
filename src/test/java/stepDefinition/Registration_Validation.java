@@ -23,7 +23,9 @@ public class Registration_Validation {
    public RegistrationPage rp;
    public ExelUtility exelUtility;
    private final Logger logger=LogManager.getLogger(this.getClass().getName());
-   public String path="F:\\Gyansetu\\G_TestCase001\\src\\test-data\\data for sign-up chat.xlsx";
+    String path = System.getProperty("user.dir") + "/src/test-data/data for sign-up chat.xlsx";
+
+    // public String path="F:\\Gyansetu\\G_TestCase001\\src\\test-data\\data for sign-up chat.xlsx";
  //  String path = System.getProperty("user.dir") + "\\src\\test-data\\data for sign-up chat.xlsx";
  @Given("Navigate Registration Page")
  public void navigate_registration_page() {

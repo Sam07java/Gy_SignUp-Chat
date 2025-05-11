@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="38.32" tests="2" skipped="0" failures="1" errors="0">
+<testcase classname="Fetch signUp data from Excel Sheet" name="Register student User in Gyansetu. - #1.1" time="29.147">
+<system-out><![CDATA[
+Given Navigate Registration Page............................................passed
+When Fetch signup data from Excel sheet "Registration", 1...................passed
+Then Click SignUp Button....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Fetch signUp data from Excel Sheet" name="Enter the data on SignUp-Chat - #1.1" time="8.672">
+<failure type="org.openqa.selenium.ElementNotInteractableException" message="element not interactable
+  (Session info: chrome=136.0.7103.93)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d5c6572f58720a96951f7242a3c90354, sendKeysToElement {id=f.A7674DAE4D093AC375C45B9E53625CE2.d.05563E6038EDA87F927598A3D698940C.e.408, value=[Ljava.lang.CharSequence;@e700eba}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\WIIS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63220}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63220/devtoo..., se:cdpVersion: 136.0.7103.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (d5c6572f58720a96951f7242a3c90354)] -&gt; xpath: //input[@placeholder='Type your answer and press enter']]
+Session ID: d5c6572f58720a96951f7242a3c90354">
+<![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=136.0.7103.93)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d5c6572f58720a96951f7242a3c90354, sendKeysToElement {id=f.A7674DAE4D093AC375C45B9E53625CE2.d.05563E6038EDA87F927598A3D698940C.e.408, value=[Ljava.lang.CharSequence;@e700eba}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\WIIS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63220}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63220/devtoo..., se:cdpVersion: 136.0.7103.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (d5c6572f58720a96951f7242a3c90354)] -> xpath: //input[@placeholder='Type your answer and press enter']]
+Session ID: d5c6572f58720a96951f7242a3c90354
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+	at page.Student_DashBoard_InnerChatBox.enter_Your_FullName(Student_DashBoard_InnerChatBox.java:22)
+	at stepDefinition.InnerBoxTextEntering.fetchDataFromExcelSheetForSignUpChatAndEnterDetailsOnSignupChat(InnerBoxTextEntering.java:154)
+	at ✽.Fetch data from Excel sheet for SignUp-Chat "Sign-Up chat", 1 and enter details on signup-chat.(file:///F:/Gyansetu/G_TestCase001/src/test/java/features/test006_student_signup_ExcelSheet.feature:25)
+]]>
+</failure>
+<system-out><![CDATA[
+Given Navigate to SignIn Page...............................................passed
+When Fetch data from Excel sheet for Sign In "Registration", 1 and Enter credentials in SignIn..passed
+And Click SignIn Button.....................................................passed
+And Fetch data from Excel sheet for SignUp-Chat "Sign-Up chat", 1 and enter details on signup-chat..failed
+Then Verified sign-up chat is completed.....................................skipped
+]]></system-out>
+</testcase>
+</testsuite>

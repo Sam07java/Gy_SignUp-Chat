@@ -24,7 +24,7 @@ public class Hook {
         driver=new ChromeDriver();
         logger.info("Starting WebDriver initialization");
         logger.info("Chrome browser launched");
-        driver.get("https://qaweb.gyansetu.ai/");
+        driver.get("https://uatweb.gyansetu.ai/");
         logger.info("Navigated to qaweb-gyansetu");
       //  driver.get("http://13.233.97.160:3000/");
         driver.manage().window().maximize();

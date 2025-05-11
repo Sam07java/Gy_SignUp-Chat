@@ -19,9 +19,9 @@ import java.util.Properties;
       //  extraGlue = {"src/test/java/features/test005_SignUpChat_with_ProfileEditPage_CollegeUser.feature"},
       // features= {"src/test/java/features/test004_signUpChat_with_profileEdit_StudentUser.feature"},
         glue = {"stepDefinition","hooks","utility"},
-        plugin = {"pretty","html:target/cucumber_report.html",
-                        "json:target/test_report.json",
-                        "junit:target/test_report.xml"},
+        plugin = {"pretty","html:test_report/cucumber_report.html",
+                        "json:test_report/test_report.json",
+                        "junit:test_report/test_report.xml"},
 
         publish = true,
         monochrome = false,

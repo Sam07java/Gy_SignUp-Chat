@@ -46,3 +46,193 @@
 22:20:08.953 [main]INFO  hooks.Hook - Chrome browser launched
 22:20:52.761 [main]INFO  hooks.Hook - Starting WebDriver initialization
 22:20:52.761 [main]INFO  hooks.Hook - Chrome browser launched
+10:17:37.226 [main]INFO  hooks.Hook - Starting WebDriver initialization
+10:17:37.241 [main]INFO  hooks.Hook - Chrome browser launched
+10:17:39.699 [main]INFO  hooks.Hook - Navigated to qaweb-gyansetu
+10:17:39.767 [main]INFO  stepDefinition.Registration_Validation - Navigating to the registration page
+10:17:40.178 [main]INFO  stepDefinition.Registration_Validation - Clicked on Registration button
+10:17:40.189 [main]INFO  stepDefinition.Registration_Validation - Fetching data from Excel - Sheet: Registration, Row: 1
+10:17:41.286 [main]INFO  stepDefinition.Registration_Validation - Fetched Email ID: sarasu123@yopmail.com
+10:17:41.754 [main]INFO  stepDefinition.Registration_Validation - Fetched Phone No: 7675443123
+10:17:42.025 [main]INFO  stepDefinition.Registration_Validation - Fetched Password: ********
+10:17:42.512 [main]INFO  stepDefinition.Registration_Validation - Checked Terms and Conditions checkbox
+10:17:42.512 [main]INFO  stepDefinition.Registration_Validation - Clicking SignUp Now button
+10:18:02.590 [main]INFO  stepDefinition.Registration_Validation - SignUp process initiated, waiting for 20 seconds for enter the OTP
+10:18:03.951 [main]INFO  hooks.Hook - Starting WebDriver initialization
+10:18:03.951 [main]INFO  hooks.Hook - Chrome browser launched
+10:18:06.158 [main]INFO  hooks.Hook - Navigated to qaweb-gyansetu
+10:18:06.222 [main]INFO  stepDefinition.InnerBoxTextEntering - Initializing LoginPage and HomePage
+10:18:06.263 [main]INFO  stepDefinition.InnerBoxTextEntering - Navigating to SignIn via HomePage
+10:18:06.571 [main]INFO  stepDefinition.InnerBoxTextEntering - SignIn page loaded
+10:18:06.580 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetching SignIn credentials from Excel: Sheet = Registration, Row = 1
+10:18:06.709 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetched Email ID: sarasu123@yopmail.com
+10:18:07.208 [main]INFO  stepDefinition.InnerBoxTextEntering - Entered Email ID in SignIn field
+10:18:07.208 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetched Password: ********
+10:18:07.489 [main]INFO  stepDefinition.InnerBoxTextEntering - Entered Password in SignIn field
+10:18:07.489 [main]INFO  stepDefinition.InnerBoxTextEntering - Clicking the Sign In button
+10:18:07.545 [main]INFO  stepDefinition.InnerBoxTextEntering - Sign In button clicked successfully
+10:18:07.553 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetching data from Excel sheet: Sign-Up chat
+10:18:07.967 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Full Name: Sarasu VB
+10:18:13.338 [main]ERROR stepDefinition.InnerBoxTextEntering - Error occurred while filling signup chat details: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@placeholder='Type your answer and press enter']"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [44d54f6d8dd4081e3cc993b86d041488, findElement {using=xpath, value=//input[@placeholder='Type your answer and press enter']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\WIIS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62221}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62221/devtoo..., se:cdpVersion: 136.0.7103.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 44d54f6d8dd4081e3cc993b86d041488
+10:22:10.015 [main]INFO  hooks.Hook - Starting WebDriver initialization
+10:22:10.018 [main]INFO  hooks.Hook - Chrome browser launched
+10:22:12.511 [main]INFO  hooks.Hook - Navigated to qaweb-gyansetu
+10:22:12.582 [main]INFO  stepDefinition.Registration_Validation - Navigating to the registration page
+10:22:12.908 [main]INFO  stepDefinition.Registration_Validation - Clicked on Registration button
+10:22:12.916 [main]INFO  stepDefinition.Registration_Validation - Fetching data from Excel - Sheet: Registration, Row: 1
+10:22:13.995 [main]INFO  stepDefinition.Registration_Validation - Fetched Email ID: sarasu123@yopmail.com
+10:22:14.367 [main]INFO  stepDefinition.Registration_Validation - Fetched Phone No: 7675443123
+10:22:14.630 [main]INFO  stepDefinition.Registration_Validation - Fetched Password: ********
+10:22:15.044 [main]INFO  stepDefinition.Registration_Validation - Checked Terms and Conditions checkbox
+10:22:15.044 [main]INFO  stepDefinition.Registration_Validation - Clicking SignUp Now button
+10:22:35.137 [main]INFO  stepDefinition.Registration_Validation - SignUp process initiated, waiting for 20 seconds for enter the OTP
+10:22:36.557 [main]INFO  hooks.Hook - Starting WebDriver initialization
+10:22:36.557 [main]INFO  hooks.Hook - Chrome browser launched
+10:22:38.828 [main]INFO  hooks.Hook - Navigated to qaweb-gyansetu
+10:22:38.893 [main]INFO  stepDefinition.InnerBoxTextEntering - Initializing LoginPage and HomePage
+10:22:38.903 [main]INFO  stepDefinition.InnerBoxTextEntering - Navigating to SignIn via HomePage
+10:22:39.184 [main]INFO  stepDefinition.InnerBoxTextEntering - SignIn page loaded
+10:22:39.192 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetching SignIn credentials from Excel: Sheet = Registration, Row = 1
+10:22:39.361 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetched Email ID: sarasu123@yopmail.com
+10:22:39.846 [main]INFO  stepDefinition.InnerBoxTextEntering - Entered Email ID in SignIn field
+10:22:39.846 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetched Password: ********
+10:22:40.203 [main]INFO  stepDefinition.InnerBoxTextEntering - Entered Password in SignIn field
+10:22:40.210 [main]INFO  stepDefinition.InnerBoxTextEntering - Clicking the Sign In button
+10:22:40.371 [main]INFO  stepDefinition.InnerBoxTextEntering - Sign In button clicked successfully
+10:22:40.379 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetching data from Excel sheet: Sign-Up chat
+10:22:40.833 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Full Name: Sarasu VB
+10:22:45.939 [main]ERROR stepDefinition.InnerBoxTextEntering - Error occurred while filling signup chat details: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@placeholder='Type your answer and press enter']"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2789609a16ff99f0bed3c02974fbe7d3, findElement {value=//input[@placeholder='Type your answer and press enter'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\WIIS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62334}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62334/devtoo..., se:cdpVersion: 136.0.7103.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2789609a16ff99f0bed3c02974fbe7d3
+10:29:55.811 [main]INFO  hooks.Hook - Starting WebDriver initialization
+10:29:55.820 [main]INFO  hooks.Hook - Chrome browser launched
+10:29:58.292 [main]INFO  hooks.Hook - Navigated to qaweb-gyansetu
+10:29:58.388 [main]INFO  stepDefinition.Registration_Validation - Navigating to the registration page
+10:29:58.752 [main]INFO  stepDefinition.Registration_Validation - Clicked on Registration button
+10:29:58.768 [main]INFO  stepDefinition.Registration_Validation - Fetching data from Excel - Sheet: Registration, Row: 1
+10:29:59.805 [main]INFO  stepDefinition.Registration_Validation - Fetched Email ID: sarasu123@yopmail.com
+10:30:00.158 [main]INFO  stepDefinition.Registration_Validation - Fetched Phone No: 7675443123
+10:30:00.389 [main]INFO  stepDefinition.Registration_Validation - Fetched Password: ********
+10:30:00.744 [main]INFO  stepDefinition.Registration_Validation - Checked Terms and Conditions checkbox
+10:30:00.744 [main]INFO  stepDefinition.Registration_Validation - Clicking SignUp Now button
+10:30:20.828 [main]INFO  stepDefinition.Registration_Validation - SignUp process initiated, waiting for 20 seconds for enter the OTP
+10:30:22.864 [main]INFO  hooks.Hook - Starting WebDriver initialization
+10:30:22.864 [main]INFO  hooks.Hook - Chrome browser launched
+10:30:25.033 [main]INFO  hooks.Hook - Navigated to qaweb-gyansetu
+10:30:25.124 [main]INFO  stepDefinition.InnerBoxTextEntering - Initializing LoginPage and HomePage
+10:30:25.128 [main]INFO  stepDefinition.InnerBoxTextEntering - Navigating to SignIn via HomePage
+10:30:25.593 [main]INFO  stepDefinition.InnerBoxTextEntering - SignIn page loaded
+10:30:25.601 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetching SignIn credentials from Excel: Sheet = Registration, Row = 1
+10:30:25.689 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetched Email ID: sarasu123@yopmail.com
+10:30:26.047 [main]INFO  stepDefinition.InnerBoxTextEntering - Entered Email ID in SignIn field
+10:30:26.047 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetched Password: ********
+10:30:26.273 [main]INFO  stepDefinition.InnerBoxTextEntering - Entered Password in SignIn field
+10:30:26.273 [main]INFO  stepDefinition.InnerBoxTextEntering - Clicking the Sign In button
+10:30:26.325 [main]INFO  stepDefinition.InnerBoxTextEntering - Sign In button clicked successfully
+10:30:26.329 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetching data from Excel sheet: Sign-Up chat
+10:30:26.435 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Full Name: Sarasu VB
+10:30:31.528 [main]ERROR stepDefinition.InnerBoxTextEntering - Error occurred while filling signup chat details: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@placeholder='Type your answer and press enter']"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0a94596c5f8b4ef5620e7b3b90938a42, findElement {value=//input[@placeholder='Type your answer and press enter'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\WIIS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62593}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62593/devtoo..., se:cdpVersion: 136.0.7103.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0a94596c5f8b4ef5620e7b3b90938a42
+10:34:50.644 [main]INFO  hooks.Hook - Starting WebDriver initialization
+10:34:50.652 [main]INFO  hooks.Hook - Chrome browser launched
+10:34:53.661 [main]INFO  hooks.Hook - Navigated to qaweb-gyansetu
+10:34:53.857 [main]INFO  stepDefinition.Registration_Validation - Navigating to the registration page
+10:34:54.543 [main]INFO  stepDefinition.Registration_Validation - Clicked on Registration button
+10:34:54.559 [main]INFO  stepDefinition.Registration_Validation - Fetching data from Excel - Sheet: Registration, Row: 1
+10:34:55.790 [main]INFO  stepDefinition.Registration_Validation - Fetched Email ID: grukagriffere-8073@yopmail.com
+10:34:56.211 [main]INFO  stepDefinition.Registration_Validation - Fetched Phone No: 7675443124
+10:34:56.454 [main]INFO  stepDefinition.Registration_Validation - Fetched Password: ********
+10:34:56.870 [main]INFO  stepDefinition.Registration_Validation - Checked Terms and Conditions checkbox
+10:34:56.871 [main]INFO  stepDefinition.Registration_Validation - Clicking SignUp Now button
+10:35:16.943 [main]INFO  stepDefinition.Registration_Validation - SignUp process initiated, waiting for 20 seconds for enter the OTP
+10:35:20.497 [main]INFO  hooks.Hook - Starting WebDriver initialization
+10:35:20.497 [main]INFO  hooks.Hook - Chrome browser launched
+10:35:22.722 [main]INFO  hooks.Hook - Navigated to qaweb-gyansetu
+10:35:22.784 [main]INFO  stepDefinition.InnerBoxTextEntering - Initializing LoginPage and HomePage
+10:35:22.784 [main]INFO  stepDefinition.InnerBoxTextEntering - Navigating to SignIn via HomePage
+10:35:23.095 [main]INFO  stepDefinition.InnerBoxTextEntering - SignIn page loaded
+10:35:23.108 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetching SignIn credentials from Excel: Sheet = Registration, Row = 1
+10:35:23.314 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetched Email ID: grukagriffere-8073@yopmail.com
+10:35:24.592 [main]INFO  stepDefinition.InnerBoxTextEntering - Entered Email ID in SignIn field
+10:35:24.592 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetched Password: ********
+10:35:24.877 [main]INFO  stepDefinition.InnerBoxTextEntering - Entered Password in SignIn field
+10:35:24.877 [main]INFO  stepDefinition.InnerBoxTextEntering - Clicking the Sign In button
+10:35:24.947 [main]INFO  stepDefinition.InnerBoxTextEntering - Sign In button clicked successfully
+10:35:24.947 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetching data from Excel sheet: Sign-Up chat
+10:35:25.117 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Full Name: Sarasu VB
+10:35:27.526 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Date of Birth: 26-July-2001
+10:35:31.798 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Main Learning Goal: sass
+10:35:32.060 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Gender: Male
+10:35:32.424 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Mother's Name: Ashwathi N
+10:35:32.712 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Father's Name: AkhilJith
+10:35:32.898 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Guardian Name: Himanshu
+10:35:33.133 [main]INFO  stepDefinition.InnerBoxTextEntering - Uploading Profile Picture
+10:35:33.260 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Institute type
+10:35:33.613 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting School Name: SN School
+10:35:34.012 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Board
+10:35:39.202 [main]ERROR stepDefinition.InnerBoxTextEntering - Error occurred while filling signup chat details: no such element: Unable to locate element: {"method":"css selector","selector":"#react\-select\-3\-option\-0"}
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4260c50f17702dd2dfab652fce4e56dc, findElement {using=id, value=react-select-3-option-0}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\WIIS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62951}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62951/devtoo..., se:cdpVersion: 136.0.7103.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4260c50f17702dd2dfab652fce4e56dc
+10:49:11.494 [main]INFO  hooks.Hook - Starting WebDriver initialization
+10:49:11.500 [main]INFO  hooks.Hook - Chrome browser launched
+10:49:14.148 [main]INFO  hooks.Hook - Navigated to qaweb-gyansetu
+10:49:14.245 [main]INFO  stepDefinition.Registration_Validation - Navigating to the registration page
+10:49:14.610 [main]INFO  stepDefinition.Registration_Validation - Clicked on Registration button
+10:49:14.625 [main]INFO  stepDefinition.Registration_Validation - Fetching data from Excel - Sheet: Registration, Row: 1
+10:49:15.769 [main]INFO  stepDefinition.Registration_Validation - Fetched Email ID: grukagriffere-8073@yopmail.com
+10:49:16.211 [main]INFO  stepDefinition.Registration_Validation - Fetched Phone No: 7675443124
+10:49:16.428 [main]INFO  stepDefinition.Registration_Validation - Fetched Password: ********
+10:49:16.770 [main]INFO  stepDefinition.Registration_Validation - Checked Terms and Conditions checkbox
+10:49:16.774 [main]INFO  stepDefinition.Registration_Validation - Clicking SignUp Now button
+10:49:36.834 [main]INFO  stepDefinition.Registration_Validation - SignUp process initiated, waiting for 20 seconds for enter the OTP
+10:49:38.421 [main]INFO  hooks.Hook - Starting WebDriver initialization
+10:49:38.436 [main]INFO  hooks.Hook - Chrome browser launched
+10:49:41.307 [main]INFO  hooks.Hook - Navigated to qaweb-gyansetu
+10:49:41.356 [main]INFO  stepDefinition.InnerBoxTextEntering - Initializing LoginPage and HomePage
+10:49:41.371 [main]INFO  stepDefinition.InnerBoxTextEntering - Navigating to SignIn via HomePage
+10:49:41.735 [main]INFO  stepDefinition.InnerBoxTextEntering - SignIn page loaded
+10:49:41.743 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetching SignIn credentials from Excel: Sheet = Registration, Row = 1
+10:49:41.850 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetched Email ID: grukagriffere-8073@yopmail.com
+10:49:42.349 [main]INFO  stepDefinition.InnerBoxTextEntering - Entered Email ID in SignIn field
+10:49:42.349 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetched Password: ********
+10:49:42.590 [main]INFO  stepDefinition.InnerBoxTextEntering - Entered Password in SignIn field
+10:49:42.599 [main]INFO  stepDefinition.InnerBoxTextEntering - Clicking the Sign In button
+10:49:42.675 [main]INFO  stepDefinition.InnerBoxTextEntering - Sign In button clicked successfully
+10:49:42.675 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetching data from Excel sheet: Sign-Up chat
+10:49:42.801 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Full Name: Sarasu VB
+10:49:45.273 [main]ERROR stepDefinition.InnerBoxTextEntering - Error occurred while filling signup chat details: element not interactable
+  (Session info: chrome=136.0.7103.93)
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d5c6572f58720a96951f7242a3c90354, sendKeysToElement {id=f.A7674DAE4D093AC375C45B9E53625CE2.d.05563E6038EDA87F927598A3D698940C.e.408, value=[Ljava.lang.CharSequence;@e700eba}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\WIIS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63220}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63220/devtoo..., se:cdpVersion: 136.0.7103.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (d5c6572f58720a96951f7242a3c90354)] -> xpath: //input[@placeholder='Type your answer and press enter']]
+Session ID: d5c6572f58720a96951f7242a3c90354

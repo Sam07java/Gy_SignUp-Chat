@@ -33,7 +33,9 @@ public class InnerBoxTextEntering {
     Student_DashBoard sdi;
     ExelUtility exelUtility;
     Screenshot screenshot;
-    String path="F:\\Gyansetu\\G_TestCase001\\src\\test-data\\data for sign-up chat.xlsx";
+   // String path="F:\\Gyansetu\\G_TestCase001\\src\\test-data\\data for sign-up chat.xlsx";
+   String path = System.getProperty("user.dir") + "/src/test-data/data for sign-up chat.xlsx";
+
     private final Logger logger= LogManager.getLogger(this.getClass().getName());
 
 
