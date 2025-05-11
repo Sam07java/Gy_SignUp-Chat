@@ -38,8 +38,12 @@ public class Hook {
     }
 
     @After
-    public void tearDown()
-    {
-      // driver.close();
+    public void tearDown() {
+        if (driver != null) {
+            driver.close();
+            logger.info("Browser window closed after scenario.");
+        } else {
+            logger.warn("Driver was null, nothing to close.");
+        }
     }
 }

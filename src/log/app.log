@@ -236,3 +236,40 @@ Command: [d5c6572f58720a96951f7242a3c90354, sendKeysToElement {id=f.A7674DAE4D09
 Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\WIIS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63220}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63220/devtoo..., se:cdpVersion: 136.0.7103.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
 Element: [[ChromeDriver: chrome on windows (d5c6572f58720a96951f7242a3c90354)] -> xpath: //input[@placeholder='Type your answer and press enter']]
 Session ID: d5c6572f58720a96951f7242a3c90354
+11:58:14.223 [main]INFO  hooks.Hook - Starting WebDriver initialization
+11:58:14.225 [main]INFO  hooks.Hook - Chrome browser launched
+11:58:17.490 [main]INFO  hooks.Hook - Navigated to qaweb-gyansetu
+11:58:17.565 [main]INFO  stepDefinition.Registration_Validation - Navigating to the registration page
+11:58:18.018 [main]INFO  stepDefinition.Registration_Validation - Clicked on Registration button
+11:58:18.034 [main]INFO  stepDefinition.Registration_Validation - Fetching data from Excel - Sheet: Registration, Row: 1
+11:58:19.794 [main]INFO  stepDefinition.Registration_Validation - Fetched Email ID: grukagriffere-8073@yopmail.com
+11:58:20.520 [main]INFO  stepDefinition.Registration_Validation - Fetched Phone No: 7675443124
+11:58:20.925 [main]INFO  stepDefinition.Registration_Validation - Fetched Password: ********
+11:58:21.413 [main]INFO  stepDefinition.Registration_Validation - Checked Terms and Conditions checkbox
+11:58:21.413 [main]INFO  stepDefinition.Registration_Validation - Clicking SignUp Now button
+11:58:41.518 [main]INFO  stepDefinition.Registration_Validation - SignUp process initiated, waiting for 20 seconds for enter the OTP
+11:58:43.698 [main]INFO  hooks.Hook - Starting WebDriver initialization
+11:58:43.699 [main]INFO  hooks.Hook - Chrome browser launched
+11:58:47.428 [main]INFO  hooks.Hook - Navigated to qaweb-gyansetu
+11:58:47.521 [main]INFO  stepDefinition.InnerBoxTextEntering - Initializing LoginPage and HomePage
+11:58:47.524 [main]INFO  stepDefinition.InnerBoxTextEntering - Navigating to SignIn via HomePage
+11:58:47.887 [main]INFO  stepDefinition.InnerBoxTextEntering - SignIn page loaded
+11:58:47.894 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetching SignIn credentials from Excel: Sheet = Registration, Row = 1
+11:58:48.058 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetched Email ID: grukagriffere-8073@yopmail.com
+11:58:48.725 [main]INFO  stepDefinition.InnerBoxTextEntering - Entered Email ID in SignIn field
+11:58:48.725 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetched Password: ********
+11:58:49.126 [main]INFO  stepDefinition.InnerBoxTextEntering - Entered Password in SignIn field
+11:58:49.127 [main]INFO  stepDefinition.InnerBoxTextEntering - Clicking the Sign In button
+11:58:49.196 [main]INFO  stepDefinition.InnerBoxTextEntering - Sign In button clicked successfully
+11:58:49.196 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetching data from Excel sheet: Sign-Up chat
+11:58:49.412 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Full Name: Sarasu VB
+11:58:51.541 [main]ERROR stepDefinition.InnerBoxTextEntering - Error occurred while filling signup chat details: stale element reference: stale element not found in the current frame
+  (Session info: chrome=136.0.7103.93)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.27.0', revision: 'd6e718d134'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [5973853c412070fe4ec5aa7cb3d7adb7, sendKeysToElement {value=[Ljava.lang.CharSequence;@58a84a12, id=f.2884C13E450560BFB66F16FF546A2FA3.d.FBD894EE1544617CE993867838F8F6ED.e.408}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\WIIS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54364}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54364/devtoo..., se:cdpVersion: 136.0.7103.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (5973853c412070fe4ec5aa7cb3d7adb7)] -> xpath: //input[@placeholder='Type your answer and press enter']]
+Session ID: 5973853c412070fe4ec5aa7cb3d7adb7
