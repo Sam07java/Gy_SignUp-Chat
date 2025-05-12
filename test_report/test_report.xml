@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="43.625" tests="2" skipped="0" failures="1" errors="0">
-<testcase classname="Fetch signUp data from Excel Sheet" name="Register student User in Gyansetu. - #1.1" time="32.726">
+<testsuite name="Cucumber" time="42.189" tests="2" skipped="0" failures="1" errors="0">
+<testcase classname="Fetch signUp data from Excel Sheet" name="Register student User in Gyansetu. - #1.1" time="31.416">
 <system-out><![CDATA[
 Given Navigate Registration Page............................................passed
 When Fetch signup data from Excel sheet "Registration", 1...................passed
 Then Click SignUp Button....................................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Fetch signUp data from Excel Sheet" name="Enter the data on SignUp-Chat - #1.1" time="10.356">
+<testcase classname="Fetch signUp data from Excel Sheet" name="Enter the data on SignUp-Chat - #1.1" time="10.108">
 <failure type="org.openqa.selenium.StaleElementReferenceException" message="stale element reference: stale element not found in the current frame
   (Session info: chrome=136.0.7103.93)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
 Build info: version: '4.27.0', revision: 'd6e718d134'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [5973853c412070fe4ec5aa7cb3d7adb7, sendKeysToElement {value=[Ljava.lang.CharSequence;@58a84a12, id=f.2884C13E450560BFB66F16FF546A2FA3.d.FBD894EE1544617CE993867838F8F6ED.e.408}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\WIIS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54364}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54364/devtoo..., se:cdpVersion: 136.0.7103.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (5973853c412070fe4ec5aa7cb3d7adb7)] -&gt; xpath: //input[@placeholder='Type your answer and press enter']]
-Session ID: 5973853c412070fe4ec5aa7cb3d7adb7">
+Command: [935ed294098adba021480208109a8863, sendKeysToElement {id=f.287AA94C1C03BCD01D2297C3752C3CD3.d.3BAF8E3FF5CDD65E9B4D66E3E65F0A45.e.408, value=[Ljava.lang.CharSequence;@7186b202}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\WIIS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54918}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54918/devtoo..., se:cdpVersion: 136.0.7103.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (935ed294098adba021480208109a8863)] -&gt; xpath: //input[@placeholder='Type your answer and press enter']]
+Session ID: 935ed294098adba021480208109a8863">
 <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
   (Session info: chrome=136.0.7103.93)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
 Build info: version: '4.27.0', revision: 'd6e718d134'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [5973853c412070fe4ec5aa7cb3d7adb7, sendKeysToElement {value=[Ljava.lang.CharSequence;@58a84a12, id=f.2884C13E450560BFB66F16FF546A2FA3.d.FBD894EE1544617CE993867838F8F6ED.e.408}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\WIIS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54364}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54364/devtoo..., se:cdpVersion: 136.0.7103.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (5973853c412070fe4ec5aa7cb3d7adb7)] -> xpath: //input[@placeholder='Type your answer and press enter']]
-Session ID: 5973853c412070fe4ec5aa7cb3d7adb7
+Command: [935ed294098adba021480208109a8863, sendKeysToElement {id=f.287AA94C1C03BCD01D2297C3752C3CD3.d.3BAF8E3FF5CDD65E9B4D66E3E65F0A45.e.408, value=[Ljava.lang.CharSequence;@7186b202}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\WIIS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54918}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54918/devtoo..., se:cdpVersion: 136.0.7103.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (935ed294098adba021480208109a8863)] -> xpath: //input[@placeholder='Type your answer and press enter']]
+Session ID: 935ed294098adba021480208109a8863
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)

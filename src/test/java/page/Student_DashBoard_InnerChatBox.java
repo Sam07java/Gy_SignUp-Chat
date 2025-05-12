@@ -1,11 +1,8 @@
 package page;
 
-import io.cucumber.java.ja.且つ;
-import org.junit.Assert;
-import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.Select;
 
-import java.security.PublicKey;
+import org.openqa.selenium.*;
+
 import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
