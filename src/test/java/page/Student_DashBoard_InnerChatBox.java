@@ -3,9 +3,15 @@ package page;
 
 import org.openqa.selenium.*;
 
+import java.time.Duration;
 import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import utility.Screenshot;
+import utility.WaitHelper;
+
 public class Student_DashBoard_InnerChatBox extends BasePage{
 
     public Student_DashBoard_InnerChatBox(WebDriver driver) {
@@ -13,132 +19,284 @@ public class Student_DashBoard_InnerChatBox extends BasePage{
     }
 
 Logger logger=LogManager.getLogger(this.getClass().getName());
-    public void enter_Your_FullName(String fullName)
-    {// (1)
-        WebElement full=driver.findElement(By.xpath("//input[@placeholder='Type your answer and press enter']"));
-        full.sendKeys(fullName);
-        full.sendKeys(Keys.ENTER);
-    }
 
-  /*  public void select_Your_DOB(String date)
-    {
-        driver.findElement(By.xpath("//button[@class='chat_search_btn']//*[name()='svg']")).sendKeys(date);
-    }
+    public void enter_Your_FullName(String fullName) {
+        logger.info("Entering full name: " + fullName);
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            By inputLocator = By.xpath("//input[@placeholder='Type your answer and press enter']");
 
-    public void dateClick()
-    {
-        driver.findElement(By.xpath("//button[@class='chat_search_btn']//*[name()='svg']")).click();
-    }
+            WebElement full = wait.until(ExpectedConditions.visibilityOfElementLocated(inputLocator));
+            full.sendKeys(fullName);
 
-    public void datepicker()
-    {//(2)
-        driver.findElement(By.xpath("//button[@aria-label='Choose date']")).click();
-        driver.findElement(By.xpath("//button[normalize-space()='9']")).click();
-        driver.findElement(By.xpath("//button[@class='chat_search_btn']")).click();
-    }*/
+            // Short wait for any front-end debounce logic (non-blocking)
+            Thread.sleep(300);
 
-    public void enter_main_learning_goal(String goal)
-    {//(3)
-       WebElement lgoal=driver.findElement(By.xpath("//input[@placeholder='Type your answer and press enter']"));
-               lgoal.sendKeys(goal);
-               lgoal.sendKeys(Keys.ENTER);
-    }
-
-    public void select_Gender()
-    {   //(4)
-        //Male or Female
-        WebElement gen= driver.findElement(By.xpath("//div[@class='css-19bb58m']"));
-        gen.click();
-        WebElement male =  driver.findElement(By.xpath("//div[@id='react-select-2-listbox']/div[2]"));
-         male.click();
-    }
-
-    public void enter_Mother_Name(String motherName)
-    {   //(5)
-    WebElement Mname=driver.findElement(By.xpath("//input[@placeholder='Type your answer and press enter']"));
-    Mname.sendKeys(motherName);
-    Mname.sendKeys(Keys.ENTER);
-    }
-
-    public void enter_Father_Name(String fatherName)
-    {   //(6)
-        WebElement Fname=driver.findElement(By.xpath("//input[@placeholder='Type your answer and press enter']"));
-               Fname.sendKeys(fatherName);
-               Fname.sendKeys(Keys.ENTER);
-    }
-
-    public void enter_Quardian_Name(String quardianName)
-    {   //(7)
-        WebElement Qname=driver.findElement(By.xpath("//input[@placeholder='Type your answer and press enter']"));
-                Qname.sendKeys(quardianName);
-                Qname.sendKeys(Keys.ENTER);
-    }
-
-    public void Upload_Profile_Picture(String path)
-    {   //(8)
-        driver.findElement(By.xpath("//input[@type='file']")).sendKeys(path);
-    }
-
-    public void select_School_type()
-    {//school or collage
-        driver.findElement(By.className("css-hlgwow")).click();
-            WebElement schoolElement = driver.findElement(By.id("react-select-3-option-0"));
-            schoolElement.click();
-    }
-
-    public void select_Collage_type()
-    {
-        driver.findElement(By.className("css-hlgwow")).click();
-        driver.findElement(By.xpath("//div[text()='College']")).click();
-    }
-
-    public void please_Select_your_University(String University)
-    {
-        System.out.println("University Methode execution started");
-        driver.findElement(By.className("css-19bb58m")).click();
-
-       List <WebElement> uni = driver.findElements(By.xpath("//div[@class='css-qr46ko']//div"));
-       for(WebElement univer_sity:uni)
-       {
-          String u=univer_sity.getText();
-           if(u.equalsIgnoreCase(University))
-           {
-               univer_sity.click();
-               break;
-           }
-       }
-    }
-
-    public void please_Select_your_Institution(String institution)
-    {
-        System.out.println("Institution Methode is execution started. ");
-        driver.findElement(By.className("css-19bb58m")).click();
-        List <WebElement> ins = driver.findElements(By.xpath("//div[@class='css-qr46ko']//div"));
-        for(WebElement instit_ution:ins){
-            String u=instit_ution.getText();
-            if(u.equalsIgnoreCase(institution)){
-                instit_ution.click();
-                break;
-            }
+            full.sendKeys(Keys.ENTER);
+            logger.info("Full name entered successfully.");
+        } catch (Exception e) {
+            logger.error("Failed to enter full name: " + e.getMessage(), e);
+            Screenshot.captureScreenshot(driver, "enter_Your_FullName");
         }
     }
 
-    public void please_select_your_Course(String course)
-    {
-        System.out.println("Course Methode is started");
-        driver.findElement(By.className("css-19bb58m")).click();
 
-        List <WebElement> cou = driver.findElements(By.xpath("//div[@class='css-qr46ko']//div"));
-        for(WebElement cou_ution:cou)
-        {
-            String u=cou_ution.getText();
-            if(u.equalsIgnoreCase(course))
-            {
-                cou_ution.click();
-                break;
-            }
+    public void enter_main_learning_goal(String goal) {
+        logger.info("Entering main learning goal: " + goal);
+        try {
+            WaitHelper waitHelper = new WaitHelper(driver);
+            By lgoal = By.xpath("//input[@placeholder='Type your answer and press enter']");
+
+           WebElement mainlgoal = waitHelper.waitForVisibility(lgoal, 10);
+
+
+            mainlgoal.sendKeys(goal);
+            mainlgoal.sendKeys(Keys.ENTER);
+            logger.info("Learning goal entered successfully.");
+        } catch (Exception e) {
+            logger.error("Failed to enter learning goal: " + e.getMessage(), e);
+            Screenshot.captureScreenshot(driver, "enter_main_learning_goal");
         }
     }
+
+    public void select_Gender() {
+        logger.info("Selecting gender.");
+        try {
+            WaitHelper waitHelper = new WaitHelper(driver);
+
+            By genderDropdown = By.xpath("//div[@class='css-19bb58m']");
+            WebElement gen = waitHelper.waitForClickable(genderDropdown, 10);
+            gen.click();
+
+            By maleOption = By.xpath("//div[@id='react-select-2-listbox']/div[2]");
+            WebElement male = waitHelper.waitForClickable(maleOption, 10);
+            male.click();
+
+            logger.info("Gender selected successfully.");
+        } catch (Exception e) {
+            logger.error("Failed to select gender: " + e.getMessage(), e);
+            Screenshot.captureScreenshot(driver, "select_Gender");
+        }
+    }
+
+
+
+    public void enter_Mother_Name(String motherName) {
+        logger.info("Entering mother's name: " + motherName);
+        try {
+            WaitHelper waitHelper = new WaitHelper(driver);
+
+            By motherNameField = By.xpath("//input[@placeholder='Type your answer and press enter']");
+            WebElement Mname = waitHelper.waitForVisibility(motherNameField, 10);
+
+            Mname.sendKeys(motherName);
+            Mname.sendKeys(Keys.ENTER);
+            logger.info("Mother's name entered successfully.");
+        } catch (Exception e) {
+            logger.error("Failed to enter mother's name: " + e.getMessage(), e);
+            Screenshot.captureScreenshot(driver, "enter_Mother_Name");
+        }
+    }
+
+
+    public void enter_Father_Name(String fatherName) {
+        logger.info("Entering father's name: " + fatherName);
+        try {
+            WaitHelper waitHelper = new WaitHelper(driver);
+
+            By fatherNameField = By.xpath("//input[@placeholder='Type your answer and press enter']");
+            WebElement Fname = waitHelper.waitForVisibility(fatherNameField, 10);
+
+            Fname.sendKeys(fatherName);
+            Fname.sendKeys(Keys.ENTER);
+            logger.info("Father's name entered successfully.");
+        } catch (Exception e) {
+            logger.error("Failed to enter father's name: " + e.getMessage(), e);
+            Screenshot.captureScreenshot(driver, "enter_Father_Name");
+        }
+    }
+
+
+    public void enter_Quardian_Name(String quardianName) {
+        logger.info("Entering guardian's name: " + quardianName);
+        try {
+            WaitHelper waitHelper = new WaitHelper(driver);
+
+            By guardianNameField = By.xpath("//input[@placeholder='Type your answer and press enter']");
+            WebElement Qname = waitHelper.waitForVisibility(guardianNameField, 10);
+
+            Qname.sendKeys(quardianName);
+            Qname.sendKeys(Keys.ENTER);
+            logger.info("Guardian's name entered successfully.");
+        } catch (Exception e) {
+            logger.error("Failed to enter guardian's name: " + e.getMessage(), e);
+            Screenshot.captureScreenshot(driver, "enter_Quardian_Name");
+        }
+    }
+
+
+    public void Upload_Profile_Picture(String path) {
+        logger.info("Uploading profile picture from path: " + path);
+        try {
+            WaitHelper waitHelper = new WaitHelper(driver);
+
+            By uploadInput = By.xpath("//input[@type='file']");
+            WebElement uploadElement = waitHelper.waitForPresence(uploadInput, 10);
+
+            uploadElement.sendKeys(path);
+            logger.info("Profile picture uploaded successfully.");
+        } catch (Exception e) {
+            logger.error("Failed to upload profile picture: " + e.getMessage(), e);
+            Screenshot.captureScreenshot(driver, "Upload_Profile_Picture");
+        }
+    }
+
+    public void select_School_type() {
+        logger.info("Selecting school type.");
+        try {
+            WaitHelper waitHelper = new WaitHelper(driver);
+
+            By schoolDropdown = By.className("css-hlgwow");
+            WebElement dropdown = waitHelper.waitForClickable(schoolDropdown, 10);
+            dropdown.click();
+
+            By schoolOption = By.id("react-select-3-option-0");
+            WebElement option = waitHelper.waitForClickable(schoolOption, 10);
+            option.click();
+
+            logger.info("School type selected successfully.");
+        } catch (Exception e) {
+            logger.error("Failed to select school type: " + e.getMessage(), e);
+            Screenshot.captureScreenshot(driver, "select_School_type");
+        }
+    }
+
+
+    public void select_Collage_type() {
+        logger.info("Selecting college type started.");
+        try {
+            WaitHelper waitHelper = new WaitHelper(driver);
+
+            By collegeDropdown = By.className("css-hlgwow");
+            WebElement dropdown = waitHelper.waitForClickable(collegeDropdown, 10);
+            dropdown.click();
+            logger.debug("Clicked on college type dropdown.");
+
+            By collegeOption = By.xpath("//div[text()='College']");
+            WebElement option = waitHelper.waitForClickable(collegeOption, 10);
+            option.click();
+
+            logger.info("College type selected successfully.");
+        } catch (Exception e) {
+            logger.error("Failed to select college type: " + e.getMessage(), e);
+            throw new RuntimeException("Unable to select college type", e);
+        }
+    }
+
+
+    public void please_Select_your_University(String University) {
+        logger.info("University selection method execution started");
+
+        try {
+            driver.findElement(By.className("css-19bb58m")).click();
+            logger.info("Clicked on university dropdown.");
+
+            List<WebElement> uni = driver.findElements(By.xpath("//div[@class='css-qr46ko']//div"));
+            logger.debug("Number of universities listed: " + uni.size());
+
+            boolean isUniversityFound = false;
+
+            for (WebElement univer_sity : uni) {
+                String u = univer_sity.getText();
+                logger.debug("Checking university option: " + u);
+
+                if (u.equalsIgnoreCase(University)) {
+                    univer_sity.click();
+                    logger.info("Selected university: " + University);
+                    isUniversityFound = true;
+                    break;
+                }
+            }
+
+            if (!isUniversityFound) {
+                logger.warn("University not found: " + University);
+            }
+
+        } catch (Exception e) {
+            logger.error("Error occurred while selecting university: " + e.getMessage(), e);
+            throw new RuntimeException("University selection failed", e);
+        }
+    }
+
+    public void please_Select_your_Institution(String institution) {
+        logger.info("Institution method execution started.");
+
+        try {
+            driver.findElement(By.className("css-19bb58m")).click();
+            logger.info("Clicked on institution dropdown.");
+
+            List<WebElement> ins = driver.findElements(By.xpath("//div[@class='css-qr46ko']//div"));
+            logger.debug("Total institutions found: " + ins.size());
+
+            boolean found = false;
+
+            for (WebElement instit_ution : ins) {
+                String u = instit_ution.getText();
+                logger.debug("Checking institution: " + u);
+
+                if (u.equalsIgnoreCase(institution)) {
+                    instit_ution.click();
+                    logger.info("Institution selected: " + institution);
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) {
+                logger.warn("Institution not found: " + institution);
+            }
+
+        } catch (Exception e) {
+            logger.error("Error while selecting institution: " + e.getMessage(), e);
+            throw new RuntimeException("Institution selection failed", e);
+        }
+    }
+
+
+    public void please_select_your_Course(String course) {
+        logger.info("Course selection method started.");
+
+        try {
+            driver.findElement(By.className("css-19bb58m")).click();
+            logger.info("Clicked on course dropdown.");
+
+            List<WebElement> cou = driver.findElements(By.xpath("//div[@class='css-qr46ko']//div"));
+            logger.debug("Total courses listed: " + cou.size());
+
+            boolean found = false;
+
+            for (WebElement cou_ution : cou) {
+                String u = cou_ution.getText();
+                logger.debug("Checking course: " + u);
+
+                if (u.equalsIgnoreCase(course)) {
+                    cou_ution.click();
+                    logger.info("Course selected: " + course);
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) {
+                logger.warn("Course not found: " + course);
+            }
+
+        } catch (Exception e) {
+            logger.error("Error while selecting course: " + e.getMessage(), e);
+            throw new RuntimeException("Course selection failed", e);
+        }
+    }
+
 
     public void please_select_your_Semester(String semester)
     {
@@ -158,12 +316,24 @@ Logger logger=LogManager.getLogger(this.getClass().getName());
         System.out.println("Semester Clicked");
     }
 
-    public void please_select_your_learningStyle()
-    {
-        driver.findElement(By.className("css-19bb58m")).click();  //css-19bb58m
-        WebElement cbseElement=driver.findElement(By.id("react-select-3-option-0"));
-        cbseElement.click();
+    public void please_select_your_learningStyle() {
+        try {
+            WaitHelper waitHelper = new WaitHelper(driver);
+
+            By dropdownLocator = By.className("css-19bb58m");
+            WebElement dropdown = waitHelper.waitForClickable(dropdownLocator, 10);
+            dropdown.click();
+
+            By optionLocator = By.xpath("//div[text()='Offline']");
+            WebElement cbseElement = waitHelper.waitForVisibility(optionLocator, 10);
+            cbseElement.click();
+
+        } catch (Exception e) {
+            logger.error("Failed to select learning style: " + e.getMessage(), e);
+            Screenshot.captureScreenshot(driver, "please_select_your_learningStyle");
+        }
     }
+
 
     public void user_select_which_your_subject_belongs(String subjectPreference)
     {
@@ -188,36 +358,74 @@ Logger logger=LogManager.getLogger(this.getClass().getName());
         driver.findElement(By.className("css-d7l1ni-option")).click();
     }
 
-    public void user_select_schoolName(String schoolNAme){
-        driver.findElement(By.className("css-19bb58m")).click();
-         List<WebElement> school=driver.findElements(By.xpath("//div[@role='option']"));
-         for(WebElement schoolElement:school){
-             if(schoolElement.getText().equalsIgnoreCase(schoolNAme)){
-                 schoolElement.click();
-                 break;
-             }
-         }
+    public void user_select_schoolName(String schoolNAme) {
+        try {
+            WaitHelper waitHelper = new WaitHelper(driver);
 
+            By dropdownLocator = By.className("css-19bb58m");
+            WebElement dropdown = waitHelper.waitForClickable(dropdownLocator, 10);
+            dropdown.click();
 
-    }
+            By optionsLocator = By.xpath("//div[@role='option']");
+            waitHelper.waitForVisibility(optionsLocator, 10); // Wait until options are visible
 
-    public void user_select_teacherName(String teacherName){
-        driver.findElement(By.className("css-19bb58m")).click();
-        List<WebElement> teacher=driver.findElements(By.xpath("//div[@role='option']"));
-        for(WebElement teacherElement: teacher){
-            if(teacherElement.getText().equalsIgnoreCase(teacherName)){
-                teacherElement.click();
-                break;
+            List<WebElement> school = driver.findElements(optionsLocator);
+            for (WebElement schoolElement : school) {
+                if (schoolElement.getText().equalsIgnoreCase(schoolNAme)) {
+                    schoolElement.click();
+                    break;
+                }
             }
+        } catch (Exception e) {
+            logger.error("Failed to select school name: " + e.getMessage(), e);
+            Screenshot.captureScreenshot(driver, "user_select_schoolName");
         }
     }
 
-    public void select_your_board()
-    {// CBSE or ICSE or State Board
-        driver.findElement(By.className("css-19bb58m")).click();
-        WebElement cbseElement=driver.findElement(By.id("react-select-3-option-0"));
-        cbseElement.click();
+
+    public void user_select_teacherName(String teacherName) {
+        try {
+            WaitHelper waitHelper = new WaitHelper(driver);
+
+            By dropdownLocator = By.className("css-19bb58m");
+            WebElement dropdown = waitHelper.waitForClickable(dropdownLocator, 10);
+            dropdown.click();
+
+            By optionsLocator = By.xpath("//div[@role='option']");
+            waitHelper.waitForVisibility(optionsLocator, 10);
+
+            List<WebElement> teacher = driver.findElements(optionsLocator);
+            for (WebElement teacherElement : teacher) {
+                if (teacherElement.getText().equalsIgnoreCase(teacherName)) {
+                    teacherElement.click();
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            logger.error("Failed to select teacher name: " + e.getMessage(), e);
+            Screenshot.captureScreenshot(driver, "user_select_teacherName");
+        }
     }
+
+
+    public void select_your_board() {
+        try {
+            WaitHelper waitHelper = new WaitHelper(driver);
+
+            By dropdownLocator = By.className("css-19bb58m");
+            WebElement dropdown = waitHelper.waitForClickable(dropdownLocator, 10);
+            dropdown.click();
+
+            By optionLocator = By.id("react-select-3-option-0");
+            WebElement cbseElement = waitHelper.waitForVisibility(optionLocator, 10);
+            cbseElement.click();
+
+        } catch (Exception e) {
+            logger.error("Failed to select board: " + e.getMessage(), e);
+            Screenshot.captureScreenshot(driver, "select_your_board");
+        }
+    }
+
 
     public void select_your_class()
     {//Select class 1 to 12
@@ -226,104 +434,177 @@ Logger logger=LogManager.getLogger(this.getClass().getName());
         driver.findElement(By.id("react-select-3-option-10")).click();
     }
 
-    public void select_your_classes(String clas)
-    {driver.findElement(By.className("css-19bb58m")).click();
-        List <WebElement> cbseClass =driver.findElements(By.xpath("//div[@role='option']"));
-            for(WebElement cb:cbseClass)
-            {
-                if(cb.getText().equalsIgnoreCase(clas)) {
+    public void select_your_classes(String clas) {
+        try {
+            WaitHelper waitHelper = new WaitHelper(driver);
+
+            By dropdownLocator = By.className("css-19bb58m");
+            WebElement dropdown = waitHelper.waitForClickable(dropdownLocator, 10);
+            dropdown.click();
+
+            By optionsLocator = By.xpath("//div[@role='option']");
+            waitHelper.waitForVisibility(optionsLocator, 10);  // Wait for options to be visible
+
+            List<WebElement> cbseClass = driver.findElements(optionsLocator);
+            for (WebElement cb : cbseClass) {
+                if (cb.getText().equalsIgnoreCase(clas)) {
                     cb.click();
                     break;
                 }
             }
+        } catch (Exception e) {
+            logger.error("Failed to select class: " + e.getMessage(), e);
+            Screenshot.captureScreenshot(driver, "select_your_classes");
+        }
     }
 
-    public void choose_your_hobbies(String hobbie)
-    {
-        WebElement choosinessHobbies=driver.findElement(By.className("css-19bb58m"));
-        choosinessHobbies.click();
-        //driver.findElement(By.id("react-select-3-option-5")).click();
-         try {
-          List<WebElement> hobbies = driver.findElements(By.xpath("//div[@role='option']"));
-             //div[@class='css-10wo9uf-option']
+
+    public void choose_your_hobbies(String hobbie) {
+        try {
+            WaitHelper waitHelper = new WaitHelper(driver);
+
+            By dropdownLocator = By.className("css-19bb58m");
+            WebElement choosinessHobbies = waitHelper.waitForClickable(dropdownLocator, 10);
+            choosinessHobbies.click();
+
+            By optionsLocator = By.xpath("//div[@role='option']");
+            waitHelper.waitForVisibility(optionsLocator, 10);
+
+            List<WebElement> hobbies = driver.findElements(optionsLocator);
             for (WebElement hb : hobbies) {
                 String hob = hb.getText();
                 if (hob.equalsIgnoreCase(hobbie)) {
-                  hb.click();
-                 // return;
+                    hb.click();
                     break;
                 }
             }
-         }
-        catch(StaleElementReferenceException a)
-        {
-        System.out.println("Exception Handled");
+            System.out.println("Hobbie clicked");
+        } catch (StaleElementReferenceException a) {
+            System.out.println("Exception Handled");
+        } catch (Exception e) {
+            logger.error("Failed to choose hobby: " + e.getMessage(), e);
+            Screenshot.captureScreenshot(driver, "choose_your_hobbies");
         }
-        System.out.println("Hobbie clicked");
     }
-    //div[@class='css-d7l1ni-option']
-    public void select_known_language(String language)
-    {
-        WebElement chooseLang=driver.findElement(By.className("css-19bb58m"));//css-19bb58m
-        chooseLang.click();
-       // driver.findElement(By.id("react-select-3-option-0")).click();
-            List<WebElement> lang = driver.findElements(By.xpath("//div[@role='option']"));
-            //div[@class='css-10wo9uf-option']
+
+    public void select_known_language(String language) {
+        try {
+            WaitHelper waitHelper = new WaitHelper(driver);
+
+            By dropdownLocator = By.className("css-19bb58m");
+            WebElement chooseLang = waitHelper.waitForClickable(dropdownLocator, 10);
+            chooseLang.click();
+
+            By optionsLocator = By.xpath("//div[@role='option']");
+            waitHelper.waitForVisibility(optionsLocator, 10);
+
+            List<WebElement> lang = driver.findElements(optionsLocator);
             for (WebElement hb : lang) {
                 String hob = hb.getText();
                 if (hob.equalsIgnoreCase(language)) {
                     hb.click();
-                    //return;
                     break;
                 }
             }
-        System.out.println("language clicked");
+            System.out.println("language clicked");
+        } catch (Exception e) {
+            logger.error("Failed to select known language: " + e.getMessage(), e);
+            Screenshot.captureScreenshot(driver, "select_known_language");
+        }
     }
 
     public void select_proficiency() {
-        WebElement chooseProficiency=driver.findElement(By.className("css-19bb58m"));
-        chooseProficiency.click();
-        driver.findElement(By.xpath("//div[@class='css-d7l1ni-option']")).click();
-        //driver.findElement(By.id("react-select-3-option-2")).click();
-    }
+        try {
+            WaitHelper waitHelper = new WaitHelper(driver);
 
-    public void select_your_mobile_number_country_code()
-    {
-        driver.findElement(By.className("selected-flag")).click();
-        WebElement chooseIndia=driver.findElement(By.xpath("//li[@data-flag-key='flag_no_0']"));
-        chooseIndia.click();
-    }
+            By proficiencyDropdown = By.className("css-19bb58m");
+            WebElement chooseProficiency = waitHelper.waitForClickable(proficiencyDropdown, 10);
+            chooseProficiency.click();
 
-    public void What_is_your_mobile_number(String phnNo)
-    {
-        WebElement mobileNO=driver.findElement(By.className("form-control"));
-        mobileNO.sendKeys(phnNo);
-        mobileNO.sendKeys(Keys.ENTER);
-    }
+            By proficiencyOption = By.xpath("//div[@class='css-d7l1ni-option']");
+            WebElement option = waitHelper.waitForClickable(proficiencyOption, 10);
+            option.click();
 
-    public void What_is_your_WhatsApp_number(String wtzpNo)
-    {
-       WebElement watzup= driver.findElement(By.className("form-control"));
-       watzup.sendKeys(wtzpNo);
-       watzup.sendKeys(Keys.ENTER);
-    }
-
-    public void Select_your_subject_name(String subjectPreference)
-    {
-        driver.findElement(By.className("css-19bb58m")).click();
-      List <WebElement> subPreference= driver.findElements(By.xpath("//div[@role='option']"));
-      for(WebElement subPreElement : subPreference) {
-           String sub= subPreElement.getText();
-          System.out.println(sub);
-           if(sub.equalsIgnoreCase(subjectPreference)){
-               subPreElement.click();
-               break;
-           }
+        } catch (Exception e) {
+            logger.error("Failed to select proficiency: " + e.getMessage(), e);
+            Screenshot.captureScreenshot(driver, "select_proficiency");
         }
+    }
 
-        //driver.findElement(By.className("css-1xc3v61-indicatorContainer")).click();
-        //driver.findElement(By.xpath("//div[text()='Science']")).click();
 
+    public void select_your_mobile_number_country_code() {
+        try {
+            WaitHelper waitHelper = new WaitHelper(driver);
+
+            By flagDropdown = By.className("selected-flag");
+            WebElement flagElement = waitHelper.waitForClickable(flagDropdown, 10);
+            flagElement.click();
+
+            By indiaOption = By.xpath("//li[@data-flag-key='flag_no_0']");
+            WebElement indiaElement = waitHelper.waitForClickable(indiaOption, 10);
+            indiaElement.click();
+
+        } catch (Exception e) {
+            logger.error("Failed to select mobile number country code: " + e.getMessage(), e);
+            Screenshot.captureScreenshot(driver, "select_your_mobile_number_country_code");
+        }
+    }
+
+
+    public void What_is_your_mobile_number(String phnNo) {
+        try {
+            WaitHelper waitHelper = new WaitHelper(driver);
+            By mobileLocator = By.className("form-control");
+            WebElement mobileNO = waitHelper.waitForVisibility(mobileLocator, 10);
+            mobileNO.sendKeys(phnNo);
+            mobileNO.sendKeys(Keys.ENTER);
+        } catch (Exception e) {
+            logger.error("Failed to enter mobile number: " + e.getMessage(), e);
+            Screenshot.captureScreenshot(driver, "What_is_your_mobile_number");
+        }
+    }
+
+
+    public void What_is_your_WhatsApp_number(String wtzpNo) {
+        try {
+            WaitHelper waitHelper = new WaitHelper(driver);
+            By whatsappLocator = By.className("form-control");
+            WebElement watzup = waitHelper.waitForVisibility(whatsappLocator, 10);
+            watzup.sendKeys(wtzpNo);
+            watzup.sendKeys(Keys.ENTER);
+        } catch (Exception e) {
+            logger.error("Failed to enter WhatsApp number: " + e.getMessage(), e);
+            Screenshot.captureScreenshot(driver, "What_is_your_WhatsApp_number");
+        }
+    }
+
+
+    public void Select_your_subject_name(String subjectPreference) throws InterruptedException {
+
+
+        Thread.sleep(2000);
+        try {
+            WaitHelper waitHelper = new WaitHelper(driver);
+            By dropdownLocator = By.className("css-19bb58m");
+            WebElement dropdown = waitHelper.waitForClickable(dropdownLocator, 10);
+            dropdown.click();
+
+            By optionsLocator = By.xpath("//div[@role='option']");
+            waitHelper.waitForVisibility(optionsLocator, 10); // wait for options visible
+
+            List<WebElement> subPreference = driver.findElements(optionsLocator);
+            for (WebElement subPreElement : subPreference) {
+                String sub = subPreElement.getText();
+                System.out.println(sub);
+                if (sub.equalsIgnoreCase(subjectPreference)) {
+                    subPreElement.click();
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            logger.error("Failed to select subject name: " + e.getMessage(), e);
+            Screenshot.captureScreenshot(driver, "Select_your_subject_name");
+        }
     }
 
     public void What_is_your_preference(String preference)

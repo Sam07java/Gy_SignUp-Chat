@@ -79,8 +79,7 @@ public class ExelUtility {
         return Data;
     }
 
-    public List<Map<String,String>>storeData(String filePath, String sheetName) throws IOException
-    {
+    public List<Map<String,String>>storeData(String filePath, String sheetName) throws IOException {
         fi=new FileInputStream(filePath);
         workbook=new XSSFWorkbook(fi);
         sheet=workbook.getSheet(sheetName);
@@ -96,12 +95,10 @@ public class ExelUtility {
             {
                cell = row.getCell(colmn);
                 DataFormatter formatter = new DataFormatter();
-                try
-                {
+                try {
                     Data1=formatter.formatCellValue(cell);
                 }
-                catch (Exception e)
-                {
+                catch (Exception e) {
                     Data1 = "";
                 }
                 String columnHeaderName=String.valueOf(sheet.getRow(sheet.getFirstRowNum()).getCell(colmn));

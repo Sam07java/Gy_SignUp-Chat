@@ -25,7 +25,6 @@ public class Student_Profile_Information_Validation {
     public void validate_the_basic_information_is_entered_correct() throws InterruptedException {
 
         Thread.sleep(2000);
-
         bi=new Basic_informationPage(driver);
         System.out.println(bi.First_Name());
         System.out.println(bi.Last_Name());

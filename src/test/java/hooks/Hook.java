@@ -25,10 +25,11 @@ public class Hook {
         logger.info("Starting WebDriver initialization");
         logger.info("Chrome browser launched");
         driver.get("https://qaweb.gyansetu.ai/");
+     //   driver.get("https://www.gyansetu.ai/");
         logger.info("Navigated to qaweb-gyansetu");
       //  driver.get("http://13.233.97.160:3000/");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         //  https://uatweb.gyansetu.ai/
         //  https://www.gyansetu.ai/
@@ -39,11 +40,11 @@ public class Hook {
 
     @After
     public void tearDown() {
-        if (driver != null) {
-            driver.close();
-            logger.info("Browser window closed after scenario.");
-        } else {
-            logger.warn("Driver was null, nothing to close.");
-        }
+//        if (driver != null) {
+//            driver.close();
+//            logger.info("Browser window closed after scenario.");
+//        } else {
+//            logger.warn("Driver was null, nothing to close.");
+//        }
     }
 }

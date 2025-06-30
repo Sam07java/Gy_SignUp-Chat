@@ -5,8 +5,8 @@ Feature:Automate signUp chat using Example keyWord-->User Student
     When User Enter Email "<username>", Password "<password>", phoneNo "<phoneNo>"
     Then Click SignUp Button
     Examples:
-      | username             | password  | phoneNo    |
-      | sidhuvp0@yopmail.com | Same@2323 | 9893483411 |
+      | username                        | password  | phoneNo   |
+      | varundavanmgmschool@yopmail.com | Same@2323 | 9893483420 |
 #    | sameer005@yopmail.com | Same@2323 | 9893483484 |
 
   Scenario Outline: Enter Details Sign Up Chat.
@@ -29,12 +29,9 @@ Feature:Automate signUp chat using Example keyWord-->User Student
     And User Select Language Proficiency
     And User Select mobile number Country code
     And User Enter Mobile Number "<Whatzup>"
-#    And User Enter WhatsAll Number "7934234441"
- # xpath different in collage user-
-    And User Select Your Subject Name "Science"
-    # semester selection.
-    And User Enter subject preference "Mathematics"
-    And User add Score Percentage "76"
+    And User Select Your Subject Name "Mathematics"
+#    And User Enter subject preference "Science"
+#    And User add Score Percentage "76"
     And User select teacher "<Teacher>"
     And User Select Current Country of Residence "India"
     And User Select Current residence State "Kerala"
@@ -46,10 +43,8 @@ Feature:Automate signUp chat using Example keyWord-->User Student
     Then Validate whether SignUp chat is Completed
 
     Examples:
-      | username             | password  | FullName  | MotherName | FatherName | Whatzup    | InstituteType | Clas     | School Name | Teacher         |
-      | sidhuvp0@yopmail.com | Same@2323 | Sidhu VCP | Sirarsi    | Kuber      | 7934234441 | School        | class_09 | SN School   | Shananth Kutttu |
-     # | sameer12@gmail.com | Same@2323 | Aravind Kirthan | Kirthi     | Thambi     | 9898988888 | School        | class_06 |  |
-#      | sameerschool07@yopmail.com | Same@2323 | Deepu Kumar | Sunitha    | Viliams    | 9893483495 | School        | class_09 |  |
+      | username                        | password  | FullName | MotherName | FatherName | Whatzup    | InstituteType | Clas     | School Name | Teacher |
+      | varundavanmgmschool@yopmail.com | Same@2323 | Ummu K   | Ansiba     | Pappa      | 7934234441 | School        | class_09 | MGM School  | Shaji V |
 
   Scenario Outline: Validate profile details with given input of Sign Up Chat
     Given Enter Student Valid Credential on SigIn Page Email "<username>" and Password "<password>"
@@ -95,7 +90,5 @@ Feature:Automate signUp chat using Example keyWord-->User Student
     Then Validate Profile Edit page is entered Completed or not.
 
     Examples:
-      | username             | password  | FirstName |  | SecondName | MotherName | FatherName | MobileNo   | InstituteType | Clas     |
-      | sidhuvp0@yopmail.com | Same@2323 | Sidhu     |  | VCP        | Sirarsi    | Kuber     | 9893483411 | School        | class 09 |
-    #  | sameer12@gmail.com | Same@2323 | Aravind   |  | Kirthan    | Kirthi     | Thambi     | 9898988888 | School        | class 06 |
-#      | sameerschool07@yopmail.com | Same@2323 | Deepu     |  | Kumar      | Sunitha    | Viliams    | 9893483495 | School        | class 09 |
+      | username                        | password  | FirstName | SecondName | MotherName | FatherName | MobileNo   | InstituteType | Clas     |
+      | varundavanmgmschool@yopmail.com | Same@2323 | Ummu      | K          | Ansiba     | Pappa      | 9893483418 | School        | class 09 |

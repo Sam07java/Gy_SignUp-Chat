@@ -25,7 +25,7 @@ public class Student_DashBoard extends BasePage {
         JavascriptExecutor js=(JavascriptExecutor)driver;
         js.executeScript("arguments[0].click()",dropdownToggle);
 
-       WebElement logoutButton= driver.findElement(By.xpath("//button[text()='Logout']"));
+       WebElement logoutButton= driver.findElement(By.xpath("//button[text()=' Logout']"));
         //driver.findElement(By.xpath("//button[@class='dropdown-item d-flex align-items-center gap-2 py-2']")).click();
         //button[text()='Logout']
 
@@ -39,7 +39,7 @@ public class Student_DashBoard extends BasePage {
         JavascriptExecutor js=(JavascriptExecutor)driver;
         js.executeScript("arguments[0].click()",dropdownToggle);
 
-        WebElement profileElement=  driver.findElement(By.xpath("//button[text()='Profile']"));
+        WebElement profileElement=  driver.findElement(By.xpath("//button[text()=' Profile']"));
         JavascriptExecutor jss=(JavascriptExecutor)driver;
         jss.executeScript("arguments[0].click()",profileElement);
     }

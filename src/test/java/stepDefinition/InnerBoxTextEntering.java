@@ -24,6 +24,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
+import static hooks.Hook.driver;
+
 public class InnerBoxTextEntering {
 
     LoginPage lop;
@@ -42,8 +44,8 @@ public class InnerBoxTextEntering {
     @Given("Navigate to SignIn Page.")
     public void Navigate_to_SignIn_Page(){
         logger.info("Initializing LoginPage and HomePage");
-        lop = new LoginPage(Hook.driver);
-        hp = new HomePage(Hook.driver);
+        lop = new LoginPage(driver);
+        hp = new HomePage(driver);
 
         logger.info("Navigating to SignIn via HomePage");
         hp.SignIn_with_Email();
@@ -59,7 +61,7 @@ public class InnerBoxTextEntering {
         String userid = signupdata.get(row).get("Email ID");
         logger.info("Fetched Email ID: {}", userid);
 
-        lop = new LoginPage(Hook.driver);
+        lop = new LoginPage(driver);
         lop.EnterUserName(userid);
         logger.info("Entered Email ID in SignIn field");
 
@@ -71,8 +73,8 @@ public class InnerBoxTextEntering {
 
     @Given("Enter Student Valid Credential on SigIn Page Email {string} and Password {string}")
     public void enter_student_valid_credential_on_sig_in_page_email_and_password(String string, String string2) {
-        lop= new LoginPage(Hook.driver);
-        hp=new HomePage(Hook.driver);
+        lop= new LoginPage(driver);
+        hp=new HomePage(driver);
         hp.SignIn_with_Email();
         lop.EnterUserName(string);
         lop.EnterPassword(string2);
@@ -87,13 +89,12 @@ public class InnerBoxTextEntering {
         // Thread.sleep(4000);
     }
 
-
     @When("Enter User detail on Dashboard Inner ChatBox")
     public void enter_user_detail_on_dashboard_inner_box() throws InterruptedException {
-        sd=new Student_DashBoard_InnerChatBox(Hook.driver);
+        sd=new Student_DashBoard_InnerChatBox(driver);
         sd.enter_Your_FullName("Suraj Venjaramood");
        // sd.select_Your_DOB("12/01/1998");
-        dp=new DatePicker(Hook.driver);
+        dp=new DatePicker(driver);
         dp.datepickerG("17","January","2015");
         sd.enter_main_learning_goal("To get Higher Mark");
         sd.select_Gender();
@@ -135,7 +136,7 @@ public class InnerBoxTextEntering {
 
         Thread.sleep(4000);
 
-        sdi = new Student_DashBoard(Hook.driver);
+        sdi = new Student_DashBoard(driver);
         logger.info("Logging out from student dashboard");
         sdi.logOut();
     }
@@ -143,42 +144,47 @@ public class InnerBoxTextEntering {
 
     @And("Fetch data from Excel sheet for SignUp-Chat {string}, {} and enter details on signup-chat.")
     public void fetchDataFromExcelSheetForSignUpChatAndEnterDetailsOnSignupChat(String sheetSignupchat, Integer roww) throws IOException, InterruptedException {
-        logger.info("Fetching data from Excel sheet: {}", sheetSignupchat);
+        logger.info("Fetching data from Excel sheet for student User: {}", sheetSignupchat);
 
         exelUtility = new ExelUtility(path);
         List<Map<String, String>> signupdata = exelUtility.storeData(path, sheetSignupchat);
 
         try {
             // Enter First Name
+            Thread.sleep(3000);
             String name = signupdata.get(roww).get("Full Name");
-            logger.info("Entering Full Name: {}", name);
-            sd = new Student_DashBoard_InnerChatBox(Hook.driver);
+            logger.info("Entering Full Name of student: {}", name);
+            sd = new Student_DashBoard_InnerChatBox(driver);
             sd.enter_Your_FullName(name);
 
             // DOB Select
             String dobdate = signupdata.get(roww).get("DOBdate");
             String dobMonth = signupdata.get(roww).get("DOBmonth");
             String dobyear = signupdata.get(roww).get("DOByear");
-            logger.info("Entering Date of Birth: {}-{}-{}", dobdate, dobMonth, dobyear);
-            dp = new DatePicker(Hook.driver);
-            dp.datepickerG(dobdate, dobMonth, dobyear);
+            logger.info("Entering Date of Birth of student: {}-{}-{}", dobdate, dobMonth, dobyear);
+            dp = new DatePicker(driver);
+            dp.datepickerGy(dobdate, dobMonth, dobyear);
 
             // Main learning Goal
+            Thread.sleep(1000);
             String learningGoal = signupdata.get(roww).get("Main learning goal");
-            logger.info("Entering Main Learning Goal: {}", learningGoal);
+            logger.info("Entering Main Learning Goals: {}", learningGoal);
             sd.enter_main_learning_goal(learningGoal);
 
             // Gender
+            Thread.sleep(1000);
             String gender = signupdata.get(roww).get("Gender");
             logger.info("Selecting Gender: {}", gender);
             sd.select_Gender();
 
             // Mother Name
+            Thread.sleep(1000);
             String mothername = signupdata.get(roww).get("Mother Name");
             logger.info("Entering Mother's Name: {}", mothername);
             sd.enter_Mother_Name(mothername);
 
             // Father Name
+            Thread.sleep(1000);
             String fathername = signupdata.get(roww).get("Father Name");
             logger.info("Entering Father's Name: {}", fathername);
             sd.enter_Father_Name(fathername);
@@ -189,27 +195,34 @@ public class InnerBoxTextEntering {
             sd.enter_Quardian_Name(guardianName);
 
             // Upload PP
+            Thread.sleep(1000);
             String uploadPp = signupdata.get(roww).get("Upload PP");
             logger.info("Uploading Profile Picture");
             sd.Upload_Profile_Picture(uploadPp);
 
             // Institute type
+            Thread.sleep(1000);
             logger.info("Selecting Institute type");
             sd.select_School_type();
 
             // School Name
+            Thread.sleep(1000);
             String schoolName = signupdata.get(roww).get("School Name");
             logger.info("Selecting School Name: {}", schoolName);
             sd.user_select_schoolName(schoolName);
 
+
             // Board
+            Thread.sleep(1000);
             logger.info("Selecting Board");
             sd.select_your_board();
 
             // Class
+            Thread.sleep(1000);
             String classes = signupdata.get(roww).get("Classes");
             logger.info("Selecting Class: {}", classes);
             sd.select_your_classes(classes);
+
 
             // Hobbies
             String hobbies = signupdata.get(roww).get("Hobbies");
@@ -231,28 +244,30 @@ public class InnerBoxTextEntering {
             sd.select_your_mobile_number_country_code();
 
             // WhatsApp No.
+            Thread.sleep(1000);
             String whatsappno = signupdata.get(roww).get("WhatsApp No.");
             logger.info("Entering WhatsApp Number: {}", whatsappno);
             sd.What_is_your_mobile_number(whatsappno);
 
             // Subject Name
+            Thread.sleep(1000);
             String sujectname = signupdata.get(roww).get("Subject Name");
             logger.info("Selecting Subject Name: {}", sujectname);
             sd.Select_your_subject_name(sujectname);
 
-            // Preference
-            String preference = signupdata.get(roww).get("Preference");
-            logger.info("Selecting Preference: {}", preference);
-            sd.What_is_your_preference(preference);
+//            // Preference
+//            String preference = signupdata.get(roww).get("Preference");
+//            logger.info("Selecting Preference: {}", preference);
+//            sd.What_is_your_preference(preference);
 
-            // Score Percentage
-            String scorePercentage = signupdata.get(roww).get("Score Percentage");
-            logger.info("Entering Score Percentage: {}", scorePercentage);
-            sd.Add_your_score_in_percentage(scorePercentage);
+//            // Score Percentage
+//            String scorePercentage = signupdata.get(roww).get("Score Percentage");
+//            logger.info("Entering Score Percentage: {}", scorePercentage);
+//            sd.Add_your_score_in_percentage(scorePercentage);
 
             // Select Teacher
             String teacher = signupdata.get(roww).get("Select Teacher");
-            logger.info("Selecting Teacher: {}", teacher);
+            logger.info("Selecting Teacher..: {}", teacher);
             sd.user_select_teacherName(teacher);
 
             // Country
@@ -292,7 +307,201 @@ public class InnerBoxTextEntering {
 
         } catch (Exception e) {
             logger.error("Error occurred while filling signup chat details: {}", e.getMessage());
-            Screenshot.captureScreenshot(Hook.driver, "SignUpChat_Failure_" + roww);
+            Screenshot.captureScreenshot(driver, "SignUpChat_Failure_" + roww);
+            throw e;  // Re-throw the exception after logging
+        }
+    }
+
+    @And("Fetch data from Excel sheet for SignUp-Chat {string}, {} and enter details on signup-chat for College user.")
+    public void fetchDataFromExcelSheetForSignUpChatAndEnterDetailsOnSignupChatforCollegeuser(String sheetSignupchat, Integer roww) throws IOException, InterruptedException {
+        logger.info("Fetching data from Excel sheet: {}", sheetSignupchat);
+
+        exelUtility = new ExelUtility(path);
+        List<Map<String, String>> signupdata = exelUtility.storeData(path, sheetSignupchat);
+
+        try {
+            // Enter First Name
+            String name = signupdata.get(roww).get("Full Name");
+            logger.info("Entering Full Name: {}", name);
+            sd = new Student_DashBoard_InnerChatBox(driver);
+            sd.enter_Your_FullName(name);
+            Thread.sleep(500);
+
+            // DOB Select
+           // Thread.sleep(3000);
+            String dobdate = signupdata.get(roww).get("DOBdate");
+            String dobMonth = signupdata.get(roww).get("DOBmonth");
+            String dobyear = signupdata.get(roww).get("DOByear");
+            logger.info("Entering Date of Birth: {}-{}-{}", dobdate, dobMonth, dobyear);
+            Thread.sleep(500);
+            dp = new DatePicker(driver);
+            dp.datepickerGy(dobdate, dobMonth, dobyear);
+
+            // Main learning Goal
+            String learningGoal = signupdata.get(roww).get("Main learning goal");
+            logger.info("Entering Main Learning Goal: {}", learningGoal);
+            sd.enter_main_learning_goal(learningGoal);
+
+            // Gender
+
+            String gender = signupdata.get(roww).get("Gender");
+            logger.info("Selecting Gender: {}", gender);
+            sd.select_Gender();
+
+            // Mother Name
+
+            String mothername = signupdata.get(roww).get("Mother Name");
+            logger.info("Entering Mother's Name: {}", mothername);
+            sd.enter_Mother_Name(mothername);
+
+            // Father Name
+
+            String fathername = signupdata.get(roww).get("Father Name");
+            logger.info("Entering Father's Name: {}", fathername);
+            sd.enter_Father_Name(fathername);
+
+            // Guardian Name
+            String guardianName = signupdata.get(roww).get("Guardian Name");
+            logger.info("Entering Guardian Name: {}", guardianName);
+            sd.enter_Quardian_Name(guardianName);
+
+            // Upload PP
+            String uploadPp = signupdata.get(roww).get("Upload PP");
+            logger.info("Uploading Profile Picture");
+            sd.Upload_Profile_Picture(uploadPp);
+
+            // Institute type
+            logger.info("Selecting Institute type");
+            sd.select_Collage_type();
+
+            // College NAme
+//            String schoolName = signupdata.get(roww).get("School Name");
+//            logger.info("Selecting School Name: {}", schoolName);
+//            sd.user_select_schoolName(schoolName);
+
+            // Select University Name
+            String universityName = signupdata.get(roww).get("University Name");
+            logger.info("Selecting University Name");
+            sd.please_Select_your_University(universityName);
+
+            // Select Institute
+            String institute = signupdata.get(roww).get("Institute");
+            logger.info("Selecting Class: {}", institute);
+            sd.please_Select_your_Institution(institute);
+
+            //Select Course
+            String course = signupdata.get(roww).get("Course");
+            logger.info("Selecting Class: {}", course);
+            sd.please_select_your_Course(course);
+
+            //Select Semester
+
+            String semester0 = signupdata.get(roww).get("Semester");
+            logger.info("Selecting Class: {}", semester0);
+            sd.please_select_your_Semester(semester0);
+
+
+            //Learning Style
+            logger.info("Selecting learning style");
+            sd.please_select_your_learningStyle();
+
+            //Select Year
+            logger.info("Selecting year");
+            String year = signupdata.get(roww).get("Year");
+            dp.selectYear(year);
+
+            // Hobbies
+            String hobbies = signupdata.get(roww).get("Hobbies");
+            logger.info("Selecting Hobbies: {}", hobbies);
+            sd.choose_your_hobbies(hobbies);
+
+            // Language
+            String language = signupdata.get(roww).get("Language");
+            logger.info("Selecting Known Language: {}", language);
+
+            sd.select_known_language(language);
+
+            // Language proficiency
+            logger.info("Selecting Language Proficiency");
+            sd.select_proficiency();
+
+            // Country Code
+            logger.info("Selecting Country Code");
+            sd.select_your_mobile_number_country_code();
+
+            // WhatsApp No.
+           // Thread.sleep(5000);
+            String whatsappno = signupdata.get(roww).get("WhatsApp No.");
+            logger.info("Entering WhatsApp Number: {}", whatsappno);
+            sd.What_is_your_mobile_number(whatsappno);
+
+            // Subject Name
+          //  Thread.sleep(10000);
+            String sujectname = signupdata.get(roww).get("Subject Name");
+            logger.info("Selecting Subject Name: {}", sujectname);
+            driver.navigate().refresh();
+            sd.Select_your_subject_name(sujectname);
+
+            // Select your Semester
+            logger.info("Selecting Semester");
+            sd.user_select_semester();
+
+            // Select Teacher
+            Thread.sleep(1000);
+            String teacher = signupdata.get(roww).get("Select Teacher");
+            logger.info("Selecting Teacher: {}", teacher);
+            sd.user_select_teacherName(teacher);
+
+            //Enter Subject preference
+//            String preference = signupdata.get(roww).get("Preference");
+//            logger.info("Selecting Subject Name: {}", preference);
+//            sd.What_is_your_preference(preference);
+
+            // Score Percentage
+//            String scorePercentage = signupdata.get(roww).get("Score Percentage");
+//            logger.info("Entering Score Percentage: {}", scorePercentage);
+//            sd.Add_your_score_in_percentage(scorePercentage);
+
+
+
+            // Country
+            String country = signupdata.get(roww).get("Country");
+            logger.info("Selecting Country: {}", country);
+            sd.select_your_current_country_of_residence(country);
+
+            // State
+            String state = signupdata.get(roww).get("State");
+            logger.info("Selecting State: {}", state);
+            sd.select_your_current_country_of_residence(state);
+
+            // District
+            String district = signupdata.get(roww).get("District");
+            logger.info("Selecting District: {}", district);
+            sd.which_district(district);
+
+            // City
+            String city = signupdata.get(roww).get("City");
+            logger.info("Selecting City: {}", city);
+            sd.which_city(city);
+
+            // Pin code
+            String pincode = signupdata.get(roww).get("Pin code");
+            logger.info("Entering Pin code: {}", pincode);
+            sd.enter_pin_Code(pincode);
+
+            // First Address
+            String firstAddress = signupdata.get(roww).get("First Address");
+            logger.info("Entering First Address: {}", firstAddress);
+            sd.enter_first_address(firstAddress);
+
+            // Second Address
+            String secondAddresss = signupdata.get(roww).get("Second Addresss");
+            logger.info("Entering Second Address: {}", secondAddresss);
+            sd.what_is_your_second_address(secondAddresss);
+
+        } catch (Exception e) {
+            logger.error("Error occurred while filling signup chat details: {}", e.getMessage());
+            Screenshot.captureScreenshot(driver, "SignUpChat_Failure_" + roww);
             throw e;  // Re-throw the exception after logging
         }
     }
@@ -306,13 +515,13 @@ public class InnerBoxTextEntering {
             logger.info("Profile Inner Chat automated successfully.");
         } else {
             logger.error("Profile Inner Chat automation failed. Capturing screenshot...");
-            Screenshot.captureScreenshot(Hook.driver, "SignUpChat_Failure");
+            Screenshot.captureScreenshot(driver, "SignUpChat_Failure");
             Assert.fail("Profile Inner Chat was not completed successfully.");
         }
 
         Thread.sleep(1000); // Optional wait for synchronization
 
-        sdi = new Student_DashBoard(Hook.driver);
+        sdi = new Student_DashBoard(driver);
         logger.info("Logging out from student dashboard.");
         sdi.logOut();
     }

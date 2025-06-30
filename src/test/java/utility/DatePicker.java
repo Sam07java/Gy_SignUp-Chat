@@ -1,8 +1,6 @@
 package utility;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
@@ -13,11 +11,12 @@ import java.util.HashMap;
 import java.util.List;
 
 import static utility.CalanderObject.convertMonth;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 public class DatePicker {
 
     WebDriver driver;
-
+    private final Logger logger = LogManager.getLogger(this.getClass().getName());
     public DatePicker(WebDriver driver) {
         this.driver=driver;
     }
@@ -110,92 +109,156 @@ public class DatePicker {
         driver.findElement(By.xpath("//button[@class='chat_search_btn']")).click();
     }
 
-    public void datepickerG(String date,String month,String year)
-    {
-        WebElement datepick=driver.findElement(By.xpath("//button[@aria-label='Choose date']"));
-        datepick.click();
-        WebElement monthYear=driver.findElement(By.xpath("//div[@class='MuiPickersCalendarHeader-label css-1v994a0']"));
-        String my=monthYear.getText();
-       // System.out.println("First location"+my);
-        String[] parts=my.split(" ");
-        //System.out.println("1st Part="+parts[0]);
-      //  System.out.println("2nd Part="+parts[1]);
-        String displayed_month=parts[0];
-        String displayed_year=parts[1];
-        WebElement select_year=driver.findElement(By.xpath("//button[@aria-label='calendar view is open, switch to year view']"));
-        select_year.click();
-        List<WebElement> years=driver.findElements(By.xpath("//div[@class='MuiPickersYear-root css-j9zntq']//button"));
-        //For Year selection
-        boolean yearFound=false;
-        for(WebElement dateWebElement:years)
-        {
-            String yearText=dateWebElement.getText();
-            if(yearText.equals(year))
-            {
-                dateWebElement.click();
-                yearFound=true;
-                break;
+    public void datepickerGy(String date, String month, String year) {
+        try {
+            logger.info("Opening date picker....");
+            WebElement datepick = driver.findElement(By.xpath("//button[@aria-label='Choose date']"));
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("arguments[0].click()", datepick);
+
+            // Switch to year view
+            WebElement select_year = driver.findElement(By.xpath("//button[@aria-label='calendar view is open, switch to year view']"));
+            js.executeScript("arguments[0].click()", select_year);
+            // select_year.click();
+            logger.info("Switched to year view..");
+
+            // Select the desired year
+            List<WebElement> years = driver.findElements(By.xpath("//div[@class='MuiPickersYear-root css-j9zntq']//button"));
+            boolean yearFound = false;
+            for (WebElement yearElement : years) {
+                if (yearElement.getText().equals(year)) {
+                    yearElement.click();
+                    yearFound = true;
+                    logger.info("Year {} selected..", year);
+                    break;
+                }
             }
-        }
-        if(yearFound)
-        {
-            System.out.println("clicked on year");
-        }
-        else
-        {
-            System.out.println("Year not found");
-        }
-        //For Month Selection
-        while(true)
-        {
-            WebElement monthYear1=driver.findElement(By.xpath("//div[@class='MuiPickersCalendarHeader-label css-1v994a0']"));
-            String afterMonthYear=monthYear1.getText();
-            //System.out.println(afterMonthYear);
-            String achualdate=month+" "+year;
-            if(achualdate.equals(afterMonthYear)) {
-                break;
+            if (!yearFound) {
+                logger.warn("Year {} not found in list...", year);
+                return;
             }
-           // driver.findElement(By.xpath(" //button[@title='Previous month']")).click();
-            driver.findElement(By.xpath("//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeStart MuiIconButton-sizeMedium MuiPickersArrowSwitcher-button css-1fklenr']")).click();
-        }
-        //For Date Selection
-        List<WebElement> dateF=driver.findElements(By.xpath("//button[@class='MuiButtonBase-root MuiPickersDay-root MuiPickersDay-dayWithMargin css-zo8nzd']"));
-        //button[@class='MuiButtonBase-root MuiPickersDay-root MuiPickersDay-dayWithMargin css-126v4m4']
-        int dateSize=dateF.size();
-       System.out.println("date Size:="+dateSize);
-        for(int i=0;i<=dateSize;i++) {
-           WebElement cell=dateF.get(i);
-           if (cell.getText().equals(date)) {
-               cell.click();
-               System.out.println("date clicked");
-               break;
-           }
-        }
+
+            // Compare current and target month/year
+            Month targetMonthEnum = CalanderObject.convertMonth(month);
+            int targetMonthNum = targetMonthEnum.getValue();
+            int targetYearNum = Integer.parseInt(year);
+
+            while (true) {
+                WebElement displayed = driver.findElement(By.xpath("//div[@class='MuiPickersCalendarHeader-label css-1v994a0']"));
+                String[] currentParts = displayed.getText().split(" ");
+                Month currentMonthEnum = CalanderObject.convertMonth(currentParts[0]);
+                int currentMonthNum = currentMonthEnum.getValue();
+                int currentYearNum = Integer.parseInt(currentParts[1]);
+
+                if (currentMonthNum == targetMonthNum && currentYearNum == targetYearNum) {
+                    logger.info("Target month/year visible: {} {}", currentMonthEnum, currentYearNum);
+                    break;
+                }
+
+                if (currentYearNum > targetYearNum || (currentYearNum == targetYearNum && currentMonthNum > targetMonthNum)) {
+                    // Navigate to previous month
+                    driver.findElement(By.xpath("//button[@aria-label='Previous month']")).click();
+                    logger.info("Clicked previous month");
+                } else {
+                    // Navigate to next month
+                    driver.findElement(By.xpath("//button[@aria-label='Next month']")).click();
+                    logger.info("Clicked next month");
+                }
+            }
+
+            // Select the date
+            List<WebElement> dates = driver.findElements(By.xpath("//button[contains(@class,'MuiPickersDay-root')]"));
+            for (WebElement day : dates) {
+                if (day.getText().equals(date)) {
+                    day.click();
+                    logger.info("Date {} selected", date);
+                    break;
+                }
+            }
+
             driver.findElement(By.xpath("//button[@class='chat_search_btn']")).click();
-       /* while (true) {
+            logger.info("Click submit button clicked after date selection");
 
-            Month displayMonth = convertMonth(displayed_month);
-            Month requiredMonth = convertMonth(month);
+        } catch (Exception e) {
+            logger.error("Exception in date picker Gy: {}", e.getMessage(), e);
+        }
+    }
 
-            //compare
-            int result=requiredMonth.compareTo(displayMonth);
-            //0 months are equls
-            //>0 future month
-            //<0 past
 
-            if (result<0)
-            {
-                driver.findElement(By.xpath("//button[@title='Previous month']")).click();
+
+    public void datepickerG(String date, String month, String year) {
+        try {
+            logger.info("Opening date picker...");
+           // Thread.sleep(1000);
+            WebElement datepick = driver.findElement(By.xpath("//button[@aria-label='Choose date']"));
+            JavascriptExecutor js=(JavascriptExecutor)driver;js.executeScript("arguments[0].click()",datepick);
+          //  datepick.click();
+
+            WebElement monthYear = driver.findElement(By.xpath("//div[@class='MuiPickersCalendarHeader-label css-1v994a0']"));
+            String[] parts = monthYear.getText().split(" ");
+            String displayed_month = parts[0];
+            String displayed_year = parts[1];
+            logger.info("Initially displayed month and year: {} {}", displayed_month, displayed_year);
+
+            WebElement select_year = driver.findElement(By.xpath("//button[@aria-label='calendar view is open, switch to year view']"));
+            select_year.click();
+            logger.info("Switched to year view");
+
+            List<WebElement> years = driver.findElements(By.xpath("//div[@class='MuiPickersYear-root css-j9zntq']//button"));
+            boolean yearFound = false;
+            for (WebElement yearElement : years) {
+                String yearText = yearElement.getText();
+                if (yearText.equals(year)) {
+                    yearElement.click();
+                    yearFound = true;
+                    logger.info("Year {} selected", year);
+                    break;
+                }
             }
-            else if (result>0)
-            {
-                driver.findElement(By.xpath("//button[@title='Next month']")).click();
+            if (!yearFound) {
+                logger.warn("Year {} not found in list", year);
+                return;
             }
-            else
-            {
-                break;
+
+            logger.info("Waiting for month {} to be visible", month);
+            while (true) {
+                WebElement monthYear1 = driver.findElement(By.xpath("//div[@class='MuiPickersCalendarHeader-label css-1v994a0']"));
+                String afterMonthYear = monthYear1.getText();
+                if ((month + " " + year).equals(afterMonthYear)) {
+                    logger.info("Desired month and year displayed: {}", afterMonthYear);
+                    break;
+                }
+                driver.findElement(By.xpath("//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeStart MuiIconButton-sizeMedium MuiPickersArrowSwitcher-button css-1fklenr']")).click();
+                logger.info("Navigating to previous month...");
             }
-        }*/
+
+            List<WebElement> dateF = driver.findElements(By.xpath("//button[@class='MuiButtonBase-root MuiPickersDay-root MuiPickersDay-dayWithMargin css-zo8nzd']"));
+            logger.info("Total dates visible: {}", dateF.size());
+
+            boolean dateSelected = false;
+            for (int i = 0; i < dateF.size(); i++) {
+                WebElement cell = dateF.get(i);
+                if (cell.getText().equals(date)) {
+                    cell.click();
+                    logger.info("Date {} clicked", date);
+                    dateSelected = true;
+                    break;
+                }
+            }
+
+            if (!dateSelected) {
+                logger.warn("Date {} not found in calendar", date);
+                return;
+            }
+
+            driver.findElement(By.xpath("//button[@class='chat_search_btn']")).click();
+            logger.info("Search button clicked after date selection");
+
+        } catch (NoSuchElementException e) {
+            logger.error("Element not found: {}", e.getMessage());
+        } catch (Exception e) {
+            logger.error("An unexpected error occurred: ", e);
+        }
     }
 
 }

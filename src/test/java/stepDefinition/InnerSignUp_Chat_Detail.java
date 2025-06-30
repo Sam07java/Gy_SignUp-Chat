@@ -25,7 +25,7 @@ public class InnerSignUp_Chat_Detail {
     @When("User Select the Date of Birth Date= {string} Month= {string} Year= {string}")
     public void user_select_the_date_of_birth_date_month_year(String string, String string2, String string3) {
         dp=new DatePicker(Hook.driver);
-        dp.datepickerG(string,string2,string3);
+        dp.datepickerGy(string,string2,string3);
     }
 
     @When("User Enter Main learning Goal {string}")
@@ -67,19 +67,11 @@ public class InnerSignUp_Chat_Detail {
        } else{
            sd.select_Collage_type();
            System.out.println("collage Selected");
-//           sd.please_Select_your_University("KTU(Kerala Technical University)");
-//           sd.please_Select_your_Institution("MESITAM Chathnoor");
-//           sd.please_select_your_Course("Electronics and Communication");
-//           sd.please_select_your_Semester();
-//           sd.please_select_your_learningStyle();
-//           dp.selectYear("2022");
-
        }
     }
 
     @When("User Select University {string}")
-    public void User_Select_University(String university)
-    {
+    public void User_Select_University(String university) {
         sd.please_Select_your_University(university);
     }
 
@@ -172,7 +164,7 @@ public class InnerSignUp_Chat_Detail {
     }
 
     @When("User Select Your Subject Name {string}")
-    public void user_select_your_subject_name(String string) {
+    public void user_select_your_subject_name(String string) throws InterruptedException {
         sd.Select_your_subject_name(string);
     }
 

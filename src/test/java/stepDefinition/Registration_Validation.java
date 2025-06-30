@@ -51,7 +51,7 @@ public class Registration_Validation {
     public void click_sign_up_button() throws InterruptedException {
         logger.info("Clicking SignUp Now button");
         rp.click_SignUp_Now();
-        Thread.sleep(20000);
+        Thread.sleep(30000);
         logger.info("SignUp process initiated, waiting for 20 seconds for enter the OTP");
         // rp.registration_Validation();
     }
