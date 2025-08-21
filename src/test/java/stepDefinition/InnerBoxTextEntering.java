@@ -24,7 +24,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-import static hooks.Hook.driver;
+import static factory.BaseClass.driver;
+
+//import static hooks.Hook.driver;
 
 public class InnerBoxTextEntering {
 
@@ -56,7 +58,7 @@ public class InnerBoxTextEntering {
     public void fetchDataFromExcelSheetForSignInAndEnterCredentialsInSignIn(String sheet, Integer row) throws IOException {
         logger.info("Fetching SignIn credentials from Excel: Sheet = {}, Row = {}", sheet, row);
         exelUtility = new ExelUtility(path);
-        List<Map<String, String>> signupdata = exelUtility.storeData(path, sheet);
+        List<Map<String, String>> signupdata = exelUtility.storeData001(path, sheet);
 
         String userid = signupdata.get(row).get("Email ID");
         logger.info("Fetched Email ID: {}", userid);
@@ -147,12 +149,14 @@ public class InnerBoxTextEntering {
         logger.info("Fetching data from Excel sheet for student User: {}", sheetSignupchat);
 
         exelUtility = new ExelUtility(path);
-        List<Map<String, String>> signupdata = exelUtility.storeData(path, sheetSignupchat);
+        List<Map<String, String>> signupdata = exelUtility.storeData001(path, sheetSignupchat);
 
         try {
             // Enter First Name
-            Thread.sleep(3000);
+            Thread.sleep(2000);
             String name = signupdata.get(roww).get("Full Name");
+            driver.navigate().refresh();
+            Thread.sleep(3000);
             logger.info("Entering Full Name of student: {}", name);
             sd = new Student_DashBoard_InnerChatBox(driver);
             sd.enter_Your_FullName(name);
@@ -172,7 +176,7 @@ public class InnerBoxTextEntering {
             sd.enter_main_learning_goal(learningGoal);
 
             // Gender
-            Thread.sleep(1000);
+           // Thread.sleep(1000);
             String gender = signupdata.get(roww).get("Gender");
             logger.info("Selecting Gender: {}", gender);
             sd.select_Gender();
@@ -184,7 +188,7 @@ public class InnerBoxTextEntering {
             sd.enter_Mother_Name(mothername);
 
             // Father Name
-            Thread.sleep(1000);
+           // Thread.sleep(1000);
             String fathername = signupdata.get(roww).get("Father Name");
             logger.info("Entering Father's Name: {}", fathername);
             sd.enter_Father_Name(fathername);
@@ -201,7 +205,7 @@ public class InnerBoxTextEntering {
             sd.Upload_Profile_Picture(uploadPp);
 
             // Institute type
-            Thread.sleep(1000);
+           // Thread.sleep(1000);
             logger.info("Selecting Institute type");
             sd.select_School_type();
 
@@ -211,9 +215,8 @@ public class InnerBoxTextEntering {
             logger.info("Selecting School Name: {}", schoolName);
             sd.user_select_schoolName(schoolName);
 
-
             // Board
-            Thread.sleep(1000);
+           // Thread.sleep(1000);
             logger.info("Selecting Board");
             sd.select_your_board();
 
@@ -222,7 +225,6 @@ public class InnerBoxTextEntering {
             String classes = signupdata.get(roww).get("Classes");
             logger.info("Selecting Class: {}", classes);
             sd.select_your_classes(classes);
-
 
             // Hobbies
             String hobbies = signupdata.get(roww).get("Hobbies");
@@ -250,9 +252,11 @@ public class InnerBoxTextEntering {
             sd.What_is_your_mobile_number(whatsappno);
 
             // Subject Name
-            Thread.sleep(1000);
+           // Thread.sleep(1000);
             String sujectname = signupdata.get(roww).get("Subject Name");
             logger.info("Selecting Subject Name: {}", sujectname);
+//            driver.navigate().refresh();
+//            Thread.sleep(4000);
             sd.Select_your_subject_name(sujectname);
 
 //            // Preference
@@ -269,6 +273,16 @@ public class InnerBoxTextEntering {
             String teacher = signupdata.get(roww).get("Select Teacher");
             logger.info("Selecting Teacher..: {}", teacher);
             sd.user_select_teacherName(teacher);
+
+            //Enter Parent Email
+           String parentEmail = signupdata.get(roww).get("Parent EmailI'D");
+            logger.info("Enter the parent email id..: {}", parentEmail);
+            sd.enter_the_parentEmailID(parentEmail);
+
+           //ENter Parent Phone no.
+            String phone= signupdata.get(roww).get("PhoneNo");
+            logger.info("Enter the parent phone No..: {}", phone);
+            sd.enter_the_parentPhoneNo(phone);
 
             // Country
             String country = signupdata.get(roww).get("Country");
@@ -317,10 +331,12 @@ public class InnerBoxTextEntering {
         logger.info("Fetching data from Excel sheet: {}", sheetSignupchat);
 
         exelUtility = new ExelUtility(path);
-        List<Map<String, String>> signupdata = exelUtility.storeData(path, sheetSignupchat);
+        List<Map<String, String>> signupdata = exelUtility.storeData001(path, sheetSignupchat);
 
         try {
             // Enter First Name
+            driver.navigate().refresh();
+            Thread.sleep(8000);
             String name = signupdata.get(roww).get("Full Name");
             logger.info("Entering Full Name: {}", name);
             sd = new Student_DashBoard_InnerChatBox(driver);
@@ -395,11 +411,9 @@ public class InnerBoxTextEntering {
             sd.please_select_your_Course(course);
 
             //Select Semester
-
             String semester0 = signupdata.get(roww).get("Semester");
             logger.info("Selecting Class: {}", semester0);
             sd.please_select_your_Semester(semester0);
-
 
             //Learning Style
             logger.info("Selecting learning style");
@@ -418,7 +432,6 @@ public class InnerBoxTextEntering {
             // Language
             String language = signupdata.get(roww).get("Language");
             logger.info("Selecting Known Language: {}", language);
-
             sd.select_known_language(language);
 
             // Language proficiency
@@ -436,10 +449,11 @@ public class InnerBoxTextEntering {
             sd.What_is_your_mobile_number(whatsappno);
 
             // Subject Name
-          //  Thread.sleep(10000);
+           // Thread.sleep(10000);
             String sujectname = signupdata.get(roww).get("Subject Name");
             logger.info("Selecting Subject Name: {}", sujectname);
-            driver.navigate().refresh();
+//           driver.navigate().refresh();
+//           Thread.sleep(4000);
             sd.Select_your_subject_name(sujectname);
 
             // Select your Semester
@@ -462,7 +476,15 @@ public class InnerBoxTextEntering {
 //            logger.info("Entering Score Percentage: {}", scorePercentage);
 //            sd.Add_your_score_in_percentage(scorePercentage);
 
+            //Parent Email
+            String parentEmail = signupdata.get(roww).get("Parent EmailI'D");
+            logger.info("Enter the parent email id..: {}", parentEmail);
+            sd.enter_the_parentEmailID(parentEmail);
 
+            //ENter Parent Phone no.
+            String phone= signupdata.get(roww).get("PhoneNo");
+            logger.info("Enter the parent phone No..: {}", phone);
+            sd.enter_the_parentPhoneNo(phone);
 
             // Country
             String country = signupdata.get(roww).get("Country");

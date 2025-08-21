@@ -8,7 +8,9 @@ import org.openqa.selenium.By;
 import page.Student_DashBoard;
 import page.studentprofile_edit.*;
 
-import static hooks.Hook.driver;
+import static factory.BaseClass.driver;
+
+//import static hooks.Hook.driver;
 
 public class Student_Profile_Information_Validation {
 

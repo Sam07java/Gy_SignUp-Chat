@@ -2,12 +2,30 @@ package page;
 
 import org.junit.Assert;
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.FindBy;
 
 public class RegistrationPage extends BasePage {
 
     public RegistrationPage(WebDriver driver) {
         super(driver);
     }
+
+    @FindBy(xpath = "//u[normalize-space()='Register As Teacher']")
+    WebElement signup_for_teacherLink;
+
+    @FindBy(xpath = "//u[normalize-space()='Register As Institution']")
+    WebElement signup_fro_instituteLink;
+
+    public void click_on_Register_as_Teacher(){
+//        signup_for_teacherLink.click();
+        JavascriptExecutor js=(JavascriptExecutor)driver;
+        js.executeScript("arguments[0].click()",signup_for_teacherLink);
+    }
+
+    public void click_on_Register_as_Institute(){
+        signup_for_teacherLink.click();
+    }
+
 
     public void click_Registration_Button() {
         driver.findElement(By.xpath("//a[normalize-space()='Register']")).click();
@@ -80,5 +98,7 @@ public class RegistrationPage extends BasePage {
 
         }
     }
+
+
 
 }

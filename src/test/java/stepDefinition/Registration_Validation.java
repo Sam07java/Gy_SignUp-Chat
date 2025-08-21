@@ -1,5 +1,6 @@
 package stepDefinition;
 
+import factory.BaseClass;
 import hooks.Hook;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -8,6 +9,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import page.RegistrationPage;
+import page.Student_DashBoard;
 import utility.ExelUtility;
 
 import java.io.IOException;
@@ -17,20 +19,23 @@ import java.util.Map;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
+//import static hooks.Hook.driver;
+
 public class Registration_Validation {
 
     WebDriver driver;
    public RegistrationPage rp;
    public ExelUtility exelUtility;
+   public Student_DashBoard sdi;
    private final Logger logger=LogManager.getLogger(this.getClass().getName());
     String path = System.getProperty("user.dir") + "/src/test-data/data for sign-up chat.xlsx";
-
-    // public String path="F:\\Gyansetu\\G_TestCase001\\src\\test-data\\data for sign-up chat.xlsx";
+//     public String path="F:\\Gyansetu\\G_TestCase001\\src\\test-data\\data for sign-up chat.xlsx";
  //  String path = System.getProperty("user.dir") + "\\src\\test-data\\data for sign-up chat.xlsx";
+
  @Given("Navigate Registration Page")
  public void navigate_registration_page() {
      logger.info("Navigating to the registration page");
-     rp = new RegistrationPage(Hook.driver);
+     rp = new RegistrationPage(BaseClass.getDriver());
      rp.click_Registration_Button();
      logger.info("Clicked on Registration button");
  }
@@ -75,7 +80,7 @@ public class Registration_Validation {
     public void fetchSignupDataFromExcelSheet(String sheetName, Integer rowno) throws IOException {
         logger.info("Fetching data from Excel - Sheet: {}, Row: {}", sheetName, rowno);
         exelUtility = new ExelUtility(path);
-        List<Map<String, String>> signupdata = exelUtility.storeData(path, sheetName);
+        List<Map<String, String>> signupdata = exelUtility.storeData001(path, sheetName);
 
         String userid = signupdata.get(rowno).get("Email ID");
         logger.info("Fetched Email ID: {}", userid);
@@ -90,7 +95,14 @@ public class Registration_Validation {
         rp.Enter_Password(password);
 
         rp.click_checkBox_TermsAndCondition();
-        logger.info("Checked Terms and Conditions checkbox");
+        logger.info("Checked Terms and Conditions checkbox.....");
     }
 
+    @Then("logout after signup")
+    public void logoutAfterSignup() throws InterruptedException {
+        Thread.sleep(1000); // Optional wait for synchronization
+        sdi = new Student_DashBoard(BaseClass.getDriver());
+        logger.info("Logging out from student dashboard.");
+        sdi.signup_chat_close();
+    }
 }

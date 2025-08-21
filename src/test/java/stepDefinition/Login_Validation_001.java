@@ -1,5 +1,6 @@
 package stepDefinition;
 
+import factory.BaseClass;
 import hooks.Hook;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -19,8 +20,8 @@ public class Login_Validation_001 {
     public void navigate_to_login_page() throws InterruptedException {
 
         //Thread.sleep(2000);
-        loginpage= new LoginPage(Hook.driver);
-        hp=new HomePage(Hook.driver);
+        loginpage= new LoginPage(BaseClass.getDriver());
+        hp=new HomePage(BaseClass.getDriver());
         hp.SignIn_with_Email();
     }
     @When("Enter the valid Credential {string} and {string}")
@@ -28,16 +29,14 @@ public class Login_Validation_001 {
         loginpage.EnterUserName(username);
         //runmba@gmail.com
         loginpage.EnterPassword(password);
-
     }
     @Then("Validate Dashboard is Displayed")
     public void validate_dashboard_displayed_or_not() throws InterruptedException {
         loginpage.ClickSign_Now();
         loginpage.validatestudentpriflelogin();
 
-        sd=new Student_DashBoard(Hook.driver);
+        sd=new Student_DashBoard(BaseClass.getDriver());
         sd.logOut();
-
     }
 
 

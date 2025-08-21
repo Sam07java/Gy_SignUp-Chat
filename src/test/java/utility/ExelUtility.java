@@ -8,8 +8,11 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -30,6 +33,55 @@ public class ExelUtility {
         this.path=path;
     }
 
+    static Logger logger = LogManager.getLogger(ExelUtility.class);
+
+
+    public List<Map<String,String>> storeData001(String filePath, String sheetName) throws IOException {
+        logger.info("Starting to read Excel data from file: " + filePath + ", sheet: " + sheetName);
+
+        fi = new FileInputStream(filePath);
+        workbook = new XSSFWorkbook(fi);
+        sheet = workbook.getSheet(sheetName);
+
+        if (sheet == null) {
+            logger.error("Sheet with name '" + sheetName + "' not found.");
+            throw new IllegalArgumentException("Sheet with name '" + sheetName + "' not found.");
+        }
+
+        int lastRowNo = sheet.getLastRowNum();
+        logger.info("Total rows found (excluding header): " + lastRowNo);
+
+        List<Map<String,String>> excelData = new ArrayList<>();
+        Row headerRow = sheet.getRow(0);
+        if (headerRow == null) {
+            throw new IllegalArgumentException("Header row is missing in sheet: " + sheetName);
+        }
+
+        DataFormatter formatter = new DataFormatter();
+
+        for (int i = 1; i <= lastRowNo; i++) {
+            row = sheet.getRow(i);
+            if (row == null || row.getLastCellNum() == -1) {
+                logger.warn("Skipping empty/null row at index: " + i);
+                continue;
+            }
+
+            LinkedHashMap<String, String> columnMapdata = new LinkedHashMap<>();
+            for (int col = 0; col < headerRow.getLastCellNum(); col++) {
+                String header = formatter.formatCellValue(headerRow.getCell(col));
+                String value = formatter.formatCellValue(row.getCell(col));
+                columnMapdata.put(header, value);
+            }
+
+            excelData.add(columnMapdata);
+            logger.info("Row " + i + " processed and added to data list.");
+        }
+
+        workbook.close();
+        fi.close();
+        logger.info("Excel data extraction completed successfully.");
+        return excelData;
+    }
 
     public int getRowCount(String sheetName) throws IOException, IOException {
         fi=new FileInputStream(path);
@@ -79,6 +131,10 @@ public class ExelUtility {
         return Data;
     }
 
+
+
+
+
     public List<Map<String,String>>storeData(String filePath, String sheetName) throws IOException {
         fi=new FileInputStream(filePath);
         workbook=new XSSFWorkbook(fi);
@@ -88,6 +144,10 @@ public class ExelUtility {
         for(int i = 0; i<= lastRowNo; i++)
         {
             row = sheet.getRow(i);
+            if (row == null) {
+                System.out.println("Row: "+i);
+                throw new IllegalArgumentException("Row is null. Ensure the Excel sheet and row index are valid.");
+            }
             int totalColumn = row.getLastCellNum();
             LinkedHashMap<String, String> columnMapdata=new LinkedHashMap<String,String>();
             String Data1 = null;

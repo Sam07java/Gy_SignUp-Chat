@@ -1,5 +1,7 @@
 package stepDefinition;
 
+import factory.BaseClass;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
@@ -9,7 +11,9 @@ import page.studentprofile_edit.*;
 
 import java.util.List;
 
-import static hooks.Hook.driver;
+import static factory.BaseClass.driver;
+
+//import static hooks.Hook.driver;
 
 public class profileEditPage_Validation_With_SignUpChat {
 
@@ -21,13 +25,14 @@ public class profileEditPage_Validation_With_SignUpChat {
     Contact_Details cd;
     Subject_Preference sp;
     SoftAssert sa;
+    ParentPage pg;
 
     @When("Validate whether First Name {string} with given input of SignUp Chat")
     public void validate_whether_first_name_with_given_input_of_sign_up_chat(String firstName) throws InterruptedException {
-        sd=new Student_DashBoard(driver);
+        sd=new Student_DashBoard(BaseClass.getDriver());
        // sd.profile_edit_page();
        // Thread.sleep(2000);
-        bi=new Basic_informationPage(driver);
+        bi=new Basic_informationPage(BaseClass.getDriver());
         sa=new SoftAssert();
 
         try {
@@ -109,9 +114,8 @@ public class profileEditPage_Validation_With_SignUpChat {
 
     @When("Validate Gender with SignUp Chat Input.")
     public void validate_gender_with_sign_up_chat_input() {
-        SoftAssert s=new SoftAssert();
             sa.assertTrue(bi.Gender());
-
+            sa.assertAll();
     }
 
     @Then("Click Submit Button")
@@ -123,8 +127,7 @@ public class profileEditPage_Validation_With_SignUpChat {
 
     @Then("Validate whether the Address Page is Displayed")
     public void validate_whether_the_address_page_is_displayed() throws InterruptedException {
-
-        ap=new AddressPage(driver);
+        ap=new AddressPage(BaseClass.getDriver());
     }
 
     @Then("Check if Country Selected is correct with the input from the SignUP chat {string}.")
@@ -227,7 +230,7 @@ public class profileEditPage_Validation_With_SignUpChat {
     public void click_the_next_button() throws InterruptedException {
         ap.Click_Next_Button();
         Thread.sleep(1000);
-       // sa.assertAll();
+        sa.assertAll();
     }
 
     @Then("Naviagte to Hobbies and Language Page.")
@@ -267,7 +270,7 @@ public class profileEditPage_Validation_With_SignUpChat {
     public void click_next_button() throws InterruptedException {
         hpp.Click_Button();
         Thread.sleep(1000);
-      //  sa.assertAll();
+        sa.assertAll();
     }
 
     @Then("Verify whether Academic History Page is displayed or not")
@@ -414,7 +417,7 @@ public class profileEditPage_Validation_With_SignUpChat {
     public void click_the_next_button_of_academic_history() throws InterruptedException {
         ahh.Click_Next_Button();
         Thread.sleep(1000);
-       // sa.assertAll();
+        sa.assertAll();
     }
 
     @Then("Check if Contact Details Page is Displayed or not")
@@ -537,4 +540,54 @@ public class profileEditPage_Validation_With_SignUpChat {
         sd.logOut();
         sa.assertAll();
     }
+
+    @And("Verify the Parent Email I'd with sign-up chat input {string}")
+    public void verifyTheParentEmailIDWithSignUpChatInput(String eamil) throws InterruptedException {
+        pg= new ParentPage(driver);
+        try {
+            sa.assertEquals(eamil, pg.parent_EmailID());
+            System.out.println( pg.parent_EmailID());
+        } catch (AssertionError e) {
+            System.out.println("Assertion failed: Expected [" + eamil + "], but found [" +  pg.parent_EmailID() + "]");
+            sa.fail("User Score Percentage Validation Failed");
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @And("Verify the Parent Phone Number with sign-up chat input {string}")
+    public void verifyTheParentPhoneNumberWithSignUpChatInput(String phoneNo) {
+        try {
+            sa.assertEquals(phoneNo,  pg.parent_phoneNo());
+            System.out.println( pg.parent_phoneNo());
+        } catch (AssertionError e) {
+            System.out.println("Assertion failed: Expected [" + phoneNo + "], but found [" +  pg.parent_phoneNo() + "]");
+            sa.fail("User Score Percentage Validation Failed");
+        }
+
+        pg.click_Next_Button();
+    }
+
+    @And("Verify the Class is selected with Sign-up chat input {string}")
+    public void verifyTheClassIsSelectedWithSignUpChatInput(String cl) {
+        try {
+            sa.assertEquals(cl, sp.studentclass());
+            System.out.println(sp.studentclass());
+        } catch (AssertionError e) {
+            System.out.println("Assertion failed: Expected [" + cl + "], but found [" + sp.studentclass() + "]");
+            sa.fail("User Email Validation Failed");
+        }
+    }
+
+    @And("Verify the Teacher is selected with sign-up chat input {string}")
+    public void verifyTheTeacherIsSelectedWithSignUpChatInput(String teacher) {
+        try {
+            sa.assertEquals(teacher, sp.teacher());
+            System.out.println(sp.teacher());
+        } catch (AssertionError e) {
+            System.out.println("Assertion failed: Expected [" + teacher + "], but found [" + sp.teacher() + "]");
+            sa.fail("User Email Validation Failed");
+        }
+    }
+
 }

@@ -7,6 +7,7 @@ import java.time.Duration;
 import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utility.Screenshot;
@@ -20,26 +21,93 @@ public class Student_DashBoard_InnerChatBox extends BasePage{
 
 Logger logger=LogManager.getLogger(this.getClass().getName());
 
-    public void enter_Your_FullName(String fullName) {
-        logger.info("Entering full name: " + fullName);
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            By inputLocator = By.xpath("//input[@placeholder='Type your answer and press enter']");
+//    public void enter_Your_FullName(String fullName) {
+//        logger.info("Entering full name: " + fullName);
+//        try {
+//          //  Thread.sleep(3000);
+//          //  driver.navigate().refresh();
+////Thread.sleep(7000);
+////            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+////          //  By inputLocator = By.xpath("//input[@placeholder='Type your answer and press enter']");
+////            By inputLocator = By.xpath("//input[@class='form-control']");
+////            ////div[@class='chatinput-body']
+////           WebElement full = wait.until(ExpectedConditions.visibilityOfElementLocated(inputLocator));
+////            full.sendKeys(fullName);
+////            // Short wait for any front-end debounce logic (non-blocking)
+////
+////            full.sendKeys(Keys.ENTER);
+////            JavascriptExecutor js = (JavascriptExecutor) driver;
+////            js.executeScript(
+////                    "arguments[0].dispatchEvent(new KeyboardEvent('keydown', {key:'Enter', code: 'Enter', keyCode: 13, which: 13, bubbles: true}));",
+////                    full
+////            );
+//            WebElement full = driver.findElement(By.xpath("//input[@class='form-control']"));
+//            Actions actions = new Actions(driver);
+//            actions.moveToElement(full).click().sendKeys(fullName).sendKeys(Keys.ENTER).perform();
+//
+//            logger.info("Full name entered successfully.");
+//        } catch (Exception e) {
+//            logger.error("Failed to enter full name: " + e.getMessage(), e);
+//            Screenshot.captureScreenshot(driver, "enter_Your_FullName");
+//        }
+//    }
 
-            WebElement full = wait.until(ExpectedConditions.visibilityOfElementLocated(inputLocator));
-            full.sendKeys(fullName);
 
-            // Short wait for any front-end debounce logic (non-blocking)
-            Thread.sleep(300);
+//public void enter_Your_FullName(String fullName) {
+//    logger.info("Entering full name: " + fullName);
+//    try {
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//        By inputLocator = By.xpath("//input[@class='form-control']");
+//        WebElement inputField = wait.until(ExpectedConditions.elementToBeClickable(inputLocator));
+//
+//        // Scroll into view and focus
+//        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", inputField);
+//        ((JavascriptExecutor) driver).executeScript("arguments[0].focus();", inputField);
+//
+//        // Set the value using JS
+//        ((JavascriptExecutor) driver).executeScript("arguments[0].value = arguments[1];", inputField, fullName);
+//
+//        // Dispatch actual Enter key event
+//        String enterScript = """
+//            var event = new KeyboardEvent('keydown', {
+//                bubbles: true,
+//                cancelable: true,
+//                keyCode: 13
+//            });
+//            arguments[0].dispatchEvent(event);
+//        """;
+//
+//        ((JavascriptExecutor) driver).executeScript(enterScript, inputField);
+//
+//        logger.info("Full name entered and Enter key dispatched successfully.");
+//    } catch (Exception e) {
+//        logger.error("Failed to enter full name: " + e.getMessage(), e);
+//        Screenshot.captureScreenshot(driver, "enter_Your_FullName");
+//    }
+//}
+public void enter_Your_FullName(String fullName) {
+    logger.info("Entering full name: " + fullName);
+    try {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        By inputLocator = By.xpath("//input[@class='form-control']");
+        WebElement inputField = wait.until(ExpectedConditions.elementToBeClickable(inputLocator));
 
-            full.sendKeys(Keys.ENTER);
-            logger.info("Full name entered successfully.");
-        } catch (Exception e) {
-            logger.error("Failed to enter full name: " + e.getMessage(), e);
-            Screenshot.captureScreenshot(driver, "enter_Your_FullName");
-        }
+        // Click and type using Actions (simulate human)
+        Actions actions = new Actions(driver);
+        actions.moveToElement(inputField)
+                .click()
+                .sendKeys(fullName)
+                .pause(Duration.ofMillis(300)) // simulate slight pause
+                .sendKeys(Keys.ENTER)
+                .build()
+                .perform();
+
+        logger.info("Full name entered with Actions and Enter sent.");
+    } catch (Exception e) {
+        logger.error("Failed to enter full name with Actions: " + e.getMessage(), e);
+        Screenshot.captureScreenshot(driver, "enter_Your_FullName");
     }
-
+}
 
     public void enter_main_learning_goal(String goal) {
         logger.info("Entering main learning goal: " + goal);
@@ -407,6 +475,39 @@ Logger logger=LogManager.getLogger(this.getClass().getName());
         }
     }
 
+    public void enter_the_parentEmailID(String emailid){
+        logger.info("Entering Parent Email ID.: " + emailid);
+        try {
+            WaitHelper waitHelper = new WaitHelper(driver);
+
+            By parentEmailfield = By.xpath("//input[@placeholder='Type your answer and press enter']");
+            WebElement emailidweb = waitHelper.waitForVisibility(parentEmailfield, 10);
+
+            emailidweb.sendKeys(emailid);
+            emailidweb.sendKeys(Keys.ENTER);
+            logger.info("Parent Email id entered successfully..");
+        } catch (Exception e) {
+            logger.error("Failed to Enter the parent email id: " + e.getMessage(), e);
+            Screenshot.captureScreenshot(driver, "enter_ParentEmailID");
+        }
+    }
+
+    public void enter_the_parentPhoneNo(String phoneNO){
+        logger.info("Entering Parent Phone No.: " + phoneNO);
+        try {
+            WaitHelper waitHelper = new WaitHelper(driver);
+
+            By phoneNOField = By.xpath("//input[@placeholder='Type your answer and press enter']");
+            WebElement emailidweb = waitHelper.waitForVisibility(phoneNOField, 10);
+
+            emailidweb.sendKeys(phoneNO);
+            emailidweb.sendKeys(Keys.ENTER);
+            logger.info("Parent Email id entered successfully.");
+        } catch (Exception e) {
+            logger.error("Failed to Enter the parent phone No.: " + e.getMessage(), e);
+            Screenshot.captureScreenshot(driver, "enter_ParentPhoneNo.");
+        }
+    }
 
     public void select_your_board() {
         try {
@@ -580,14 +681,14 @@ Logger logger=LogManager.getLogger(this.getClass().getName());
 
 
     public void Select_your_subject_name(String subjectPreference) throws InterruptedException {
-
-
         Thread.sleep(2000);
         try {
             WaitHelper waitHelper = new WaitHelper(driver);
             By dropdownLocator = By.className("css-19bb58m");
             WebElement dropdown = waitHelper.waitForClickable(dropdownLocator, 10);
             dropdown.click();
+
+            Screenshot.captureScreenshot(driver, "ScreenShot of subject in Sign-up Chat");
 
             By optionsLocator = By.xpath("//div[@role='option']");
             waitHelper.waitForVisibility(optionsLocator, 10); // wait for options visible

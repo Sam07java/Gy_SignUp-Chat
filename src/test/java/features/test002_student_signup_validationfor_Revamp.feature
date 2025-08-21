@@ -1,9 +1,8 @@
 Feature: Validate Student Registration page
-  #Scenario:Check Whether Student Registration page is working properly as per given Credential.
-   # Given Navigate Registration Page
-   # When User Enter Email "sameer7860n@gmail.com" and Password "Same@1213"
-   # Then Click SignUp Button
-#
+#  Scenario:Check Whether Student Registration page is working properly as per given Credential.
+#    Given Navigate Registration Page
+#    When User Enter Email "sameer7860n@gmail.com" and Password "Same@1213"
+#    Then Click SignUp Button
 
   Scenario Outline: Register student User in Gyansetu
     Given Navigate Registration Page
@@ -14,3 +13,11 @@ Feature: Validate Student Registration page
       | username                    | password  | phoneNo    |
       | sameerschool07@yopmail.com  | Same@2323 | 9893483500 |
       | sameercollage07@yopmail.com | Same@2323 | 9893483501   |
+
+Scenario Outline: Login as student profile
+  Given Enter Student Valid Credential on SigIn Page Email "<username>" and Password "<password>"
+  When Click SignIn Button
+
+  Examples:
+    | username             | password  |
+    | payal001@yopmail.com | Same@2323 |

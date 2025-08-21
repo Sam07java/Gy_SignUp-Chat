@@ -10,12 +10,28 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import static hooks.Hook.driver;
+
 
 public class Student_DashBoard extends BasePage {
 
     public Student_DashBoard(WebDriver driver) {
         super(driver);
+    }
+
+    public void signup_chat_close(){
+        driver.findElement(By.xpath("//button[@aria-label='close' and contains(@class, 'MuiIconButton-root')]")).click();
+        driver.findElement(By.xpath("//button[contains(@class, 'MuiButton-root') and text()='Ok']")).click();
+
+        WebElement dropdownToggle=  driver.findElement(By.xpath("//a[@class='dropdown-toggle dropdown-toggle-nocaret']"));
+        JavascriptExecutor js=(JavascriptExecutor)driver;
+        js.executeScript("arguments[0].click()",dropdownToggle);
+
+        WebElement logoutButton= driver.findElement(By.xpath("//button[text()=' Logout']"));
+        //driver.findElement(By.xpath("//button[@class='dropdown-item d-flex align-items-center gap-2 py-2']")).click();
+        //button[text()='Logout']
+
+        JavascriptExecutor jss=(JavascriptExecutor)driver;
+        jss.executeScript("arguments[0].click()",logoutButton);
     }
 
     public void logOut() throws InterruptedException {

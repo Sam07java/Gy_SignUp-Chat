@@ -5,12 +5,7 @@ Feature:Automate signUp chat using Example keyWord-->User College Student
     When User Enter Email "<username>", Password "<password>", phoneNo "<phoneNo>"
     Then Click SignUp Button
 
-    Examples:
-      | username             | password  | phoneNo    |
-      | payal001@yopmail.com | Same@2323 | 9893483696 |
-#      | sameer005@yopmail.com | Same@2323 | 9893483484 |
-
-  Scenario Outline: Enter Details Sign Up Chat.
+    Examples:  Scenario Outline: Enter Details Sign Up Chat.
     Given Enter Student Valid Credential on SigIn Page Email "<username>" and Password "<password>"
     When Click SignIn Button
     And User enter the Full Name "<FullName>"
@@ -49,10 +44,15 @@ Feature:Automate signUp chat using Example keyWord-->User College Student
     And User Enter First Address "Manzil manzil"
     And User Enter Second Address "Valanjavazhi"
     Then Validate whether SignUp chat is Completed
+      | username                         | password  | phoneNo    |
+      | deillounnellobo-1748@yopmail.com | Same@2323 | 9893222220 |
+#      | sameer005@yopmail.com | Same@2323 | 9893483484 |
+
+
 
     Examples:
-      | username                | password  | FullName | MotherName | FatherName | MobileNo   | InstituteType | Year | University                       | Institution | Course | Semester   | Subject preference | Teacher | Day | Month  | DOBYear |
-      | payal001@yopmail.com | Same@2323 | Akhil J  | Sarasu     | Thambi     | 9877334477 | College       | 2000 | KTU(Kerala Technical University) | MESITAM     | ECE    | Semester 1 | Basic Electronics  | Akhil P | 23  | August | 2011    |
+      | username                         | password  | FullName | MotherName | FatherName | MobileNo   | InstituteType | Year | University                       | Institution | Course | Semester   | Subject preference | Teacher | Day | Month  | DOBYear |
+      | deillounnellobo-1748@yopmail.com | Same@2323 | Akhil J  | Sarasu     | Thambi     | 9877334477 | College       | 2000 | KTU(Kerala Technical University) | MESITAM     | ECE    | Semester 1 | Basic Electronics  | Akhil P | 23  | August | 2011    |
 
   Scenario Outline: Validate profile details with given input of Sign Up Chat
     Given Enter Student Valid Credential on SigIn Page Email "<username>" and Password "<password>"
@@ -101,6 +101,6 @@ Feature:Automate signUp chat using Example keyWord-->User College Student
     Then Validate Profile Edit page is entered Completed or not.
 
     Examples:
-      | username             | password  | FirstName | SecondName | MotherName | FatherName | MobileNo   | InstituteType | Year | University                       | Institution Name | Course | Semester   | Subject preference | DOB        |
-      | payal001@yopmail.com | Same@2323 | Akhil     | J          | Sarasu     | Thambi     | 9893483696 | College       | 2000 | KTU(Kerala Technical University) | MESITAM          | ECE    | Semester 1 | Basic Electronics  | 23/08/2011 |
+      | username                         | password  | FirstName | SecondName | MotherName | FatherName | MobileNo   | InstituteType | Year | University                       | Institution Name | Course | Semester   | Subject preference | DOB        |
+      | deillounnellobo-1748@yopmail.com | Same@2323 | Akhil     | J          | Sarasu     | Thambi     | 9893483696 | College       | 2000 | KTU(Kerala Technical University) | MESITAM          | ECE    | Semester 1 | Basic Electronics  | 23/08/2011 |
     #  | sabin09@gmail.com | Same@2323 | Sabin     | NN         | Sabu S     | Radha V    | 8964363772 | College       | 1993 | KTU(Kerala Technical University) | Sreechithra college | B.Tech ECE    | Semester 3 | DSP                                  | 14/11/2008 |

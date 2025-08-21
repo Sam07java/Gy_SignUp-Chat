@@ -10,6 +10,10 @@ import page.Student_DashBoard;
 import page.Student_DashBoard_InnerChatBox;
 import utility.DatePicker;
 
+import static factory.BaseClass.driver;
+
+//import static hooks.Hook.driver;
+
 public class InnerSignUp_Chat_Detail {
 
     Student_DashBoard_InnerChatBox sd;
@@ -17,14 +21,17 @@ public class InnerSignUp_Chat_Detail {
     Student_DashBoard sdi;
 
     @When("User enter the Full Name {string}")
-    public void user_enter_the_full_name(String fullName) {
-        sd=new Student_DashBoard_InnerChatBox(Hook.driver);
+    public void user_enter_the_full_name(String fullName) throws InterruptedException {
+            Thread.sleep(3000);
+            driver.navigate().refresh();
+            Thread.sleep(7000);
+        sd=new Student_DashBoard_InnerChatBox(driver);
         sd.enter_Your_FullName(fullName);
     }
 
     @When("User Select the Date of Birth Date= {string} Month= {string} Year= {string}")
     public void user_select_the_date_of_birth_date_month_year(String string, String string2, String string3) {
-        dp=new DatePicker(Hook.driver);
+        dp=new DatePicker(driver);
         dp.datepickerGy(string,string2,string3);
     }
 
@@ -168,6 +175,17 @@ public class InnerSignUp_Chat_Detail {
         sd.Select_your_subject_name(string);
     }
 
+    @And("User Enter the Parent Email I'D {string}")
+    public void userEnterTheParentEmailID(String parentEmail) {
+        sd.enter_the_parentEmailID(parentEmail);
+    }
+
+    @And("User Enter the Parent Phone Number {string}")
+    public void userEnterTheParentPhoneNumber(String phone) {
+        sd.enter_the_parentPhoneNo(phone);
+
+    }
+
     @When("User Enter subject preference {string}")
     public void user_enter_subject_preference(String string) {
         sd.What_is_your_preference(string);
@@ -218,7 +236,7 @@ public class InnerSignUp_Chat_Detail {
         sd.validateInnerChatBox();
         System.out.println("Profile Inner Chat Automated Successfully");
         Thread.sleep(1000);
-        sdi=new Student_DashBoard(Hook.driver);
+        sdi=new Student_DashBoard(driver);
         sdi.logOut();
     }
 
@@ -232,5 +250,6 @@ public class InnerSignUp_Chat_Detail {
     public void userSelectTeacher(String arg0) {
             sd.user_select_teacherName(arg0);
     }
+
 
 }
