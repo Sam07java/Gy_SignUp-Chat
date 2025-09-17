@@ -8,4 +8,5 @@ Feature: Register as Teacher using Registration form
     Then Validate whether registration is successfully or not.
     Examples:
       | SheetName           | RowNumber |
-      | Register as Teacher | 0         |
+      | Register as Teacher | 2         |
+#      | Register as Teacher | 3         |

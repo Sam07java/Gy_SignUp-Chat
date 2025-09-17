@@ -72,4 +72,10 @@ public class LoginPage extends BasePage {
             Assert.fail("Login failed - Unexpected Exception");
         }
     }
+
+    public void click_SignUp_Here(){
+        WebElement signup_element = driver.findElement(By.xpath("//a[text()='Sign up here']"));
+        JavascriptExecutor js=(JavascriptExecutor)driver;
+        js.executeScript("arguments[0].click()",signup_element);
+    }
 }

@@ -112,6 +112,42 @@ public class RgistrationPage_Teacher extends BasePage{
         }
     }
 
+    public void select_institute_college(String inst){
+        driver.findElement(By.xpath("/html/body/div/div[2]/div/div[2]/div/div/div/div/div[2]/div/div/div/div")).click();
+        List<WebElement> instituteele = driver.findElements(By.xpath("//li[@role='option']"));
+        for(WebElement ele : instituteele){
+            String instt=ele.getText();
+            if(instt.equalsIgnoreCase(inst)){
+                ele.click();
+                break;
+            }
+        }
+    }
+
+    public void select_course(String course){
+        driver.findElement(By.id("demo3-multiple-name-0")).click();
+        List<WebElement> instituteele = driver.findElements(By.xpath("//li[@role='option']"));
+        for(WebElement ele : instituteele){
+            String instt=ele.getText();
+            if(instt.equalsIgnoreCase(course)){
+                ele.click();
+                break;
+            }
+        }
+    }
+
+    public void select_semester(String sem){
+        driver.findElement(By.id("semester_select_0")).click();
+        List<WebElement> instituteele = driver.findElements(By.xpath("//li[@role='option']"));
+        for(WebElement ele : instituteele){
+            String instt=ele.getText();
+            if(instt.equalsIgnoreCase(sem)){
+                ele.click();
+                break;
+            }
+        }
+    }
+
     public void teaching_Experince(String exp){
         driver.findElement(By.name("experience")).sendKeys(exp);
     }
@@ -133,7 +169,8 @@ public class RgistrationPage_Teacher extends BasePage{
        }
     }
 
-    public void select_subject(String subjA, String subjB) {
+    public void select_subject(String subjA, String subjB) throws InterruptedException {
+        Thread.sleep(1000);
         BaseClass.getLogger().info("Clicking on Subject dropdown");
         subject_element.click();
         //  driver.findElement(By.id("mui-component-select-courses.0.subjects")).click();
@@ -175,8 +212,12 @@ public class RgistrationPage_Teacher extends BasePage{
         driver.findElement(By.xpath("//input[@id='flexCheckDefault']")).click();
     }
 
-    public void click_Submit_button(){
-        driver.findElement(By.xpath("//button[text()='Submit']")).click();
+    public void click_Submit_button() throws InterruptedException {
+        Thread.sleep(500);
+
+        JavascriptExecutor js=(JavascriptExecutor)driver;
+        js.executeScript("arguments[0].click()",driver.findElement(By.xpath("//button[text()='Submit']")));
+//        driver.findElement(By.xpath("//button[text()='Submit']")).click();
     }
 
 }

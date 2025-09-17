@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="130.109" tests="2" skipped="0" failures="2" errors="0" timestamp="2025-09-16T10:16:53.835118Z">
+<testcase classname="Fetch signUp data from Excel Sheet" name="Register student User in Gyansetu. - #1.1" time="41.383">
+<failure type="org.openqa.selenium.StaleElementReferenceException" message="stale element reference: stale element not found in the current frame
+  (Session info: chrome=140.0.7339.82)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c97d8fd7b9c30acd830a170f119e75c9, clickElement {id=f.34B0CF0EE3F295410802162887E4803E.d.D1AC4384D653FB21603E392E71663B7B.e.715}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.82, chrome: {chromedriverVersion: 140.0.7339.82 (bc93617e21c3..., userDataDir: C:\Users\WIIS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52697}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52697/devtoo..., se:cdpVersion: 140.0.7339.82, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (c97d8fd7b9c30acd830a170f119e75c9)] -&gt; xpath: //button[@aria-label='close' and contains(@class, 'MuiIconButton-root')]]
+Session ID: c97d8fd7b9c30acd830a170f119e75c9">
+<![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+  (Session info: chrome=140.0.7339.82)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c97d8fd7b9c30acd830a170f119e75c9, clickElement {id=f.34B0CF0EE3F295410802162887E4803E.d.D1AC4384D653FB21603E392E71663B7B.e.715}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.82, chrome: {chromedriverVersion: 140.0.7339.82 (bc93617e21c3..., userDataDir: C:\Users\WIIS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52697}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52697/devtoo..., se:cdpVersion: 140.0.7339.82, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (c97d8fd7b9c30acd830a170f119e75c9)] -> xpath: //button[@aria-label='close' and contains(@class, 'MuiIconButton-root')]]
+Session ID: c97d8fd7b9c30acd830a170f119e75c9
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at page.Student_DashBoard.signup_chat_close(Student_DashBoard.java:22)
+	at stepDefinition.Registration_Validation.logoutAfterSignup(Registration_Validation.java:118)
+	at ✽.logout after signup(file:///F:/Gyansetu/G_TestCase001/src/test/java/features/test006_SchoolStudent_signup_signupchat_ExcelSheet.feature:7)
+]]>
+</failure>
+<system-out><![CDATA[
+Given Navigate Registration Page............................................passed
+When Fetch signup data from Excel sheet "Sheet1", 0.........................passed
+Then Click SignUp Button....................................................passed
+Then logout after signup....................................................failed
+]]></system-out>
+</testcase>
+<testcase classname="Fetch signUp data from Excel Sheet" name="Enter the data on SignUp-Chat - #1.1" time="88.039">
+<failure type="org.openqa.selenium.StaleElementReferenceException" message="stale element reference: stale element not found in the current frame
+  (Session info: chrome=140.0.7339.82)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2319dbeb5836e9b1c807c597fc44ea92, clickElement {id=f.6AADD1D43C78F4C58A737A4F66C5F753.d.E063017413D794923F8DF4443CD7D26C.e.8613}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.82, chrome: {chromedriverVersion: 140.0.7339.82 (bc93617e21c3..., userDataDir: C:\Users\WIIS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58464}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58464/devtoo..., se:cdpVersion: 140.0.7339.82, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (2319dbeb5836e9b1c807c597fc44ea92)] -&gt; xpath: //div[@class='css-19bb58m']]
+Session ID: 2319dbeb5836e9b1c807c597fc44ea92">
+<![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+  (Session info: chrome=140.0.7339.82)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2319dbeb5836e9b1c807c597fc44ea92, clickElement {id=f.6AADD1D43C78F4C58A737A4F66C5F753.d.E063017413D794923F8DF4443CD7D26C.e.8613}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.82, chrome: {chromedriverVersion: 140.0.7339.82 (bc93617e21c3..., userDataDir: C:\Users\WIIS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58464}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58464/devtoo..., se:cdpVersion: 140.0.7339.82, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (2319dbeb5836e9b1c807c597fc44ea92)] -> xpath: //div[@class='css-19bb58m']]
+Session ID: 2319dbeb5836e9b1c807c597fc44ea92
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at page.Student_DashBoard_InnerChatBox.select_your_current_country_of_residence(Student_DashBoard_InnerChatBox.java:728)
+	at stepDefinition.InnerBoxTextEntering.fetchDataFromExcelSheetForSignUpChatAndEnterDetailsOnSignupChat(InnerBoxTextEntering.java:290)
+	at ✽.Fetch data from Excel sheet for SignUp-Chat "Sign-Up chat_for_StudentUser", 0 and enter details on signup-chat.(file:///F:/Gyansetu/G_TestCase001/src/test/java/features/test006_SchoolStudent_signup_signupchat_ExcelSheet.feature:26)
+]]>
+</failure>
+<system-out><![CDATA[
+Given Navigate to SignIn Page...............................................passed
+When Fetch data from Excel sheet for Sign In "Sheet1", 0 and Enter credentials in SignIn..passed
+And Click SignIn Button.....................................................passed
+And Fetch data from Excel sheet for SignUp-Chat "Sign-Up chat_for_StudentUser", 0 and enter details on signup-chat..failed
+Then Verified sign-up chat is completed.....................................skipped
+]]></system-out>
+</testcase>
+</testsuite>

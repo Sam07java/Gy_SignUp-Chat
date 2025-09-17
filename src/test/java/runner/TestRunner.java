@@ -12,14 +12,15 @@ import java.util.Properties;
 @CucumberOptions(
         features = {
  //               "src/test/java/features/test002_student_signup_validationfor_Revamp.feature",
-//             "src/test/java/features/test004_signUpChat_with_profileEdit_StudentUser.feature",
+//             "src/test/java/features/test004_signUpChat_with_profileEdit_SchoolStudentUser.feature",
 //                 "src/test/java/features/test005_SignUpChat_with_ProfileEditPage_CollegeUser.feature",
-                 "src/test/java/features/test006_student_signup_signupchat_ExcelSheet.feature",
+                 "src/test/java/features/test006_SchoolStudent_signup_signupchat_ExcelSheet.feature",
 //                "src/test/java/features/test008_register_as_teacher.feature",
-//               "src/test/java/features/test007_CollageStudent_signUp_SignUpchat_ExcelSheet.feature"
+//               "src/test/java/features/test007_CollageStudent_signUp_SignUpchat_ExcelSheet.feature",
+//                "src/test/java/features/test009_register_as_Institute.feature",
         },
       //  extraGlue = {"src/test/java/features/test005_SignUpChat_with_ProfileEditPage_CollegeUser.feature"},
-      // features= {"src/test/java/features/test004_signUpChat_with_profileEdit_StudentUser.feature"},
+      // features= {"src/test/java/features/test004_signUpChat_with_profileEdit_SchoolStudentUser.feature"},
         glue = {"stepDefinition","hooks","utility"},
         plugin = {"pretty","html:test_report/cucumber_report.html",
                 "json:test_report/test_report.json",
@@ -36,7 +37,7 @@ public class TestRunner extends AbstractTestNGCucumberTests{
     //validate_dashBoard_profileChatInner_003.featuree
     //test002_student_signup_validation.featuree
    //test003_signUp_chat_Validate_ProfileEditPAge_student.featuree
-    //test004_signUpChat_with_profileEdit_StudentUser.feature
+    //test004_signUpChat_with_profileEdit_SchoolStudentUser.feature
     //Properties p=new Properties();
    // test005_SignUpChat_with_ProfileEditPage_CollegeUser.feature
 }

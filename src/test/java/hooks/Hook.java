@@ -47,7 +47,7 @@ public void initialSetup() throws IOException {
     @After
     public void tearDown() {
 //        if (driver != null) {
-            driver.close();
+//            driver.close();
 //            logger.info("Browser window closed after scenario.");
 //        } else {
 //            logger.warn("Driver was null, nothing to close.");

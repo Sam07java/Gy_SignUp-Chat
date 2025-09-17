@@ -83,45 +83,103 @@ public class registerf_as_teacher {
         rgistrationPageTeacher.click_Next_Button();
 
     // Document Page
-//       String schoolentity = exeldataTeacher.get(arg1).get("School");
-        rgistrationPageTeacher.select_Entity("school");
+       String schoolentity = exeldataTeacher.get(arg1).get("Entity");
 
-       String schoolInstitute = exeldataTeacher.get(arg1).get("Institute");
-       BaseClass.getLogger().info("School institute fetch from excel: "+schoolInstitute);
-        rgistrationPageTeacher.select_Institute(schoolInstitute);
+       if(schoolentity.equalsIgnoreCase("School")) {
+           rgistrationPageTeacher.select_Entity("school");
 
-        rgistrationPageTeacher.teaching_Experince("4");
-        rgistrationPageTeacher.select_Qualification();
+           String schoolInstitute = exeldataTeacher.get(arg1).get("Institute");
+           BaseClass.getLogger().info("School institute fetch from excel: " + schoolInstitute);
+           rgistrationPageTeacher.select_Institute(schoolInstitute);
 
-        String sclass = exeldataTeacher.get(arg1).get("SClass");
-        BaseClass.getLogger().info("class institute fetch from excel: "+sclass);
-        rgistrationPageTeacher.select_class(sclass);
+           rgistrationPageTeacher.teaching_Experince("4");
+           rgistrationPageTeacher.select_Qualification();
 
-       String subA = exeldataTeacher.get(arg1).get("Subject A");
-       String subB = exeldataTeacher.get(arg1).get("Subject B");
-        BaseClass.getLogger().info("Subjects are fetched from execl sheet:"+subA+", "+subB);
+           String sclass = exeldataTeacher.get(arg1).get("SClass");
+           BaseClass.getLogger().info("class institute fetch from excel: " + sclass);
+           rgistrationPageTeacher.select_class(sclass);
 
-        rgistrationPageTeacher.select_subject(subA, subB);
-        BaseClass.getLogger().info("Subjectes are clicked");
+           String subA = exeldataTeacher.get(arg1).get("Subject A");
+           String subB = exeldataTeacher.get(arg1).get("Subject B");
+           BaseClass.getLogger().info("Subjects are fetched from execl sheet:" + subA + ", " + subB);
+           rgistrationPageTeacher.select_subject(subA, subB);
+           BaseClass.getLogger().info("Subjectes are clicked");
+       }else {
+           rgistrationPageTeacher.select_Entity("College");
+          String university = exeldataTeacher.get(arg1).get("University Name");
+          rgistrationPageTeacher.select_Institute(university);
+
+          String institueCollege = exeldataTeacher.get(arg1).get("Institute");
+          rgistrationPageTeacher.select_institute_college(institueCollege);
+
+           rgistrationPageTeacher.teaching_Experince("4");
+           rgistrationPageTeacher.select_Qualification();
+
+          String course = exeldataTeacher.get(arg1).get("Course");
+          rgistrationPageTeacher.select_course(course);
+
+          String semester = exeldataTeacher.get(arg1).get("Semester");
+          rgistrationPageTeacher.select_semester(semester);
+
+           String subA = exeldataTeacher.get(arg1).get("Subject A");
+           String subB = exeldataTeacher.get(arg1).get("Subject B");
+           BaseClass.getLogger().info("Subjects are fetched from execl sheet(College):" + subA + ", " + subB);
+           rgistrationPageTeacher.select_subject(subA, subB);
+           BaseClass.getLogger().info("Subjectes are clicked(College)");
+       }
+
         rgistrationPageTeacher.upload_Document("C:/Users/WIIS/Downloads/pexels-earano-3608311.jpg");
         BaseClass.getLogger().info("Document uploaded");
         rgistrationPageTeacher.check_Terma$Condition();
         BaseClass.getLogger().info("Terms and condition check box clicked");
         rgistrationPageTeacher.click_Submit_button();
         BaseClass.getLogger().info("Submit button clicked");
-
     }
 
     @Then("Validate whether registration is successfully or not.")
-    public void validateWhetherRegisterationIsSuccessfullyOrNot() {
+    public void validateWhetherRegisterationIsSuccessfullyOrNot() throws InterruptedException {
+
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement headingElement = wait.until(ExpectedConditions
-                .visibilityOfElementLocated(By.tagName("h2")));
+        WebElement validationText = wait.until(ExpectedConditions.visibilityOfElementLocated(
+                By.xpath("//div[@class='Toastify__toast-body']/div[2]")));
 
-        String heandingText = headingElement.getText();
-        BaseClass.getLogger().info("OTP Box: "+heandingText);
-        Assert.assertEquals("Please verify your OTP.", heandingText);
+        String toastMessage = validationText.getText().trim();
+        BaseClass.getLogger().info("Toaster message: " + toastMessage);
 
+        switch (toastMessage) {
+            case "Institute created successfully":
+                Assert.assertEquals("Institute created successfully", toastMessage);
+                break;
+
+            case "Teacher registration request sent successfully":
+                Assert.assertEquals("Teacher registration request sent successfully", toastMessage);
+                break;
+
+            default:
+                Assert.fail("Unexpected toaster message: " + toastMessage);
+        }
+////        WebElement validationText= driver.findElement(By.xpath("//div[text()='User with this email or phone already exists']"));
+//        Thread.sleep(8000);
+//        WebElement validationText= driver.findElement(By.xpath("//div[@class='Toastify__toast-body']/div[2]"));
+//        if(validationText.isDisplayed()&&validationText.getText().equalsIgnoreCase("Institute created successfully")){
+//            BaseClass.getLogger().info("Toaster message for validation institute creation... "+validationText.getText());
+//            Assert.assertEquals("Institute created successfully", validationText.getText());
+//        }
+//        else if (validationText.isDisplayed()&&validationText.getText().equalsIgnoreCase(" Teacher registration request sent successfully")){
+//            BaseClass.getLogger().info("Toaster message for validation for teacher creation... "+validationText.getText());
+//            Assert.assertEquals(" Teacher registration request sent successfully", validationText.getText());
+//        }else {
+//            BaseClass.getLogger().info("Toaster message for validation "+validationText.getText());
+//            Assert.fail(validationText.getText());
+//        }
+//
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//        WebElement headingElement = wait.until(ExpectedConditions
+//                .visibilityOfElementLocated(By.tagName("h2")));
+//
+//        String heandingText = headingElement.getText();
+//        BaseClass.getLogger().info("OTP Box: " + heandingText);
+//        Assert.assertEquals("Please verify your OTP.", heandingText);
     }
 
 //    @When("Fetch the data from excel sheet {string}  {} enter the deatils First Page")

@@ -14,7 +14,7 @@ public class RegistrationPage extends BasePage {
     WebElement signup_for_teacherLink;
 
     @FindBy(xpath = "//u[normalize-space()='Register As Institution']")
-    WebElement signup_fro_instituteLink;
+    WebElement signup_for_instituteLink;
 
     public void click_on_Register_as_Teacher(){
 //        signup_for_teacherLink.click();
@@ -23,7 +23,9 @@ public class RegistrationPage extends BasePage {
     }
 
     public void click_on_Register_as_Institute(){
-        signup_for_teacherLink.click();
+//        signup_for_instituteLink.click();
+        JavascriptExecutor js=(JavascriptExecutor)driver;
+        js.executeScript("arguments[0].click()", signup_for_instituteLink);
     }
 
 

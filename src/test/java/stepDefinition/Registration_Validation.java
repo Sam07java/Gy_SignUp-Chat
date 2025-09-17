@@ -8,6 +8,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import page.HomePage;
+import page.LoginPage;
 import page.RegistrationPage;
 import page.Student_DashBoard;
 import utility.ExelUtility;
@@ -27,6 +29,8 @@ public class Registration_Validation {
    public RegistrationPage rp;
    public ExelUtility exelUtility;
    public Student_DashBoard sdi;
+   public HomePage homePage;
+   LoginPage loginPage;
    private final Logger logger=LogManager.getLogger(this.getClass().getName());
     String path = System.getProperty("user.dir") + "/src/test-data/data for sign-up chat.xlsx";
 //     public String path="F:\\Gyansetu\\G_TestCase001\\src\\test-data\\data for sign-up chat.xlsx";
@@ -35,9 +39,17 @@ public class Registration_Validation {
  @Given("Navigate Registration Page")
  public void navigate_registration_page() {
      logger.info("Navigating to the registration page");
+
+//     homePage=new HomePage(BaseClass.getDriver());
+//     homePage.SignIn_with_Email();
+
+     loginPage=new LoginPage(BaseClass.getDriver());
+     loginPage.click_SignUp_Here();
+     logger.info("Clicked on SignUp_Here button");
+
      rp = new RegistrationPage(BaseClass.getDriver());
-     rp.click_Registration_Button();
-     logger.info("Clicked on Registration button");
+//     rp.click_Registration_Button();
+//     logger.info("Clicked on Registration button");
  }
 
     @When("User Enter Email {string} and Password {string}")
