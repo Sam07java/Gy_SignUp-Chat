@@ -176,8 +176,8 @@ public class DatePicker {
                 }
             }
 
-//            driver.findElement(By.xpath("//button[@class='chat_search_btn']")).click();
-//            logger.info("Click submit button clicked after date selection");
+            driver.findElement(By.xpath("//button[@class='chat_search_btn']")).click();
+            logger.info("Click submit button clicked after date selection");
 
         } catch (Exception e) {
             logger.error("Exception in date picker Gy: {}", e.getMessage(), e);

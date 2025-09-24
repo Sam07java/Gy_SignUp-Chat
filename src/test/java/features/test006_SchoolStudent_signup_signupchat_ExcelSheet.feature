@@ -7,7 +7,7 @@ Given Navigate Registration Page
   Then logout after signup
   Examples:
     | SheetName | RowNo |
-    | Sheet1    | 0     |
+    | Sheet1    | 2     |
 #    | Sheet1    | 1     |
 #    | SchoolUser_Registration | 3     |
 #    | SchoolUser_Registration | 4     |
@@ -27,7 +27,7 @@ Given Navigate Registration Page
   Then Verified sign-up chat is completed.
   Examples:
     | SheetNAme | RowNumber | SignUp-Chat                  | Number |
-    | Sheet1    | 0         | Sign-Up chat_for_StudentUser | 0      |
+    | Sheet1    | 2         | Sign-Up chat_for_StudentUser | 0      |
 #    | Sheet1    | 1         | Sign-Up chat_for_StudentUser | 1      |
 #    | SchoolUser_Registration | 3         | Sign-Up chat_for_StudentUser | 3      |
 #    | SchoolUser_Registration | 4         | Sign-Up chat_for_StudentUser | 4      |

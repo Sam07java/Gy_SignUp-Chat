@@ -7,10 +7,10 @@ Feature: Fetch signUp data from Excel Sheet for College User
     Examples:
       | SheetName                | RowNo |
       | CollegeUser_Registration | 0     |
-# | CollegeUser_Registration | 1     |
-#      | CollegeUser_Registration | 3     |
-#      | CollegeUser_Registration | 4     |
-#      | CollegeUser_Registration | 5     |
+## | CollegeUser_Registration | 1     |
+##      | CollegeUser_Registration | 3     |
+##      | CollegeUser_Registration | 4     |
+##      | CollegeUser_Registration | 5     |
 
   Scenario Outline: Enter the data on SignUp-Chat
     Given Navigate to SignIn Page.

@@ -336,7 +336,7 @@ public class InnerBoxTextEntering {
         try {
             // Enter First Name
             driver.navigate().refresh();
-            Thread.sleep(8000);
+            Thread.sleep(4000);
             String name = signupdata.get(roww).get("Full Name");
             logger.info("Entering Full Name: {}", name);
             sd = new Student_DashBoard_InnerChatBox(driver);
