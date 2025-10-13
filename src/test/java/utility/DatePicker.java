@@ -21,64 +21,6 @@ public class DatePicker {
         this.driver=driver;
     }
 
-
-    public void DatePickers()
-    {
-        driver = new ChromeDriver();
-
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-
-        driver.get("https://jqueryui.com/datepicker/");
-
-        driver.manage().window().maximize();
-
-        WebElement Frame = driver.findElement(By.xpath("//iframe[@class='demo-frame']"));
-
-        driver.switchTo().frame(Frame);
-
-        // Since there are one frame we can use below code too
-
-        // driver.switchTo().frame(0);
-
-        // Approach Number One : This is used almost all time
-        /*
-         * WebElement datePicker=driver.findElement(By.xpath("//input[@id='datepicker']"));
-         * datePicker.sendKeys("04/12/2025");
-         */
-
-        //Approach Two
-        String year = "2028";
-        String month = "March";
-        String date = "23";
-
-        WebElement datePicker=driver.findElement(By.xpath("//input[@id='datepicker']"));
-
-        datePicker.click();
-
-        while (true) {
-
-            String Month = driver.findElement(By.xpath("//span[@class='ui-datepicker-month']")).getText();
-            String Year = driver.findElement(By.xpath("//span[@class='ui-datepicker-year']")).getText();
-
-            if (Month.equals(month) && Year.equals(year)) {
-                break;
-            }
-
-            WebElement next = driver.findElement(By.xpath("//span[@class='ui-icon ui-icon-circle-triangle-e']"));
-            next.click();
-        }
-        List<WebElement> allDates =  driver.findElements(By.xpath("//table[@class='ui-datepicker-calendar']//td"));
-
-        for (WebElement eachDate : allDates)
-        {
-            if (eachDate.getText().equals(date))
-            {
-                eachDate.click();
-                break;
-            }
-        }
-    }
-
     public void selectYear(String Year)
     {
         WebElement datepick=driver.findElement(By.xpath("//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconButton-edgeEnd MuiIconButton-sizeMedium css-slyssw']"));
@@ -109,7 +51,7 @@ public class DatePicker {
         driver.findElement(By.xpath("//button[@class='chat_search_btn']")).click();
     }
 
-    public void datepickerGy(String date, String month, String year) {
+    public void datepickerGy(String date, String month, String year, Boolean option) {
         try {
             logger.info("Opening date picker....");
             WebElement datepick = driver.findElement(By.xpath("//button[@aria-label='Choose date']"));
@@ -175,10 +117,10 @@ public class DatePicker {
                     break;
                 }
             }
-
-            driver.findElement(By.xpath("//button[@class='chat_search_btn']")).click();
-            logger.info("Click submit button clicked after date selection");
-
+            if(option) {
+                driver.findElement(By.xpath("//button[@class='chat_search_btn']")).click();
+                logger.info("Click submit button clicked after date selection");
+            }
         } catch (Exception e) {
             logger.error("Exception in date picker Gy: {}", e.getMessage(), e);
         }

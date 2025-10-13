@@ -1,17 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="87.815" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-09-24T11:48:43.581145800Z">
-<testcase classname="Fetch signUp data from Excel Sheet" name="Register student User in Gyansetu. - #1.1" time="46.628">
+<testsuite name="Cucumber" time="63.894" tests="2" skipped="0" failures="1" errors="0" timestamp="2025-10-04T06:11:34.143328600Z">
+<testcase classname="Fetch signUp data from Excel Sheet" name="Register student User in Gyansetu. - #1.1" time="6.525">
+<failure type="org.openqa.selenium.NoSuchWindowException" message="no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=140.0.7339.208)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f05f1c0e3c0e8be2a3197e38b799084f, maximizeCurrentWindow {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.208, chrome: {chromedriverVersion: 140.0.7339.207 (17230b545fd..., userDataDir: C:\Users\WIIS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53200}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53200/devtoo..., se:cdpVersion: 140.0.7339.208, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f05f1c0e3c0e8be2a3197e38b799084f">
+<![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=140.0.7339.208)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f05f1c0e3c0e8be2a3197e38b799084f, maximizeCurrentWindow {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 140.0.7339.208, chrome: {chromedriverVersion: 140.0.7339.207 (17230b545fd..., userDataDir: C:\Users\WIIS\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53200}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53200/devtoo..., se:cdpVersion: 140.0.7339.208, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f05f1c0e3c0e8be2a3197e38b799084f
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:617)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:621)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:1042)
+	at hooks.Hook.initialSetup(Hook.java:44)
+]]>
+</failure>
 <system-out><![CDATA[
-Given Navigate Registration Page............................................passed
-When Fetch signup data from Excel sheet "Sheet1", 2.........................passed
-Then Click SignUp Button....................................................passed
-Then logout after signup....................................................passed
+Given Navigate Registration Page............................................skipped
+When Fetch signup data from Excel sheet "Sheet1", 0.........................skipped
+Then Click SignUp Button....................................................skipped
+Then logout after signup....................................................skipped
 ]]></system-out>
 </testcase>
-<testcase classname="Fetch signUp data from Excel Sheet" name="Enter the data on SignUp-Chat - #1.1" time="40.66">
+<testcase classname="Fetch signUp data from Excel Sheet" name="Enter the data on SignUp-Chat - #1.1" time="56.814">
 <system-out><![CDATA[
 Given Navigate to SignIn Page...............................................passed
-When Fetch data from Excel sheet for Sign In "Sheet1", 2 and Enter credentials in SignIn..passed
+When Fetch data from Excel sheet for Sign In "Sheet1", 0 and Enter credentials in SignIn..passed
 And Click SignIn Button.....................................................passed
 And Fetch data from Excel sheet for SignUp-Chat "Sign-Up chat_for_StudentUser", 0 and enter details on signup-chat..passed
 Then Verified sign-up chat is completed.....................................passed

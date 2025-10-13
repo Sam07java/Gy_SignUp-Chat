@@ -32,7 +32,7 @@ public class InnerSignUp_Chat_Detail {
     @When("User Select the Date of Birth Date= {string} Month= {string} Year= {string}")
     public void user_select_the_date_of_birth_date_month_year(String string, String string2, String string3) {
         dp=new DatePicker(driver);
-        dp.datepickerGy(string,string2,string3);
+        dp.datepickerGy(string,string2,string3, true);
     }
 
     @When("User Enter Main learning Goal {string}")

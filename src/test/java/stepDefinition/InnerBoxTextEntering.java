@@ -167,7 +167,7 @@ public class InnerBoxTextEntering {
             String dobyear = signupdata.get(roww).get("DOByear");
             logger.info("Entering Date of Birth of student: {}-{}-{}", dobdate, dobMonth, dobyear);
             dp = new DatePicker(driver);
-            dp.datepickerGy(dobdate, dobMonth, dobyear);
+            dp.datepickerGy(dobdate, dobMonth, dobyear, true);
 
             // Main learning Goal
             Thread.sleep(1000);
@@ -351,7 +351,7 @@ public class InnerBoxTextEntering {
             logger.info("Entering Date of Birth: {}-{}-{}", dobdate, dobMonth, dobyear);
             Thread.sleep(500);
             dp = new DatePicker(driver);
-            dp.datepickerGy(dobdate, dobMonth, dobyear);
+            dp.datepickerGy(dobdate, dobMonth, dobyear, true);
 
             // Main learning Goal
             String learningGoal = signupdata.get(roww).get("Main learning goal");

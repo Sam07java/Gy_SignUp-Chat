@@ -68,7 +68,7 @@ public class registerf_as_teacher {
         BaseClass.logger.info("Entered data of email id: "+emailid);
 
     datePicker = new DatePicker(BaseClass.getDriver());
-        datePicker.datepickerGy(date, month, year);
+        datePicker.datepickerGy(date, month, year, false);
 
     rgistrationPageTeacher.click_Next_Button();
 

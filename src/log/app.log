@@ -20904,3 +20904,680 @@ Session ID: 6e5e99333f6627b1ee3b5422e8371294
 17:20:08.890 [main]INFO  page.Student_DashBoard_InnerChatBox - Inner ChatBox is visible on the screen.
 17:20:09.129 [main]INFO  stepDefinition.InnerBoxTextEntering - Profile Inner Chat automated successfully.
 17:20:10.133 [main]INFO  stepDefinition.InnerBoxTextEntering - Logging out from student dashboard.
+12:04:04.479 [main]INFO  factory.BaseClass - browser initialized
+12:04:04.488 [main]INFO  factory.BaseClass - get properties file from file directory
+12:04:11.527 [main]INFO  stepDefinition.Registration_Validation - Navigating to the registration page
+12:04:11.785 [main]INFO  stepDefinition.Registration_Validation - Clicked on SignUp_Here button
+12:04:11.859 [main]INFO  stepDefinition.Registration_Validation - Fetching data from Excel - Sheet: Sheet1, Row: 0
+12:04:11.859 [main]INFO  utility.ExelUtility - Starting to read Excel data from file: F:\Gyansetu\G_TestCase001/src/test-data/data for sign-up chat.xlsx, sheet: Sheet1
+12:04:13.307 [main]INFO  utility.ExelUtility - Total rows found (excluding header): 40
+12:04:13.353 [main]INFO  utility.ExelUtility - Row 1 processed and added to data list.
+12:04:13.353 [main]INFO  utility.ExelUtility - Row 2 processed and added to data list.
+12:04:13.354 [main]INFO  utility.ExelUtility - Row 3 processed and added to data list.
+12:04:13.355 [main]INFO  utility.ExelUtility - Row 4 processed and added to data list.
+12:04:13.357 [main]INFO  utility.ExelUtility - Row 5 processed and added to data list.
+12:04:13.358 [main]INFO  utility.ExelUtility - Row 6 processed and added to data list.
+12:04:13.359 [main]INFO  utility.ExelUtility - Row 7 processed and added to data list.
+12:04:13.359 [main]INFO  utility.ExelUtility - Row 8 processed and added to data list.
+12:04:13.360 [main]INFO  utility.ExelUtility - Row 9 processed and added to data list.
+12:04:13.361 [main]INFO  utility.ExelUtility - Row 10 processed and added to data list.
+12:04:13.361 [main]INFO  utility.ExelUtility - Row 11 processed and added to data list.
+12:04:13.361 [main]INFO  utility.ExelUtility - Row 12 processed and added to data list.
+12:04:13.361 [main]INFO  utility.ExelUtility - Row 13 processed and added to data list.
+12:04:13.362 [main]INFO  utility.ExelUtility - Row 14 processed and added to data list.
+12:04:13.362 [main]INFO  utility.ExelUtility - Row 15 processed and added to data list.
+12:04:13.362 [main]INFO  utility.ExelUtility - Row 16 processed and added to data list.
+12:04:13.363 [main]INFO  utility.ExelUtility - Row 17 processed and added to data list.
+12:04:13.363 [main]INFO  utility.ExelUtility - Row 18 processed and added to data list.
+12:04:13.363 [main]INFO  utility.ExelUtility - Row 19 processed and added to data list.
+12:04:13.363 [main]INFO  utility.ExelUtility - Row 20 processed and added to data list.
+12:04:13.364 [main]INFO  utility.ExelUtility - Row 21 processed and added to data list.
+12:04:13.364 [main]INFO  utility.ExelUtility - Row 22 processed and added to data list.
+12:04:13.364 [main]INFO  utility.ExelUtility - Row 23 processed and added to data list.
+12:04:13.366 [main]INFO  utility.ExelUtility - Row 24 processed and added to data list.
+12:04:13.366 [main]INFO  utility.ExelUtility - Row 25 processed and added to data list.
+12:04:13.367 [main]INFO  utility.ExelUtility - Row 26 processed and added to data list.
+12:04:13.368 [main]INFO  utility.ExelUtility - Row 27 processed and added to data list.
+12:04:13.368 [main]INFO  utility.ExelUtility - Row 28 processed and added to data list.
+12:04:13.369 [main]INFO  utility.ExelUtility - Row 29 processed and added to data list.
+12:04:13.369 [main]INFO  utility.ExelUtility - Row 30 processed and added to data list.
+12:04:13.369 [main]INFO  utility.ExelUtility - Row 31 processed and added to data list.
+12:04:13.370 [main]INFO  utility.ExelUtility - Row 32 processed and added to data list.
+12:04:13.370 [main]INFO  utility.ExelUtility - Row 33 processed and added to data list.
+12:04:13.371 [main]INFO  utility.ExelUtility - Row 34 processed and added to data list.
+12:04:13.371 [main]INFO  utility.ExelUtility - Row 35 processed and added to data list.
+12:04:13.372 [main]INFO  utility.ExelUtility - Row 36 processed and added to data list.
+12:04:13.372 [main]INFO  utility.ExelUtility - Row 37 processed and added to data list.
+12:04:13.373 [main]INFO  utility.ExelUtility - Row 38 processed and added to data list.
+12:04:13.373 [main]INFO  utility.ExelUtility - Row 39 processed and added to data list.
+12:04:13.373 [main]INFO  utility.ExelUtility - Row 40 processed and added to data list.
+12:04:13.373 [main]INFO  utility.ExelUtility - Excel data extraction completed successfully.
+12:04:13.374 [main]INFO  stepDefinition.Registration_Validation - Fetched Email ID: samjo66@yopmail.com
+12:04:13.898 [main]INFO  stepDefinition.Registration_Validation - Fetched Phone No: 8886663019
+12:04:14.041 [main]INFO  stepDefinition.Registration_Validation - Fetched Password: ********
+12:04:14.273 [main]INFO  stepDefinition.Registration_Validation - Checked Terms and Conditions checkbox.....
+12:04:14.275 [main]INFO  stepDefinition.Registration_Validation - Clicking SignUp Now button
+12:04:45.245 [main]INFO  factory.BaseClass - browser initialized
+12:04:45.251 [main]INFO  factory.BaseClass - get properties file from file directory
+12:04:49.107 [main]INFO  stepDefinition.Registration_Validation - Navigating to the registration page
+12:04:49.285 [main]INFO  stepDefinition.Registration_Validation - Clicked on SignUp_Here button
+12:04:49.399 [main]INFO  stepDefinition.Registration_Validation - Fetching data from Excel - Sheet: Sheet1, Row: 0
+12:04:49.401 [main]INFO  utility.ExelUtility - Starting to read Excel data from file: F:\Gyansetu\G_TestCase001/src/test-data/data for sign-up chat.xlsx, sheet: Sheet1
+12:04:50.522 [main]INFO  utility.ExelUtility - Total rows found (excluding header): 40
+12:04:50.556 [main]INFO  utility.ExelUtility - Row 1 processed and added to data list.
+12:04:50.557 [main]INFO  utility.ExelUtility - Row 2 processed and added to data list.
+12:04:50.558 [main]INFO  utility.ExelUtility - Row 3 processed and added to data list.
+12:04:50.558 [main]INFO  utility.ExelUtility - Row 4 processed and added to data list.
+12:04:50.559 [main]INFO  utility.ExelUtility - Row 5 processed and added to data list.
+12:04:50.560 [main]INFO  utility.ExelUtility - Row 6 processed and added to data list.
+12:04:50.561 [main]INFO  utility.ExelUtility - Row 7 processed and added to data list.
+12:04:50.561 [main]INFO  utility.ExelUtility - Row 8 processed and added to data list.
+12:04:50.562 [main]INFO  utility.ExelUtility - Row 9 processed and added to data list.
+12:04:50.562 [main]INFO  utility.ExelUtility - Row 10 processed and added to data list.
+12:04:50.562 [main]INFO  utility.ExelUtility - Row 11 processed and added to data list.
+12:04:50.563 [main]INFO  utility.ExelUtility - Row 12 processed and added to data list.
+12:04:50.563 [main]INFO  utility.ExelUtility - Row 13 processed and added to data list.
+12:04:50.563 [main]INFO  utility.ExelUtility - Row 14 processed and added to data list.
+12:04:50.564 [main]INFO  utility.ExelUtility - Row 15 processed and added to data list.
+12:04:50.564 [main]INFO  utility.ExelUtility - Row 16 processed and added to data list.
+12:04:50.564 [main]INFO  utility.ExelUtility - Row 17 processed and added to data list.
+12:04:50.565 [main]INFO  utility.ExelUtility - Row 18 processed and added to data list.
+12:04:50.565 [main]INFO  utility.ExelUtility - Row 19 processed and added to data list.
+12:04:50.566 [main]INFO  utility.ExelUtility - Row 20 processed and added to data list.
+12:04:50.566 [main]INFO  utility.ExelUtility - Row 21 processed and added to data list.
+12:04:50.566 [main]INFO  utility.ExelUtility - Row 22 processed and added to data list.
+12:04:50.568 [main]INFO  utility.ExelUtility - Row 23 processed and added to data list.
+12:04:50.568 [main]INFO  utility.ExelUtility - Row 24 processed and added to data list.
+12:04:50.569 [main]INFO  utility.ExelUtility - Row 25 processed and added to data list.
+12:04:50.569 [main]INFO  utility.ExelUtility - Row 26 processed and added to data list.
+12:04:50.569 [main]INFO  utility.ExelUtility - Row 27 processed and added to data list.
+12:04:50.569 [main]INFO  utility.ExelUtility - Row 28 processed and added to data list.
+12:04:50.570 [main]INFO  utility.ExelUtility - Row 29 processed and added to data list.
+12:04:50.570 [main]INFO  utility.ExelUtility - Row 30 processed and added to data list.
+12:04:50.570 [main]INFO  utility.ExelUtility - Row 31 processed and added to data list.
+12:04:50.570 [main]INFO  utility.ExelUtility - Row 32 processed and added to data list.
+12:04:50.572 [main]INFO  utility.ExelUtility - Row 33 processed and added to data list.
+12:04:50.572 [main]INFO  utility.ExelUtility - Row 34 processed and added to data list.
+12:04:50.572 [main]INFO  utility.ExelUtility - Row 35 processed and added to data list.
+12:04:50.572 [main]INFO  utility.ExelUtility - Row 36 processed and added to data list.
+12:04:50.573 [main]INFO  utility.ExelUtility - Row 37 processed and added to data list.
+12:04:50.573 [main]INFO  utility.ExelUtility - Row 38 processed and added to data list.
+12:04:50.573 [main]INFO  utility.ExelUtility - Row 39 processed and added to data list.
+12:04:50.574 [main]INFO  utility.ExelUtility - Row 40 processed and added to data list.
+12:04:50.574 [main]INFO  utility.ExelUtility - Excel data extraction completed successfully.
+12:04:50.574 [main]INFO  stepDefinition.Registration_Validation - Fetched Email ID: samjo66@yopmail.com
+12:04:51.070 [main]INFO  stepDefinition.Registration_Validation - Fetched Phone No: 8886663020
+12:04:51.245 [main]INFO  stepDefinition.Registration_Validation - Fetched Password: ********
+12:04:51.554 [main]INFO  stepDefinition.Registration_Validation - Checked Terms and Conditions checkbox.....
+12:04:51.558 [main]INFO  stepDefinition.Registration_Validation - Clicking SignUp Now button
+12:05:21.626 [main]INFO  stepDefinition.Registration_Validation - SignUp process initiated, waiting for 20 seconds for enter the OTP
+12:05:22.648 [main]INFO  stepDefinition.Registration_Validation - Logging out from student dashboard.
+12:05:24.668 [main]INFO  factory.BaseClass - browser initialized
+12:05:24.669 [main]INFO  factory.BaseClass - get properties file from file directory
+12:05:28.962 [main]INFO  stepDefinition.InnerBoxTextEntering - Initializing LoginPage and HomePage
+12:05:28.976 [main]INFO  stepDefinition.InnerBoxTextEntering - Navigating to SignIn via HomePage
+12:05:29.102 [main]INFO  stepDefinition.InnerBoxTextEntering - SignIn page loaded
+12:05:29.103 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetching SignIn credentials from Excel: Sheet = Sheet1, Row = 0
+12:05:29.104 [main]INFO  utility.ExelUtility - Starting to read Excel data from file: F:\Gyansetu\G_TestCase001/src/test-data/data for sign-up chat.xlsx, sheet: Sheet1
+12:05:29.418 [main]INFO  utility.ExelUtility - Total rows found (excluding header): 40
+12:05:29.419 [main]INFO  utility.ExelUtility - Row 1 processed and added to data list.
+12:05:29.420 [main]INFO  utility.ExelUtility - Row 2 processed and added to data list.
+12:05:29.422 [main]INFO  utility.ExelUtility - Row 3 processed and added to data list.
+12:05:29.423 [main]INFO  utility.ExelUtility - Row 4 processed and added to data list.
+12:05:29.424 [main]INFO  utility.ExelUtility - Row 5 processed and added to data list.
+12:05:29.425 [main]INFO  utility.ExelUtility - Row 6 processed and added to data list.
+12:05:29.426 [main]INFO  utility.ExelUtility - Row 7 processed and added to data list.
+12:05:29.426 [main]INFO  utility.ExelUtility - Row 8 processed and added to data list.
+12:05:29.427 [main]INFO  utility.ExelUtility - Row 9 processed and added to data list.
+12:05:29.427 [main]INFO  utility.ExelUtility - Row 10 processed and added to data list.
+12:05:29.428 [main]INFO  utility.ExelUtility - Row 11 processed and added to data list.
+12:05:29.428 [main]INFO  utility.ExelUtility - Row 12 processed and added to data list.
+12:05:29.428 [main]INFO  utility.ExelUtility - Row 13 processed and added to data list.
+12:05:29.428 [main]INFO  utility.ExelUtility - Row 14 processed and added to data list.
+12:05:29.429 [main]INFO  utility.ExelUtility - Row 15 processed and added to data list.
+12:05:29.429 [main]INFO  utility.ExelUtility - Row 16 processed and added to data list.
+12:05:29.429 [main]INFO  utility.ExelUtility - Row 17 processed and added to data list.
+12:05:29.429 [main]INFO  utility.ExelUtility - Row 18 processed and added to data list.
+12:05:29.430 [main]INFO  utility.ExelUtility - Row 19 processed and added to data list.
+12:05:29.430 [main]INFO  utility.ExelUtility - Row 20 processed and added to data list.
+12:05:29.430 [main]INFO  utility.ExelUtility - Row 21 processed and added to data list.
+12:05:29.430 [main]INFO  utility.ExelUtility - Row 22 processed and added to data list.
+12:05:29.431 [main]INFO  utility.ExelUtility - Row 23 processed and added to data list.
+12:05:29.431 [main]INFO  utility.ExelUtility - Row 24 processed and added to data list.
+12:05:29.431 [main]INFO  utility.ExelUtility - Row 25 processed and added to data list.
+12:05:29.431 [main]INFO  utility.ExelUtility - Row 26 processed and added to data list.
+12:05:29.432 [main]INFO  utility.ExelUtility - Row 27 processed and added to data list.
+12:05:29.432 [main]INFO  utility.ExelUtility - Row 28 processed and added to data list.
+12:05:29.432 [main]INFO  utility.ExelUtility - Row 29 processed and added to data list.
+12:05:29.432 [main]INFO  utility.ExelUtility - Row 30 processed and added to data list.
+12:05:29.433 [main]INFO  utility.ExelUtility - Row 31 processed and added to data list.
+12:05:29.433 [main]INFO  utility.ExelUtility - Row 32 processed and added to data list.
+12:05:29.433 [main]INFO  utility.ExelUtility - Row 33 processed and added to data list.
+12:05:29.434 [main]INFO  utility.ExelUtility - Row 34 processed and added to data list.
+12:05:29.434 [main]INFO  utility.ExelUtility - Row 35 processed and added to data list.
+12:05:29.434 [main]INFO  utility.ExelUtility - Row 36 processed and added to data list.
+12:05:29.434 [main]INFO  utility.ExelUtility - Row 37 processed and added to data list.
+12:05:29.435 [main]INFO  utility.ExelUtility - Row 38 processed and added to data list.
+12:05:29.435 [main]INFO  utility.ExelUtility - Row 39 processed and added to data list.
+12:05:29.435 [main]INFO  utility.ExelUtility - Row 40 processed and added to data list.
+12:05:29.435 [main]INFO  utility.ExelUtility - Excel data extraction completed successfully.
+12:05:29.435 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetched Email ID: samjo66@yopmail.com
+12:05:29.813 [main]INFO  stepDefinition.InnerBoxTextEntering - Entered Email ID in SignIn field
+12:05:29.814 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetched Password: ********
+12:05:30.010 [main]INFO  stepDefinition.InnerBoxTextEntering - Entered Password in SignIn field
+12:05:30.011 [main]INFO  stepDefinition.InnerBoxTextEntering - Clicking the Sign In button
+12:05:30.995 [main]INFO  stepDefinition.InnerBoxTextEntering - Sign In button clicked successfully
+12:05:30.996 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetching data from Excel sheet for student User: Sign-Up chat_for_StudentUser
+12:05:30.996 [main]INFO  utility.ExelUtility - Starting to read Excel data from file: F:\Gyansetu\G_TestCase001/src/test-data/data for sign-up chat.xlsx, sheet: Sign-Up chat_for_StudentUser
+12:05:31.130 [main]INFO  utility.ExelUtility - Total rows found (excluding header): 26
+12:05:31.135 [main]INFO  utility.ExelUtility - Row 1 processed and added to data list.
+12:05:31.137 [main]INFO  utility.ExelUtility - Row 2 processed and added to data list.
+12:05:31.140 [main]INFO  utility.ExelUtility - Row 3 processed and added to data list.
+12:05:31.142 [main]INFO  utility.ExelUtility - Row 4 processed and added to data list.
+12:05:31.145 [main]INFO  utility.ExelUtility - Row 5 processed and added to data list.
+12:05:31.147 [main]INFO  utility.ExelUtility - Row 6 processed and added to data list.
+12:05:31.149 [main]INFO  utility.ExelUtility - Row 7 processed and added to data list.
+12:05:31.150 [main]INFO  utility.ExelUtility - Row 8 processed and added to data list.
+12:05:31.152 [main]INFO  utility.ExelUtility - Row 9 processed and added to data list.
+12:05:31.154 [main]INFO  utility.ExelUtility - Row 10 processed and added to data list.
+12:05:31.156 [main]INFO  utility.ExelUtility - Row 11 processed and added to data list.
+12:05:31.158 [main]INFO  utility.ExelUtility - Row 12 processed and added to data list.
+12:05:31.159 [main]INFO  utility.ExelUtility - Row 13 processed and added to data list.
+12:05:31.160 [main]INFO  utility.ExelUtility - Row 14 processed and added to data list.
+12:05:31.162 [main]INFO  utility.ExelUtility - Row 15 processed and added to data list.
+12:05:31.163 [main]INFO  utility.ExelUtility - Row 16 processed and added to data list.
+12:05:31.164 [main]INFO  utility.ExelUtility - Row 17 processed and added to data list.
+12:05:31.164 [main]INFO  utility.ExelUtility - Row 18 processed and added to data list.
+12:05:31.165 [main]INFO  utility.ExelUtility - Row 19 processed and added to data list.
+12:05:31.165 [main]INFO  utility.ExelUtility - Row 20 processed and added to data list.
+12:05:31.165 [main]INFO  utility.ExelUtility - Row 21 processed and added to data list.
+12:05:31.166 [main]INFO  utility.ExelUtility - Row 22 processed and added to data list.
+12:05:31.166 [main]INFO  utility.ExelUtility - Row 23 processed and added to data list.
+12:05:31.166 [main]INFO  utility.ExelUtility - Row 24 processed and added to data list.
+12:05:31.166 [main]INFO  utility.ExelUtility - Row 25 processed and added to data list.
+12:05:31.167 [main]INFO  utility.ExelUtility - Row 26 processed and added to data list.
+12:05:31.167 [main]INFO  utility.ExelUtility - Excel data extraction completed successfully.
+12:05:36.253 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Full Name of student: Samjo N
+12:05:36.298 [main]INFO  page.Student_DashBoard_InnerChatBox - Entering full name: Samjo N
+12:05:36.975 [main]INFO  page.Student_DashBoard_InnerChatBox - Full name entered with Actions and Enter sent.
+12:05:36.977 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Date of Birth of student: 26-January-2005
+12:05:36.978 [main]INFO  utility.DatePicker - Opening date picker....
+12:05:37.226 [main]INFO  utility.DatePicker - Switched to year view..
+12:05:38.582 [main]INFO  utility.DatePicker - Year 2005 selected..
+12:05:38.800 [main]INFO  utility.DatePicker - Clicked previous month
+12:05:39.032 [main]INFO  utility.DatePicker - Clicked previous month
+12:05:39.189 [main]INFO  utility.DatePicker - Clicked previous month
+12:05:39.426 [main]INFO  utility.DatePicker - Clicked previous month
+12:05:39.581 [main]INFO  utility.DatePicker - Clicked previous month
+12:05:39.765 [main]INFO  utility.DatePicker - Clicked previous month
+12:05:39.958 [main]INFO  utility.DatePicker - Clicked previous month
+12:05:40.207 [main]INFO  utility.DatePicker - Clicked previous month
+12:05:40.232 [main]INFO  utility.DatePicker - Target month/year visible: JANUARY 2005
+12:05:40.696 [main]INFO  utility.DatePicker - Date 26 selected
+12:05:40.850 [main]INFO  utility.DatePicker - Click submit button clicked after date selection
+12:05:41.866 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Main Learning Goals: Well
+12:05:41.866 [main]INFO  page.Student_DashBoard_InnerChatBox - Entering main learning goal: Well
+12:05:42.044 [main]INFO  page.Student_DashBoard_InnerChatBox - Learning goal entered successfully.
+12:05:42.044 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Gender: Male
+12:05:42.045 [main]INFO  page.Student_DashBoard_InnerChatBox - Selecting gender.
+12:05:42.343 [main]INFO  page.Student_DashBoard_InnerChatBox - Gender selected successfully.
+12:05:43.349 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Mother's Name: Shari Cll
+12:05:43.349 [main]INFO  page.Student_DashBoard_InnerChatBox - Entering mother's name: Shari Cll
+12:05:43.524 [main]INFO  page.Student_DashBoard_InnerChatBox - Mother's name entered successfully.
+12:05:43.525 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Father's Name: lJith
+12:05:43.525 [main]INFO  page.Student_DashBoard_InnerChatBox - Entering father's name: lJith
+12:05:43.692 [main]INFO  page.Student_DashBoard_InnerChatBox - Father's name entered successfully.
+12:05:43.692 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Guardian Name: Himanshu
+12:05:43.692 [main]INFO  page.Student_DashBoard_InnerChatBox - Entering guardian's name: Himanshu
+12:05:43.801 [main]INFO  page.Student_DashBoard_InnerChatBox - Guardian's name entered successfully.
+12:05:44.817 [main]INFO  stepDefinition.InnerBoxTextEntering - Uploading Profile Picture
+12:05:44.817 [main]INFO  page.Student_DashBoard_InnerChatBox - Uploading profile picture from path: C:\\Users\\WIIS\\Pictures\\one piece\\1471770.jpg
+12:05:44.902 [main]INFO  page.Student_DashBoard_InnerChatBox - Profile picture uploaded successfully.
+12:05:44.902 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Institute type
+12:05:44.902 [main]INFO  page.Student_DashBoard_InnerChatBox - Selecting school type.
+12:05:45.189 [main]INFO  page.Student_DashBoard_InnerChatBox - School type selected successfully.
+12:05:46.191 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting School Name: Manimal HSS
+12:05:46.480 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Board
+12:05:47.814 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Class: Class_10
+12:05:48.210 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Hobbies: Studying
+12:05:48.546 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Known Language: Hindi
+12:05:49.455 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Language Proficiency
+12:05:49.753 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Country Code
+12:05:51.113 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering WhatsApp Number: 9876655555
+12:05:51.292 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Subject Name: English First
+12:05:53.862 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Teacher..: Sanju Vava
+12:05:54.166 [main]INFO  stepDefinition.InnerBoxTextEntering - Enter the parent email id..: gepihemeuteu-1849@yopmail.com
+12:05:54.167 [main]INFO  page.Student_DashBoard_InnerChatBox - Entering Parent Email ID.: gepihemeuteu-1849@yopmail.com
+12:05:54.454 [main]INFO  page.Student_DashBoard_InnerChatBox - Parent Email id entered successfully..
+12:05:54.454 [main]INFO  stepDefinition.InnerBoxTextEntering - Enter the parent phone No..: 8876655400
+12:05:54.455 [main]INFO  page.Student_DashBoard_InnerChatBox - Entering Parent Phone No.: 8876655400
+12:05:54.606 [main]INFO  page.Student_DashBoard_InnerChatBox - Parent Email id entered successfully.
+12:05:54.607 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Country: India
+12:05:55.920 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting State: Kerala
+12:05:56.400 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting District: Alappuzha
+12:05:56.644 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting City: Cherthala
+12:05:56.811 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Pin code: 788764
+12:05:56.968 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering First Address: All is well
+12:05:57.099 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Second Address: All is well
+12:05:57.230 [main]INFO  stepDefinition.InnerBoxTextEntering - Starting sign-up chat verification
+12:05:57.271 [main]INFO  page.Student_DashBoard_InnerChatBox - Inner ChatBox is visible on the screen.
+12:05:57.442 [main]INFO  stepDefinition.InnerBoxTextEntering - Profile Inner Chat automated successfully.
+12:05:58.443 [main]INFO  stepDefinition.InnerBoxTextEntering - Logging out from student dashboard.
+11:22:32.534 [main]INFO  factory.BaseClass - browser initialized
+11:22:32.541 [main]INFO  factory.BaseClass - get properties file from file directory
+11:22:41.473 [main]INFO  stepDefinition.Registration_Validation - Navigating to the registration page
+11:22:41.749 [main]INFO  stepDefinition.Registration_Validation - Clicked on SignUp_Here button
+11:22:41.858 [main]INFO  stepDefinition.Registration_Validation - Fetching data from Excel - Sheet: Sheet1, Row: 0
+11:22:41.858 [main]INFO  utility.ExelUtility - Starting to read Excel data from file: F:\Gyansetu\G_TestCase001/src/test-data/data for sign-up chat.xlsx, sheet: Sheet1
+11:22:43.816 [main]INFO  utility.ExelUtility - Total rows found (excluding header): 41
+11:22:43.892 [main]INFO  utility.ExelUtility - Row 1 processed and added to data list.
+11:22:43.895 [main]INFO  utility.ExelUtility - Row 2 processed and added to data list.
+11:22:43.898 [main]INFO  utility.ExelUtility - Row 3 processed and added to data list.
+11:22:43.899 [main]INFO  utility.ExelUtility - Row 4 processed and added to data list.
+11:22:43.901 [main]INFO  utility.ExelUtility - Row 5 processed and added to data list.
+11:22:43.902 [main]INFO  utility.ExelUtility - Row 6 processed and added to data list.
+11:22:43.903 [main]INFO  utility.ExelUtility - Row 7 processed and added to data list.
+11:22:43.904 [main]INFO  utility.ExelUtility - Row 8 processed and added to data list.
+11:22:43.904 [main]INFO  utility.ExelUtility - Row 9 processed and added to data list.
+11:22:43.915 [main]INFO  utility.ExelUtility - Row 10 processed and added to data list.
+11:22:43.915 [main]INFO  utility.ExelUtility - Row 11 processed and added to data list.
+11:22:43.919 [main]INFO  utility.ExelUtility - Row 12 processed and added to data list.
+11:22:43.920 [main]INFO  utility.ExelUtility - Row 13 processed and added to data list.
+11:22:43.920 [main]INFO  utility.ExelUtility - Row 14 processed and added to data list.
+11:22:43.920 [main]INFO  utility.ExelUtility - Row 15 processed and added to data list.
+11:22:43.924 [main]INFO  utility.ExelUtility - Row 16 processed and added to data list.
+11:22:43.924 [main]INFO  utility.ExelUtility - Row 17 processed and added to data list.
+11:22:43.935 [main]INFO  utility.ExelUtility - Row 18 processed and added to data list.
+11:22:43.936 [main]INFO  utility.ExelUtility - Row 19 processed and added to data list.
+11:22:43.936 [main]INFO  utility.ExelUtility - Row 20 processed and added to data list.
+11:22:43.938 [main]INFO  utility.ExelUtility - Row 21 processed and added to data list.
+11:22:43.941 [main]INFO  utility.ExelUtility - Row 22 processed and added to data list.
+11:22:43.941 [main]INFO  utility.ExelUtility - Row 23 processed and added to data list.
+11:22:43.941 [main]INFO  utility.ExelUtility - Row 24 processed and added to data list.
+11:22:43.941 [main]INFO  utility.ExelUtility - Row 25 processed and added to data list.
+11:22:43.943 [main]INFO  utility.ExelUtility - Row 26 processed and added to data list.
+11:22:43.943 [main]INFO  utility.ExelUtility - Row 27 processed and added to data list.
+11:22:43.943 [main]INFO  utility.ExelUtility - Row 28 processed and added to data list.
+11:22:43.945 [main]INFO  utility.ExelUtility - Row 29 processed and added to data list.
+11:22:43.947 [main]INFO  utility.ExelUtility - Row 30 processed and added to data list.
+11:22:43.947 [main]INFO  utility.ExelUtility - Row 31 processed and added to data list.
+11:22:43.948 [main]INFO  utility.ExelUtility - Row 32 processed and added to data list.
+11:22:43.948 [main]INFO  utility.ExelUtility - Row 33 processed and added to data list.
+11:22:43.950 [main]INFO  utility.ExelUtility - Row 34 processed and added to data list.
+11:22:43.950 [main]INFO  utility.ExelUtility - Row 35 processed and added to data list.
+11:22:43.952 [main]INFO  utility.ExelUtility - Row 36 processed and added to data list.
+11:22:43.952 [main]INFO  utility.ExelUtility - Row 37 processed and added to data list.
+11:22:43.952 [main]INFO  utility.ExelUtility - Row 38 processed and added to data list.
+11:22:43.954 [main]INFO  utility.ExelUtility - Row 39 processed and added to data list.
+11:22:43.954 [main]INFO  utility.ExelUtility - Row 40 processed and added to data list.
+11:22:43.954 [main]INFO  utility.ExelUtility - Row 41 processed and added to data list.
+11:22:43.956 [main]INFO  utility.ExelUtility - Excel data extraction completed successfully.
+11:22:43.956 [main]INFO  stepDefinition.Registration_Validation - Fetched Email ID: samjo667@yopmail.com
+11:22:44.647 [main]INFO  stepDefinition.Registration_Validation - Fetched Phone No: 8886663021
+11:22:45.002 [main]INFO  stepDefinition.Registration_Validation - Fetched Password: ********
+11:22:45.555 [main]INFO  stepDefinition.Registration_Validation - Checked Terms and Conditions checkbox.....
+11:22:45.560 [main]INFO  stepDefinition.Registration_Validation - Clicking SignUp Now button
+11:23:15.683 [main]INFO  stepDefinition.Registration_Validation - SignUp process initiated, waiting for 20 seconds for enter the OTP
+11:23:16.736 [main]INFO  stepDefinition.Registration_Validation - Logging out from student dashboard.
+11:23:28.746 [main]INFO  factory.BaseClass - browser initialized
+11:23:28.748 [main]INFO  factory.BaseClass - get properties file from file directory
+11:23:37.185 [main]INFO  stepDefinition.InnerBoxTextEntering - Initializing LoginPage and HomePage
+11:23:37.221 [main]INFO  stepDefinition.InnerBoxTextEntering - Navigating to SignIn via HomePage
+11:23:37.502 [main]INFO  stepDefinition.InnerBoxTextEntering - SignIn page loaded
+11:23:37.511 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetching SignIn credentials from Excel: Sheet = Sheet1, Row = 0
+11:23:37.511 [main]INFO  utility.ExelUtility - Starting to read Excel data from file: F:\Gyansetu\G_TestCase001/src/test-data/data for sign-up chat.xlsx, sheet: Sheet1
+11:23:37.787 [main]INFO  utility.ExelUtility - Total rows found (excluding header): 41
+11:23:37.795 [main]INFO  utility.ExelUtility - Row 1 processed and added to data list.
+11:23:37.795 [main]INFO  utility.ExelUtility - Row 2 processed and added to data list.
+11:23:37.795 [main]INFO  utility.ExelUtility - Row 3 processed and added to data list.
+11:23:37.798 [main]INFO  utility.ExelUtility - Row 4 processed and added to data list.
+11:23:37.798 [main]INFO  utility.ExelUtility - Row 5 processed and added to data list.
+11:23:37.798 [main]INFO  utility.ExelUtility - Row 6 processed and added to data list.
+11:23:37.798 [main]INFO  utility.ExelUtility - Row 7 processed and added to data list.
+11:23:37.798 [main]INFO  utility.ExelUtility - Row 8 processed and added to data list.
+11:23:37.803 [main]INFO  utility.ExelUtility - Row 9 processed and added to data list.
+11:23:37.803 [main]INFO  utility.ExelUtility - Row 10 processed and added to data list.
+11:23:37.803 [main]INFO  utility.ExelUtility - Row 11 processed and added to data list.
+11:23:37.803 [main]INFO  utility.ExelUtility - Row 12 processed and added to data list.
+11:23:37.803 [main]INFO  utility.ExelUtility - Row 13 processed and added to data list.
+11:23:37.803 [main]INFO  utility.ExelUtility - Row 14 processed and added to data list.
+11:23:37.803 [main]INFO  utility.ExelUtility - Row 15 processed and added to data list.
+11:23:37.803 [main]INFO  utility.ExelUtility - Row 16 processed and added to data list.
+11:23:37.803 [main]INFO  utility.ExelUtility - Row 17 processed and added to data list.
+11:23:37.808 [main]INFO  utility.ExelUtility - Row 18 processed and added to data list.
+11:23:37.808 [main]INFO  utility.ExelUtility - Row 19 processed and added to data list.
+11:23:37.808 [main]INFO  utility.ExelUtility - Row 20 processed and added to data list.
+11:23:37.810 [main]INFO  utility.ExelUtility - Row 21 processed and added to data list.
+11:23:37.810 [main]INFO  utility.ExelUtility - Row 22 processed and added to data list.
+11:23:37.812 [main]INFO  utility.ExelUtility - Row 23 processed and added to data list.
+11:23:37.812 [main]INFO  utility.ExelUtility - Row 24 processed and added to data list.
+11:23:37.813 [main]INFO  utility.ExelUtility - Row 25 processed and added to data list.
+11:23:37.813 [main]INFO  utility.ExelUtility - Row 26 processed and added to data list.
+11:23:37.813 [main]INFO  utility.ExelUtility - Row 27 processed and added to data list.
+11:23:37.813 [main]INFO  utility.ExelUtility - Row 28 processed and added to data list.
+11:23:37.815 [main]INFO  utility.ExelUtility - Row 29 processed and added to data list.
+11:23:37.815 [main]INFO  utility.ExelUtility - Row 30 processed and added to data list.
+11:23:37.815 [main]INFO  utility.ExelUtility - Row 31 processed and added to data list.
+11:23:37.815 [main]INFO  utility.ExelUtility - Row 32 processed and added to data list.
+11:23:37.815 [main]INFO  utility.ExelUtility - Row 33 processed and added to data list.
+11:23:37.815 [main]INFO  utility.ExelUtility - Row 34 processed and added to data list.
+11:23:37.815 [main]INFO  utility.ExelUtility - Row 35 processed and added to data list.
+11:23:37.815 [main]INFO  utility.ExelUtility - Row 36 processed and added to data list.
+11:23:37.815 [main]INFO  utility.ExelUtility - Row 37 processed and added to data list.
+11:23:37.815 [main]INFO  utility.ExelUtility - Row 38 processed and added to data list.
+11:23:37.815 [main]INFO  utility.ExelUtility - Row 39 processed and added to data list.
+11:23:37.819 [main]INFO  utility.ExelUtility - Row 40 processed and added to data list.
+11:23:37.819 [main]INFO  utility.ExelUtility - Row 41 processed and added to data list.
+11:23:37.819 [main]INFO  utility.ExelUtility - Excel data extraction completed successfully.
+11:23:37.819 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetched Email ID: samjo667@yopmail.com
+11:23:38.399 [main]INFO  stepDefinition.InnerBoxTextEntering - Entered Email ID in SignIn field
+11:23:38.399 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetched Password: ********
+11:23:38.792 [main]INFO  stepDefinition.InnerBoxTextEntering - Entered Password in SignIn field
+11:23:38.794 [main]INFO  stepDefinition.InnerBoxTextEntering - Clicking the Sign In button
+11:23:40.596 [main]INFO  stepDefinition.InnerBoxTextEntering - Sign In button clicked successfully
+11:23:40.598 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetching data from Excel sheet for student User: Sign-Up chat_for_StudentUser
+11:23:40.598 [main]INFO  utility.ExelUtility - Starting to read Excel data from file: F:\Gyansetu\G_TestCase001/src/test-data/data for sign-up chat.xlsx, sheet: Sign-Up chat_for_StudentUser
+11:23:40.770 [main]INFO  utility.ExelUtility - Total rows found (excluding header): 26
+11:23:40.778 [main]INFO  utility.ExelUtility - Row 1 processed and added to data list.
+11:23:40.781 [main]INFO  utility.ExelUtility - Row 2 processed and added to data list.
+11:23:40.786 [main]INFO  utility.ExelUtility - Row 3 processed and added to data list.
+11:23:40.786 [main]INFO  utility.ExelUtility - Row 4 processed and added to data list.
+11:23:40.791 [main]INFO  utility.ExelUtility - Row 5 processed and added to data list.
+11:23:40.795 [main]INFO  utility.ExelUtility - Row 6 processed and added to data list.
+11:23:40.800 [main]INFO  utility.ExelUtility - Row 7 processed and added to data list.
+11:23:40.805 [main]INFO  utility.ExelUtility - Row 8 processed and added to data list.
+11:23:40.812 [main]INFO  utility.ExelUtility - Row 9 processed and added to data list.
+11:23:40.816 [main]INFO  utility.ExelUtility - Row 10 processed and added to data list.
+11:23:40.822 [main]INFO  utility.ExelUtility - Row 11 processed and added to data list.
+11:23:40.828 [main]INFO  utility.ExelUtility - Row 12 processed and added to data list.
+11:23:40.828 [main]INFO  utility.ExelUtility - Row 13 processed and added to data list.
+11:23:40.830 [main]INFO  utility.ExelUtility - Row 14 processed and added to data list.
+11:23:40.830 [main]INFO  utility.ExelUtility - Row 15 processed and added to data list.
+11:23:40.830 [main]INFO  utility.ExelUtility - Row 16 processed and added to data list.
+11:23:40.830 [main]INFO  utility.ExelUtility - Row 17 processed and added to data list.
+11:23:40.832 [main]INFO  utility.ExelUtility - Row 18 processed and added to data list.
+11:23:40.832 [main]INFO  utility.ExelUtility - Row 19 processed and added to data list.
+11:23:40.832 [main]INFO  utility.ExelUtility - Row 20 processed and added to data list.
+11:23:40.832 [main]INFO  utility.ExelUtility - Row 21 processed and added to data list.
+11:23:40.834 [main]INFO  utility.ExelUtility - Row 22 processed and added to data list.
+11:23:40.834 [main]INFO  utility.ExelUtility - Row 23 processed and added to data list.
+11:23:40.834 [main]INFO  utility.ExelUtility - Row 24 processed and added to data list.
+11:23:40.834 [main]INFO  utility.ExelUtility - Row 25 processed and added to data list.
+11:23:40.836 [main]INFO  utility.ExelUtility - Row 26 processed and added to data list.
+11:23:40.839 [main]INFO  utility.ExelUtility - Excel data extraction completed successfully.
+11:23:45.917 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Full Name of student: Samjo N
+11:23:45.975 [main]INFO  page.Student_DashBoard_InnerChatBox - Entering full name: Samjo N
+11:23:46.794 [main]INFO  page.Student_DashBoard_InnerChatBox - Full name entered with Actions and Enter sent.
+11:23:46.794 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Date of Birth of student: 26-January-2005
+11:23:46.794 [main]INFO  utility.DatePicker - Opening date picker....
+11:23:47.363 [main]INFO  utility.DatePicker - Switched to year view..
+11:23:49.986 [main]INFO  utility.DatePicker - Year 2005 selected..
+11:23:50.429 [main]INFO  utility.DatePicker - Clicked previous month
+11:23:50.858 [main]INFO  utility.DatePicker - Clicked previous month
+11:23:51.125 [main]INFO  utility.DatePicker - Clicked previous month
+11:23:51.530 [main]INFO  utility.DatePicker - Clicked previous month
+11:23:51.891 [main]INFO  utility.DatePicker - Clicked previous month
+11:23:52.295 [main]INFO  utility.DatePicker - Clicked previous month
+11:23:52.662 [main]INFO  utility.DatePicker - Clicked previous month
+11:23:53.109 [main]INFO  utility.DatePicker - Clicked previous month
+11:23:53.496 [main]INFO  utility.DatePicker - Clicked previous month
+11:23:53.575 [main]INFO  utility.DatePicker - Target month/year visible: JANUARY 2005
+11:23:54.487 [main]INFO  utility.DatePicker - Date 26 selected
+11:23:54.789 [main]INFO  utility.DatePicker - Click submit button clicked after date selection
+11:23:55.802 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Main Learning Goals: Well
+11:23:55.802 [main]INFO  page.Student_DashBoard_InnerChatBox - Entering main learning goal: Well
+11:23:56.177 [main]INFO  page.Student_DashBoard_InnerChatBox - Learning goal entered successfully.
+11:23:56.178 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Gender: Male
+11:23:56.178 [main]INFO  page.Student_DashBoard_InnerChatBox - Selecting gender.
+11:23:56.823 [main]INFO  page.Student_DashBoard_InnerChatBox - Gender selected successfully.
+11:23:57.837 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Mother's Name: Shari Cll
+11:23:57.837 [main]INFO  page.Student_DashBoard_InnerChatBox - Entering mother's name: Shari Cll
+11:23:58.215 [main]INFO  page.Student_DashBoard_InnerChatBox - Mother's name entered successfully.
+11:23:58.215 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Father's Name: lJith
+11:23:58.215 [main]INFO  page.Student_DashBoard_InnerChatBox - Entering father's name: lJith
+11:23:58.425 [main]INFO  page.Student_DashBoard_InnerChatBox - Father's name entered successfully.
+11:23:58.425 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Guardian Name: Himanshu
+11:23:58.428 [main]INFO  page.Student_DashBoard_InnerChatBox - Entering guardian's name: Himanshu
+11:23:58.691 [main]INFO  page.Student_DashBoard_InnerChatBox - Guardian's name entered successfully.
+11:23:59.700 [main]INFO  stepDefinition.InnerBoxTextEntering - Uploading Profile Picture
+11:23:59.700 [main]INFO  page.Student_DashBoard_InnerChatBox - Uploading profile picture from path: C:\\Users\\WIIS\\Pictures\\one piece\\1471770.jpg
+11:23:59.837 [main]INFO  page.Student_DashBoard_InnerChatBox - Profile picture uploaded successfully.
+11:23:59.837 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Institute type
+11:23:59.837 [main]INFO  page.Student_DashBoard_InnerChatBox - Selecting school type.
+11:24:00.368 [main]INFO  page.Student_DashBoard_InnerChatBox - School type selected successfully.
+11:24:01.377 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting School Name: Manimal HSS
+11:24:01.920 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Board
+11:24:03.414 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Class: Class_10
+11:24:04.076 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Hobbies: Studying
+11:24:04.669 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Known Language: Hindi
+11:24:05.873 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Language Proficiency
+11:24:06.498 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Country Code
+11:24:08.216 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering WhatsApp Number: 9876655555
+11:24:08.571 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Subject Name: English First
+11:24:11.388 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Teacher..: Sanju Vava
+11:24:11.913 [main]INFO  stepDefinition.InnerBoxTextEntering - Enter the parent email id..: gepihemeuteu-1849@yopmail.com
+11:24:11.913 [main]INFO  page.Student_DashBoard_InnerChatBox - Entering Parent Email ID.: gepihemeuteu-1849@yopmail.com
+11:24:12.335 [main]INFO  page.Student_DashBoard_InnerChatBox - Parent Email id entered successfully..
+11:24:12.335 [main]INFO  stepDefinition.InnerBoxTextEntering - Enter the parent phone No..: 8876655400
+11:24:12.335 [main]INFO  page.Student_DashBoard_InnerChatBox - Entering Parent Phone No.: 8876655400
+11:24:12.687 [main]INFO  page.Student_DashBoard_InnerChatBox - Parent Email id entered successfully.
+11:24:12.687 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Country: India
+11:24:15.355 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting State: Kerala
+11:24:16.579 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting District: Alappuzha
+11:24:17.109 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting City: Cherthala
+11:24:17.562 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Pin code: 788764
+11:24:17.789 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering First Address: All is well
+11:24:18.107 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Second Address: All is well
+11:24:18.469 [main]INFO  stepDefinition.InnerBoxTextEntering - Starting sign-up chat verification
+11:24:18.559 [main]INFO  page.Student_DashBoard_InnerChatBox - Inner ChatBox is visible on the screen.
+11:24:19.036 [main]INFO  stepDefinition.InnerBoxTextEntering - Profile Inner Chat automated successfully.
+11:24:20.042 [main]INFO  stepDefinition.InnerBoxTextEntering - Logging out from student dashboard.
+11:40:01.965 [main]INFO  factory.BaseClass - browser initialized
+11:40:01.965 [main]INFO  factory.BaseClass - get properties file from file directory
+11:40:09.990 [main]INFO  stepDefinition.Registration_Validation - Navigating to the registration page
+11:40:10.189 [main]INFO  stepDefinition.Registration_Validation - Clicked on SignUp_Here button
+11:40:10.236 [main]INFO  stepDefinition.Registration_Validation - Fetching data from Excel - Sheet: Sheet1, Row: 0
+11:40:10.236 [main]INFO  utility.ExelUtility - Starting to read Excel data from file: F:\Gyansetu\G_TestCase001/src/test-data/data for sign-up chat.xlsx, sheet: Sheet1
+11:40:12.244 [main]INFO  utility.ExelUtility - Total rows found (excluding header): 41
+11:40:12.301 [main]INFO  utility.ExelUtility - Row 1 processed and added to data list.
+11:40:12.301 [main]INFO  utility.ExelUtility - Row 2 processed and added to data list.
+11:40:12.306 [main]INFO  utility.ExelUtility - Row 3 processed and added to data list.
+11:40:12.306 [main]INFO  utility.ExelUtility - Row 4 processed and added to data list.
+11:40:12.308 [main]INFO  utility.ExelUtility - Row 5 processed and added to data list.
+11:40:12.309 [main]INFO  utility.ExelUtility - Row 6 processed and added to data list.
+11:40:12.311 [main]INFO  utility.ExelUtility - Row 7 processed and added to data list.
+11:40:12.311 [main]INFO  utility.ExelUtility - Row 8 processed and added to data list.
+11:40:12.313 [main]INFO  utility.ExelUtility - Row 9 processed and added to data list.
+11:40:12.315 [main]INFO  utility.ExelUtility - Row 10 processed and added to data list.
+11:40:12.315 [main]INFO  utility.ExelUtility - Row 11 processed and added to data list.
+11:40:12.317 [main]INFO  utility.ExelUtility - Row 12 processed and added to data list.
+11:40:12.317 [main]INFO  utility.ExelUtility - Row 13 processed and added to data list.
+11:40:12.317 [main]INFO  utility.ExelUtility - Row 14 processed and added to data list.
+11:40:12.319 [main]INFO  utility.ExelUtility - Row 15 processed and added to data list.
+11:40:12.319 [main]INFO  utility.ExelUtility - Row 16 processed and added to data list.
+11:40:12.319 [main]INFO  utility.ExelUtility - Row 17 processed and added to data list.
+11:40:12.321 [main]INFO  utility.ExelUtility - Row 18 processed and added to data list.
+11:40:12.323 [main]INFO  utility.ExelUtility - Row 19 processed and added to data list.
+11:40:12.323 [main]INFO  utility.ExelUtility - Row 20 processed and added to data list.
+11:40:12.323 [main]INFO  utility.ExelUtility - Row 21 processed and added to data list.
+11:40:12.323 [main]INFO  utility.ExelUtility - Row 22 processed and added to data list.
+11:40:12.323 [main]INFO  utility.ExelUtility - Row 23 processed and added to data list.
+11:40:12.325 [main]INFO  utility.ExelUtility - Row 24 processed and added to data list.
+11:40:12.325 [main]INFO  utility.ExelUtility - Row 25 processed and added to data list.
+11:40:12.325 [main]INFO  utility.ExelUtility - Row 26 processed and added to data list.
+11:40:12.325 [main]INFO  utility.ExelUtility - Row 27 processed and added to data list.
+11:40:12.325 [main]INFO  utility.ExelUtility - Row 28 processed and added to data list.
+11:40:12.325 [main]INFO  utility.ExelUtility - Row 29 processed and added to data list.
+11:40:12.325 [main]INFO  utility.ExelUtility - Row 30 processed and added to data list.
+11:40:12.325 [main]INFO  utility.ExelUtility - Row 31 processed and added to data list.
+11:40:12.325 [main]INFO  utility.ExelUtility - Row 32 processed and added to data list.
+11:40:12.325 [main]INFO  utility.ExelUtility - Row 33 processed and added to data list.
+11:40:12.325 [main]INFO  utility.ExelUtility - Row 34 processed and added to data list.
+11:40:12.325 [main]INFO  utility.ExelUtility - Row 35 processed and added to data list.
+11:40:12.325 [main]INFO  utility.ExelUtility - Row 36 processed and added to data list.
+11:40:12.325 [main]INFO  utility.ExelUtility - Row 37 processed and added to data list.
+11:40:12.325 [main]INFO  utility.ExelUtility - Row 38 processed and added to data list.
+11:40:12.334 [main]INFO  utility.ExelUtility - Row 39 processed and added to data list.
+11:40:12.334 [main]INFO  utility.ExelUtility - Row 40 processed and added to data list.
+11:40:12.334 [main]INFO  utility.ExelUtility - Row 41 processed and added to data list.
+11:40:12.334 [main]INFO  utility.ExelUtility - Excel data extraction completed successfully.
+11:40:12.334 [main]INFO  stepDefinition.Registration_Validation - Fetched Email ID: samjo668@yopmail.com
+11:40:12.858 [main]INFO  stepDefinition.Registration_Validation - Fetched Phone No: 8886663022
+11:40:13.162 [main]INFO  stepDefinition.Registration_Validation - Fetched Password: ********
+11:40:13.635 [main]INFO  stepDefinition.Registration_Validation - Checked Terms and Conditions checkbox.....
+11:40:13.639 [main]INFO  stepDefinition.Registration_Validation - Clicking SignUp Now button
+11:41:39.006 [main]INFO  factory.BaseClass - browser initialized
+11:41:39.011 [main]INFO  factory.BaseClass - get properties file from file directory
+11:41:44.536 [main]INFO  factory.BaseClass - browser initialized
+11:41:44.536 [main]INFO  factory.BaseClass - get properties file from file directory
+11:41:52.671 [main]INFO  stepDefinition.InnerBoxTextEntering - Initializing LoginPage and HomePage
+11:41:52.689 [main]INFO  stepDefinition.InnerBoxTextEntering - Navigating to SignIn via HomePage
+11:41:52.989 [main]INFO  stepDefinition.InnerBoxTextEntering - SignIn page loaded
+11:41:52.997 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetching SignIn credentials from Excel: Sheet = Sheet1, Row = 0
+11:41:52.997 [main]INFO  utility.ExelUtility - Starting to read Excel data from file: F:\Gyansetu\G_TestCase001/src/test-data/data for sign-up chat.xlsx, sheet: Sheet1
+11:41:54.353 [main]INFO  utility.ExelUtility - Total rows found (excluding header): 41
+11:41:54.405 [main]INFO  utility.ExelUtility - Row 1 processed and added to data list.
+11:41:54.405 [main]INFO  utility.ExelUtility - Row 2 processed and added to data list.
+11:41:54.405 [main]INFO  utility.ExelUtility - Row 3 processed and added to data list.
+11:41:54.411 [main]INFO  utility.ExelUtility - Row 4 processed and added to data list.
+11:41:54.411 [main]INFO  utility.ExelUtility - Row 5 processed and added to data list.
+11:41:54.411 [main]INFO  utility.ExelUtility - Row 6 processed and added to data list.
+11:41:54.413 [main]INFO  utility.ExelUtility - Row 7 processed and added to data list.
+11:41:54.413 [main]INFO  utility.ExelUtility - Row 8 processed and added to data list.
+11:41:54.415 [main]INFO  utility.ExelUtility - Row 9 processed and added to data list.
+11:41:54.415 [main]INFO  utility.ExelUtility - Row 10 processed and added to data list.
+11:41:54.415 [main]INFO  utility.ExelUtility - Row 11 processed and added to data list.
+11:41:54.415 [main]INFO  utility.ExelUtility - Row 12 processed and added to data list.
+11:41:54.415 [main]INFO  utility.ExelUtility - Row 13 processed and added to data list.
+11:41:54.418 [main]INFO  utility.ExelUtility - Row 14 processed and added to data list.
+11:41:54.418 [main]INFO  utility.ExelUtility - Row 15 processed and added to data list.
+11:41:54.418 [main]INFO  utility.ExelUtility - Row 16 processed and added to data list.
+11:41:54.418 [main]INFO  utility.ExelUtility - Row 17 processed and added to data list.
+11:41:54.419 [main]INFO  utility.ExelUtility - Row 18 processed and added to data list.
+11:41:54.419 [main]INFO  utility.ExelUtility - Row 19 processed and added to data list.
+11:41:54.419 [main]INFO  utility.ExelUtility - Row 20 processed and added to data list.
+11:41:54.419 [main]INFO  utility.ExelUtility - Row 21 processed and added to data list.
+11:41:54.419 [main]INFO  utility.ExelUtility - Row 22 processed and added to data list.
+11:41:54.422 [main]INFO  utility.ExelUtility - Row 23 processed and added to data list.
+11:41:54.422 [main]INFO  utility.ExelUtility - Row 24 processed and added to data list.
+11:41:54.422 [main]INFO  utility.ExelUtility - Row 25 processed and added to data list.
+11:41:54.422 [main]INFO  utility.ExelUtility - Row 26 processed and added to data list.
+11:41:54.422 [main]INFO  utility.ExelUtility - Row 27 processed and added to data list.
+11:41:54.422 [main]INFO  utility.ExelUtility - Row 28 processed and added to data list.
+11:41:54.422 [main]INFO  utility.ExelUtility - Row 29 processed and added to data list.
+11:41:54.422 [main]INFO  utility.ExelUtility - Row 30 processed and added to data list.
+11:41:54.422 [main]INFO  utility.ExelUtility - Row 31 processed and added to data list.
+11:41:54.422 [main]INFO  utility.ExelUtility - Row 32 processed and added to data list.
+11:41:54.422 [main]INFO  utility.ExelUtility - Row 33 processed and added to data list.
+11:41:54.422 [main]INFO  utility.ExelUtility - Row 34 processed and added to data list.
+11:41:54.422 [main]INFO  utility.ExelUtility - Row 35 processed and added to data list.
+11:41:54.422 [main]INFO  utility.ExelUtility - Row 36 processed and added to data list.
+11:41:54.422 [main]INFO  utility.ExelUtility - Row 37 processed and added to data list.
+11:41:54.422 [main]INFO  utility.ExelUtility - Row 38 processed and added to data list.
+11:41:54.422 [main]INFO  utility.ExelUtility - Row 39 processed and added to data list.
+11:41:54.422 [main]INFO  utility.ExelUtility - Row 40 processed and added to data list.
+11:41:54.422 [main]INFO  utility.ExelUtility - Row 41 processed and added to data list.
+11:41:54.422 [main]INFO  utility.ExelUtility - Excel data extraction completed successfully.
+11:41:54.422 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetched Email ID: samjo668@yopmail.com
+11:41:55.005 [main]INFO  stepDefinition.InnerBoxTextEntering - Entered Email ID in SignIn field
+11:41:55.005 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetched Password: ********
+11:41:55.341 [main]INFO  stepDefinition.InnerBoxTextEntering - Entered Password in SignIn field
+11:41:55.345 [main]INFO  stepDefinition.InnerBoxTextEntering - Clicking the Sign In button
+11:41:57.099 [main]INFO  stepDefinition.InnerBoxTextEntering - Sign In button clicked successfully
+11:41:57.099 [main]INFO  stepDefinition.InnerBoxTextEntering - Fetching data from Excel sheet for student User: Sign-Up chat_for_StudentUser
+11:41:57.099 [main]INFO  utility.ExelUtility - Starting to read Excel data from file: F:\Gyansetu\G_TestCase001/src/test-data/data for sign-up chat.xlsx, sheet: Sign-Up chat_for_StudentUser
+11:41:57.376 [main]INFO  utility.ExelUtility - Total rows found (excluding header): 26
+11:41:57.395 [main]INFO  utility.ExelUtility - Row 1 processed and added to data list.
+11:41:57.399 [main]INFO  utility.ExelUtility - Row 2 processed and added to data list.
+11:41:57.406 [main]INFO  utility.ExelUtility - Row 3 processed and added to data list.
+11:41:57.411 [main]INFO  utility.ExelUtility - Row 4 processed and added to data list.
+11:41:57.415 [main]INFO  utility.ExelUtility - Row 5 processed and added to data list.
+11:41:57.421 [main]INFO  utility.ExelUtility - Row 6 processed and added to data list.
+11:41:57.421 [main]INFO  utility.ExelUtility - Row 7 processed and added to data list.
+11:41:57.421 [main]INFO  utility.ExelUtility - Row 8 processed and added to data list.
+11:41:57.435 [main]INFO  utility.ExelUtility - Row 9 processed and added to data list.
+11:41:57.439 [main]INFO  utility.ExelUtility - Row 10 processed and added to data list.
+11:41:57.442 [main]INFO  utility.ExelUtility - Row 11 processed and added to data list.
+11:41:57.442 [main]INFO  utility.ExelUtility - Row 12 processed and added to data list.
+11:41:57.442 [main]INFO  utility.ExelUtility - Row 13 processed and added to data list.
+11:41:57.442 [main]INFO  utility.ExelUtility - Row 14 processed and added to data list.
+11:41:57.442 [main]INFO  utility.ExelUtility - Row 15 processed and added to data list.
+11:41:57.442 [main]INFO  utility.ExelUtility - Row 16 processed and added to data list.
+11:41:57.442 [main]INFO  utility.ExelUtility - Row 17 processed and added to data list.
+11:41:57.442 [main]INFO  utility.ExelUtility - Row 18 processed and added to data list.
+11:41:57.450 [main]INFO  utility.ExelUtility - Row 19 processed and added to data list.
+11:41:57.450 [main]INFO  utility.ExelUtility - Row 20 processed and added to data list.
+11:41:57.450 [main]INFO  utility.ExelUtility - Row 21 processed and added to data list.
+11:41:57.450 [main]INFO  utility.ExelUtility - Row 22 processed and added to data list.
+11:41:57.450 [main]INFO  utility.ExelUtility - Row 23 processed and added to data list.
+11:41:57.450 [main]INFO  utility.ExelUtility - Row 24 processed and added to data list.
+11:41:57.450 [main]INFO  utility.ExelUtility - Row 25 processed and added to data list.
+11:41:57.450 [main]INFO  utility.ExelUtility - Row 26 processed and added to data list.
+11:41:57.450 [main]INFO  utility.ExelUtility - Excel data extraction completed successfully.
+11:42:02.652 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Full Name of student: Samjo N
+11:42:02.658 [main]INFO  page.Student_DashBoard_InnerChatBox - Entering full name: Samjo N
+11:42:03.457 [main]INFO  page.Student_DashBoard_InnerChatBox - Full name entered with Actions and Enter sent.
+11:42:03.457 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Date of Birth of student: 26-January-2005
+11:42:03.457 [main]INFO  utility.DatePicker - Opening date picker....
+11:42:03.995 [main]INFO  utility.DatePicker - Switched to year view..
+11:42:06.631 [main]INFO  utility.DatePicker - Year 2005 selected..
+11:42:07.056 [main]INFO  utility.DatePicker - Clicked previous month
+11:42:07.389 [main]INFO  utility.DatePicker - Clicked previous month
+11:42:07.766 [main]INFO  utility.DatePicker - Clicked previous month
+11:42:08.160 [main]INFO  utility.DatePicker - Clicked previous month
+11:42:08.544 [main]INFO  utility.DatePicker - Clicked previous month
+11:42:08.877 [main]INFO  utility.DatePicker - Clicked previous month
+11:42:09.216 [main]INFO  utility.DatePicker - Clicked previous month
+11:42:09.542 [main]INFO  utility.DatePicker - Clicked previous month
+11:42:09.891 [main]INFO  utility.DatePicker - Clicked previous month
+11:42:09.996 [main]INFO  utility.DatePicker - Target month/year visible: JANUARY 2005
+11:42:10.832 [main]INFO  utility.DatePicker - Date 26 selected
+11:42:11.170 [main]INFO  utility.DatePicker - Click submit button clicked after date selection
+11:42:12.180 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Main Learning Goals: Well
+11:42:12.180 [main]INFO  page.Student_DashBoard_InnerChatBox - Entering main learning goal: Well
+11:42:12.564 [main]INFO  page.Student_DashBoard_InnerChatBox - Learning goal entered successfully.
+11:42:12.564 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Gender: Male
+11:42:12.564 [main]INFO  page.Student_DashBoard_InnerChatBox - Selecting gender.
+11:42:13.144 [main]INFO  page.Student_DashBoard_InnerChatBox - Gender selected successfully.
+11:42:14.157 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Mother's Name: Shari Cll
+11:42:14.157 [main]INFO  page.Student_DashBoard_InnerChatBox - Entering mother's name: Shari Cll
+11:42:14.763 [main]INFO  page.Student_DashBoard_InnerChatBox - Mother's name entered successfully.
+11:42:14.763 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Father's Name: lJith
+11:42:14.765 [main]INFO  page.Student_DashBoard_InnerChatBox - Entering father's name: lJith
+11:42:15.149 [main]INFO  page.Student_DashBoard_InnerChatBox - Father's name entered successfully.
+11:42:15.149 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Guardian Name: Himanshu
+11:42:15.149 [main]INFO  page.Student_DashBoard_InnerChatBox - Entering guardian's name: Himanshu
+11:42:15.504 [main]INFO  page.Student_DashBoard_InnerChatBox - Guardian's name entered successfully.
+11:42:16.520 [main]INFO  stepDefinition.InnerBoxTextEntering - Uploading Profile Picture
+11:42:16.520 [main]INFO  page.Student_DashBoard_InnerChatBox - Uploading profile picture from path: C:\\Users\\WIIS\\Pictures\\one piece\\1471770.jpg
+11:42:16.740 [main]INFO  page.Student_DashBoard_InnerChatBox - Profile picture uploaded successfully.
+11:42:16.740 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Institute type
+11:42:16.740 [main]INFO  page.Student_DashBoard_InnerChatBox - Selecting school type.
+11:42:17.333 [main]INFO  page.Student_DashBoard_InnerChatBox - School type selected successfully.
+11:42:18.334 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting School Name: Manimal HSS
+11:42:18.856 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Board
+11:42:20.312 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Class: Class_10
+11:42:21.003 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Hobbies: Studying
+11:42:21.588 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Known Language: Hindi
+11:42:22.855 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Language Proficiency
+11:42:23.439 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Country Code
+11:42:25.180 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering WhatsApp Number: 9876655555
+11:42:25.478 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Subject Name: English First
+11:42:28.268 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Teacher..: Sanju Vava
+11:42:28.853 [main]INFO  stepDefinition.InnerBoxTextEntering - Enter the parent email id..: gepihemeuteu-1849@yopmail.com
+11:42:28.854 [main]INFO  page.Student_DashBoard_InnerChatBox - Entering Parent Email ID.: gepihemeuteu-1849@yopmail.com
+11:42:29.536 [main]INFO  page.Student_DashBoard_InnerChatBox - Parent Email id entered successfully..
+11:42:29.537 [main]INFO  stepDefinition.InnerBoxTextEntering - Enter the parent phone No..: 8876655400
+11:42:29.537 [main]INFO  page.Student_DashBoard_InnerChatBox - Entering Parent Phone No.: 8876655400
+11:42:30.007 [main]INFO  page.Student_DashBoard_InnerChatBox - Parent Email id entered successfully.
+11:42:30.008 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting Country: India
+11:42:32.809 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting State: Kerala
+11:42:33.732 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting District: Alappuzha
+11:42:34.138 [main]INFO  stepDefinition.InnerBoxTextEntering - Selecting City: Cherthala
+11:42:34.423 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Pin code: 788764
+11:42:34.743 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering First Address: All is well
+11:42:35.006 [main]INFO  stepDefinition.InnerBoxTextEntering - Entering Second Address: All is well
+11:42:35.287 [main]INFO  stepDefinition.InnerBoxTextEntering - Starting sign-up chat verification
+11:42:35.341 [main]INFO  page.Student_DashBoard_InnerChatBox - Inner ChatBox is visible on the screen.
+11:42:35.679 [main]INFO  stepDefinition.InnerBoxTextEntering - Profile Inner Chat automated successfully.
+11:42:36.685 [main]INFO  stepDefinition.InnerBoxTextEntering - Logging out from student dashboard.
